@@ -25,6 +25,9 @@ For SEC EDGAR, set a User-Agent that identifies you, as SEC's [fair-access polic
 | `sec_edgar` | financial, fraud, cyber, reputational | SEC EDGAR submissions, full-text search, XBRL company facts | Risk-relevant 8-K items (1.05 cyber incident, 1.03 bankruptcy, 4.02 non-reliance, 4.01 auditor change, and others), NT late filings, red-flag phrases in filings, and annual ratios such as equity, liquidity, leverage, losses and revenue decline. |
 | `cisa_kev` | cyber | CISA Known Exploited Vulnerabilities catalog | Vulnerabilities in the company's own products that are being exploited in the wild. Each links to its NVD entry. |
 | `hibp` | cyber | Have I Been Pwned breach catalogue (CC BY 4.0) | Known data breaches, matched by domain or name. |
+| `courtlistener` | reputational | [CourtListener](https://www.courtlistener.com/help/api/) RECAP federal dockets (Free Law Project) | Federal cases filed in the last 365 days that name the company as defendant, grouped by nature of suit (securities, antitrust, product liability, consumer and privacy, employment). Each theme cites up to 5 dockets. |
+| `doj` | reputational | [U.S. Department of Justice press releases API](https://www.justice.gov/developer) | Press releases from the last 3 years whose headline names the company. Settlements, penalties and pleas are high severity; cases where the company is only a victim or context are info. |
+| `wikipedia` | reputational | English Wikipedia via the MediaWiki API (CC BY-SA 4.0) | Controversy, criticism and litigation sections of the articles listed in the company's `wikipedia` field (default: its name), cited by revision permalink. Sections that mention a year in the last 2 years are medium severity. |
 
 ## How sourcing is enforced
 
@@ -40,7 +43,7 @@ risk_collector/
   models.py      Company, Source, RiskSignal, SourceCheck
   http.py        stdlib HTTP client: per-host rate limits, retries, disk cache
   matching.py    name normalisation and fuzzy matching
-  collectors/    gdelt, sanctions, sec_edgar, cyber (cisa_kev, hibp)
+  collectors/    gdelt, sanctions, sec_edgar, cyber (cisa_kev, hibp), reputation (courtlistener, doj, wikipedia)
   pipeline.py    runs collectors and builds per-category summaries and scores
   report.py      JSON and Markdown (citations) output
 ```

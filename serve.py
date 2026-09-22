@@ -22,7 +22,7 @@ class DashboardData:
     def score(self, weights=None):
         with self.lock:
             config = self.root / 'examples/collection_config.json'
-            defaults = self.root / 'examples/collection_weights.json'
+            defaults = self.root / 'examples/dashboard_weights.json'
             paths = sorted((self.root / 'companies').rglob('*.json')) + [config, defaults]
             fingerprint = tuple((str(p), p.stat().st_mtime_ns, p.stat().st_size) for p in paths)
             if fingerprint != self.fingerprint:

@@ -19,16 +19,25 @@ class DashboardDataTests(unittest.TestCase):
         rows = {r['entity_id']: r for r in payload['scoreboard']['records']}
         self.assertEqual(payload['score_basis'], 'collector_heuristic')
         self.assertEqual(len(rows), 10)
+        self.assertNotIn('sanctions', payload['dashboard']['default_weights'])
+        self.assertEqual(len(payload['dashboard']['default_weights']), 4)
+        self.assertEqual(payload['scoreboard']['normalized_weights']['sanctions'], 0)
         self.assertEqual(rows['microsoft']['categories']['financial']['score'], 0)
-        self.assertIsNone(rows['microsoft']['categories']['reputational']['score'])
-        self.assertEqual(rows['microsoft']['overall']['coverage'], .75)
-        self.assertIsNone(rows['hireright']['overall']['score'])
+        self.assertEqual(rows['microsoft']['categories']['reputational']['score'], 69)
+        self.assertAlmostEqual(rows['microsoft']['overall']['coverage'], 1)
+        self.assertEqual(rows['hireright']['overall']['score'], 8)
+        self.assertAlmostEqual(rows['hireright']['overall']['coverage'], .166)
+        self.assertIsNone(rows['chain-iq']['overall']['score'])
         self.assertTrue(payload['evidence']['hireright']['report']['errors'])
         cyber = DashboardData().score({'cybersecurity': 100})
         ms = next(r for r in cyber['scoreboard']['records'] if r['entity_id'] == 'microsoft')
         self.assertEqual(ms['overall']['score'], 100)
         self.assertEqual(ms['overall']['coverage'], 1)
-        missing = DashboardData().score({'reputational': 100})
+        reputation = DashboardData().score({'reputational': 100})
+        self.assertEqual(sum(r['overall']['score'] is not None for r in reputation['scoreboard']['records']), 9)
+        for row in reputation['scoreboard']['records']:
+            self.assertEqual(row['overall']['score'], row['categories']['reputational']['score'])
+        missing = DashboardData().score({'sanctions': 100})
         self.assertTrue(all(r['overall']['score'] is None for r in missing['scoreboard']['records']))
 
     def test_updated_report_rebuilds_cached_snapshot(self):
@@ -36,7 +45,7 @@ class DashboardDataTests(unittest.TestCase):
             root = Path(directory)
             shutil.copytree(ROOT / 'companies', root / 'companies')
             (root / 'examples').mkdir()
-            for name in ('collection_config.json', 'collection_weights.json'):
+            for name in ('collection_config.json', 'dashboard_weights.json'):
                 shutil.copy(ROOT / 'examples' / name, root / 'examples' / name)
             data = DashboardData(root)
             first = data.score()
@@ -52,7 +61,9 @@ class DashboardDataTests(unittest.TestCase):
             self.assertIsNot(data.dataset, retained)
             self.assertNotEqual(first['collection_digest'], updated['collection_digest'])
             self.assertEqual(updated['evidence']['microsoft']['generated_at'], report['generated_at'])
-            self.assertEqual(updated['evidence']['microsoft']['report_count'], 2)
+            self.assertEqual(updated['evidence']['microsoft']['report_count'], 3)
+            ms = next(r for r in updated['scoreboard']['records'] if r['entity_id'] == 'microsoft')
+            self.assertEqual(ms['categories']['reputational']['score'], 69)
 
 
 class DashboardHTTPTests(unittest.TestCase):

@@ -1,0 +1,1552 @@
+{
+  "company": {
+    "name": "Microsoft",
+    "aliases": [
+      "Microsoft Corporation",
+      "Microsoft Corp"
+    ],
+    "ticker": "MSFT",
+    "domain": "microsoft.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": [],
+    "wikipedia": [
+      "Microsoft",
+      "Criticism of Microsoft"
+    ]
+  },
+  "generated_at": "2026-09-22T15:09:18+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "courtlistener",
+      "doj",
+      "wikipedia"
+    ],
+    "categories": [
+      "reputational"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "courtlistener": 365,
+      "doj": 1095,
+      "wikipedia": 730
+    }
+  },
+  "summary": [
+    {
+      "category": "reputational",
+      "signals": 31,
+      "max_severity": "medium",
+      "score": 69,
+      "by_severity": {
+        "info": 7,
+        "low": 14,
+        "medium": 10,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Corporate identity > Environment (latest year mentioned 2026)",
+      "summary": "In 2011, Greenpeace released a report rating the top ten big brands in cloud computing on the sources of electricity for their data centers. At the time, data centers consumed up to 2% of all global electricity, and this amount was projected to increase. Phil Radford of Greenpeace said, \"We are concerned that this new explosion in electricity use could lock us into old, polluting energy sources instead of the clean energy available today\", and called on \"Amazon, Microsoft and other leaders of th...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Microsoft - section 'Environment'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Microsoft#Environment",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Microsoft (revision 1375562445)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Microsoft&oldid=1375562445",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2026",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Corporate identity",
+          "Environment"
+        ],
+        "latest_year": 2026,
+        "chars": 4307
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Ties to US Government departments (latest year mentioned 2026)",
+      "summary": "On September 14, 2019, Microsoft's flagship store was shut down by protestors as part of a direct action organized by Close the Camps NYC. The action was in response to Microsoft's $19.4 million contract with U.S. Immigration and Customs Enforcement (ICE). Microsoft's relationship with the immigration enforcement agency was revealed by executive Tom Keane, through a company blog post that described ICE's use of the company's high-security cloud storage product Azure Government. He went on to say...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Ties to US Government departments'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Ties_to_US_Government_departments",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2026",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Ties to US Government departments"
+        ],
+        "latest_year": 2026,
+        "chars": 839
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Corporate identity > Controversies > Involvement in the Gaza war (latest year mentioned 2025)",
+      "summary": "Microsoft Azure is one of multiple cloud computing services used for data storage by the Israel Defense Forces (IDF). The IDF's usage of Azure intensified during the Gaza war and genocide, doubling its stored data to over 13.6 petabytes from March to July 2024. In June 2025, a UN expert's report named Microsoft as being \"central to Israel's surveillance apparatus and the ongoing Gaza destruction.\" In late 2025, a non-profit organization filed a complaint within the European Union, raising concer...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Microsoft - section 'Involvement in the Gaza war'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Microsoft#Involvement_in_the_Gaza_war",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Microsoft (revision 1375562445)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Microsoft&oldid=1375562445",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2025",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Corporate identity",
+          "Controversies",
+          "Involvement in the Gaza war"
+        ],
+        "latest_year": 2025,
+        "chars": 3373
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Privacy issues > Use of engineers in China for U.S. military technical support (latest year mentioned 2025)",
+      "summary": "In July 2025, ProPublica reported that Microsoft had used engineers in the People's Republic of China to help maintain United States Department of Defense (DOD) systems. U.S. personnel, often with limited-to-no technical skills, formally oversee engineers in China who have far more advanced technical expertise, presenting a vulnerability to hacking. Microsoft did not disclose the location of the engineers to the Pentagon. Microsoft stated that it terminated the program, termed \"digital escort\", ...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Use of engineers in China for U.S. military technical support'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Use_of_engineers_in_China_for_U.S._military_technical_support",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2025",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Privacy issues",
+          "Use of engineers in China for U.S. military technical support"
+        ],
+        "latest_year": 2025,
+        "chars": 776
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Corporate identity > Controversies (latest year mentioned 2024)",
+      "summary": "Criticism of Microsoft has followed various aspects of its products and business practices, including surveillance of employees, \"Velvet Sweatshop\" practices, tax manipulation, and antitrust violations. Frequently criticized are the ease of use, robustness, and security of the Microsoft's software. The company has also been criticized for the use of permatemp employees (employees employed for years as \"temporary\", and therefore without medical benefits), the use of forced retention tactics, whic...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Microsoft - section 'Controversies'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Microsoft#Controversies",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Microsoft (revision 1375562445)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Microsoft&oldid=1375562445",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2024",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Corporate identity",
+          "Controversies"
+        ],
+        "latest_year": 2024,
+        "chars": 5162
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Litigation (latest year mentioned 2024)",
+      "summary": "Microsoft's market dominance and business practices have attracted widespread resentment, which is not necessarily restricted to the company's competitors. In a 2003 publication, Dan Geer argued the prevalence of Microsoft products has resulted in a monoculture which is dangerously easy for viruses to exploit. On June 25, 2024, the European Commission accused Microsoft of violating the Treaty on the Functioning of the European Union by bundling Microsoft Teams with Microsoft 365 and Microsoft Of...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Litigation'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Litigation",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2024",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Litigation"
+        ],
+        "latest_year": 2024,
+        "chars": 505
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Advertising and public relations (latest year mentioned 2024)",
+      "summary": "Critics have alleged that Microsoft has used funding to drum up support from think tanks and trade organizations such as the Alexis de Tocqueville Institution (AdTI), the Independent Institute, and Americans for Technology Leadership (ATL). During the antitrust case United States v. Microsoft, ATL sent a poll to 19 state attorneys general purporting to show that \"the public believes state AGs should devote their energy to causes other than Microsoft\". Also during the case the Independent Institu...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Advertising and public relations'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Advertising_and_public_relations",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2024",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Advertising and public relations"
+        ],
+        "latest_year": 2024,
+        "chars": 6233
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "19 employment, discrimination and labour suits filed against Microsoft since 2025-09-22",
+      "summary": "Most recent: Sherman v. Microsoft Corporation (2026-09-02, 751 Labor: Family and Medical Leave Act); Hammes v. Microsoft Corp. (2026-06-25, Civil Rights: Jobs); Stephens v. Microsoft Corporation (2026-06-23, 442 Civil Rights: Jobs). Filings are allegations, not findings of liability.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Sherman v. Microsoft Corporation (W.D. Wash., 2:26-cv-03246)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74773149/sherman-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-02",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Hammes v. Microsoft Corp. (E.D. Cal., 2:26-cv-02265)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73539279/hammes-v-microsoft-corp/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-06-25",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Stephens v. Microsoft Corporation (W.D. Wash., 2:26-cv-02181)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73522540/stephens-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-06-23",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Woods v. Microsoft Corporation (W.D. Wash., 2:26-cv-02287)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73559590/woods-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-06-18",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Luu v. Microsoft Corporation (N.D. Ga., 1:26-cv-03070)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73432722/luu-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-06-02",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: Microsoft",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Microsoft%22%20OR%20%22Microsoft%20Corporation%22%20OR%20%22Microsoft%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-09-02",
+      "tags": [
+        "litigation",
+        "employment"
+      ],
+      "data": {
+        "cases": 19,
+        "theme": "employment"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "2 antitrust suits filed against Microsoft since 2025-09-22",
+      "summary": "Most recent: Rockman v. Microsoft Corporation (2026-05-31, 410 Anti-Trust); Bryant v. Microsoft Corporation (2025-10-13, 410 Anti-Trust). Filings are allegations, not findings of liability.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Rockman v. Microsoft Corporation (W.D. Wash., 2:26-cv-01876)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73419951/rockman-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-05-31",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Bryant v. Microsoft Corporation (N.D. Cal., 5:25-cv-08733)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/71631869/bryant-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2025-10-13",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: Microsoft",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Microsoft%22%20OR%20%22Microsoft%20Corporation%22%20OR%20%22Microsoft%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-05-31",
+      "tags": [
+        "litigation",
+        "antitrust"
+      ],
+      "data": {
+        "cases": 2,
+        "theme": "antitrust"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "3 product liability suits filed against Microsoft since 2025-09-22",
+      "summary": "Most recent: Rodriguez v. Microsoft Corporation (2026-02-23, 365 Personal Inj. Prod. Liability); Champion Local School District v. Microsoft Corporation (2026-02-21, 365 Personal Inj. Prod. Liability); White v. Microsoft Corporation (2025-11-12, 365 Personal Inj. Prod. Liability). Filings are allegations, not findings of liability.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Rodriguez v. Microsoft Corporation (E.D. Cal., 1:26-cv-01557)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/72322975/rodriguez-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-02-23",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Champion Local School District v. Microsoft Corporation (N.D. Ohio, 4:26-cv-00436)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/72311108/champion-local-school-district-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-02-21",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "White v. Microsoft Corporation (M.D. Penn., 3:25-cv-02142)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/71907606/white-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2025-11-12",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: Microsoft",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Microsoft%22%20OR%20%22Microsoft%20Corporation%22%20OR%20%22Microsoft%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-02-23",
+      "tags": [
+        "litigation",
+        "product_liability"
+      ],
+      "data": {
+        "cases": 3,
+        "theme": "product_liability"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Censorship in China > Bing censorship of the 1989 Tiananmen Square massacre (latest year mentioned 2021)",
+      "summary": "On June 4, 2021, the 32nd anniversary of the 1989 Tiananmen Square massacre, searches for the Tank Man image and videos were censored by Microsoft Bing search engine worldwide. Hours after Microsoft acknowledged the issue, the search returned only pictures of tanks elsewhere in the world. Search engines that license results from Microsoft such as DuckDuckGo and Yahoo faced similar issues. Microsoft said the issue was \"due to an accidental human error.\" According to a Bloomberg Businessweek inves...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Bing censorship of the 1989 Tiananmen Square massacre'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Bing_censorship_of_the_1989_Tiananmen_Square_massacre",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2021",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Censorship in China",
+          "Bing censorship of the 1989 Tiananmen Square massacre"
+        ],
+        "latest_year": 2021,
+        "chars": 1031
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Tax avoidance (latest year mentioned 2020)",
+      "summary": "As reported by several news outlets, an Irish subsidiary of Microsoft based in the Republic of Ireland declared £220 bn in profits but paid no corporation tax for the year 2020. This is due to the company being tax resident in Bermuda as mentioned in the accounts for 'Microsoft Round Island One', a subsidiary that collects licence fees from the use of Microsoft software worldwide. Dame Margaret Hodge, a Labour MP in the UK said, \"It is unsurprising – yet still shocking – that massively wealthy g...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Tax avoidance'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Tax_avoidance",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2020",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Tax avoidance"
+        ],
+        "latest_year": 2020,
+        "chars": 1176
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Robot journalism (latest year mentioned 2020)",
+      "summary": "In May 2020, Microsoft announced that a number of its MSN contract journalists would be replaced by robot journalism leading to criticism about which stories would be displayed and their quality.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Robot journalism'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Robot_journalism",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2020",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Robot journalism"
+        ],
+        "latest_year": 2020,
+        "chars": 195
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Privacy issues > Telemetry and data collection (latest year mentioned 2019)",
+      "summary": "Windows 10 was criticized on-launch for having default settings that send various information regarding user behaviors to Microsoft and its \"trusted partners\", such as data regarding user contacts and calendar events, location data and history, \"telemetry\" (diagnostics data); this could not be fully disabled on non-enterprise versions of Windows 10), an \"advertising ID\", as well as further data when the Cortana assistant is enabled in full. Microsoft faced criticism from France's data protection...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Telemetry and data collection'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Telemetry_and_data_collection",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2019",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Privacy issues",
+          "Telemetry and data collection"
+        ],
+        "latest_year": 2019,
+        "chars": 1590
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Copyright enforcement (latest year mentioned 2018)",
+      "summary": "When Microsoft discovered that its first product, Altair BASIC, was subject to widespread unauthorized copying, Microsoft founder Bill Gates wrote an Open Letter to Hobbyists that openly accused many hobbyists of stealing software. Gates' letter provoked many responses, with some hobbyists objecting to the broad accusation, and others supporting the principle of compensation. This disagreement over whether software should be proprietary continues into the present day under the banner of the free...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Copyright enforcement'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Copyright_enforcement",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2018",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Copyright enforcement"
+        ],
+        "latest_year": 2018,
+        "chars": 2950
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Corporate affairs > Unions (latest year mentioned 2017)",
+      "summary": "Microsoft recognizes seven trade unions representing 1,750 workers in the United States at its video game subsidiaries Activision Blizzard and ZeniMax Media. U.S. workers have been vocal in opposing military and law-enforcement contracts with Microsoft. Bethesda Game Studios is unionized in Canada. Microsoft South Korea has recognized its union since 2017. German employees have elected works councils since 1998.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Microsoft - section 'Unions'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Microsoft#Unions",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Microsoft (revision 1375562445)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Microsoft&oldid=1375562445",
+          "retrieved_at": "2026-09-22T15:08:05+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2017",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Corporate affairs",
+          "Unions"
+        ],
+        "latest_year": 2017,
+        "chars": 415
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Labor practices (latest year mentioned 2015)",
+      "summary": "Microsoft has been criticized for the use of permatemp employees (employees who are employed for years as \"temporary\" and hence do not have medical benefits), use of forced retention tactics, where departing employees would be sued to prevent departure, as well as more traditional cost-saving measures, ranging from cutting medical benefits to not providing towels in company locker rooms. Historically, Microsoft has also been accused of overworking employees, in many cases, leading to burnout wit...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Labor practices'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Labor_practices",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2015",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Labor practices"
+        ],
+        "latest_year": 2015,
+        "chars": 2773
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Privacy issues > Collaboration with the NSA on internet surveillance (latest year mentioned 2013)",
+      "summary": "Microsoft was the first company to participate in the PRISM surveillance program, according to leaked NSA documents obtained by The Guardian and The Washington Post in June 2013, and acknowledged by government officials following the leak. The program authorizes the government to secretly access data of non-US citizens hosted by American companies without a warrant. Microsoft has denied participation in such a program. In July 2013, The Guardian elaborated that leaked documents show that: Micros...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Collaboration with the NSA on internet surveillance'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Collaboration_with_the_NSA_on_internet_surveillance",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2013",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Privacy issues",
+          "Collaboration with the NSA on internet surveillance"
+        ],
+        "latest_year": 2013,
+        "chars": 975
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Mono patent concerns (latest year mentioned 2011)",
+      "summary": "On July 6, 2009, Microsoft announced that it was placing their ECMA 334 and ECMA 335 specifications under their Community Promise pledging that they would not assert their patents against anyone implementing, distributing, or using alternative implementations of .NET. Mono's implementation of those components of the .NET stack not submitted to the ECMA for standardization has been the source of patent violation concerns for much of the life of the project. In particular, discussion has taken pla...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Mono patent concerns'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Mono_patent_concerns",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2011",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Mono patent concerns"
+        ],
+        "latest_year": 2011,
+        "chars": 3177
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Licensing agreements (latest year mentioned 2010)",
+      "summary": "A common complaint comes from those who want to purchase a computer that usually comes preinstalled with Windows without a copy of Windows pre-installed and without paying extra for the license either so that another operating system can be used or because a license was already acquired elsewhere, such as through the MSDN Academic Alliance program. Microsoft encourages original equipment manufacturers (OEMs) to supply computers with Windows pre-installed by presenting their dominance in computer...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Licensing agreements'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Licensing_agreements",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2010",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Licensing agreements"
+        ],
+        "latest_year": 2010,
+        "chars": 3643
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Censorship in China (latest year mentioned 2009)",
+      "summary": "Microsoft (along with Google, Yahoo, Cisco, AOL, Skype, and other companies) has cooperated with the Chinese government in implementing a system of Internet censorship. Human rights advocates such as Human Rights Watch and media groups such as Reporters Without Borders criticized the companies, noting for example that it is \"ironic that companies whose existence depends on freedom of information and expression have taken on the role of censor.\" Since 2009, Microsoft has run a local version of Bi...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Censorship in China'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Censorship_in_China",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2009",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Censorship in China"
+        ],
+        "latest_year": 2009,
+        "chars": 615
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Ignoring unauthorized copying (latest year mentioned 2008)",
+      "summary": "Microsoft ignored unauthorized copying of its own software for their benefit on the long term. While talking about users in China who do not pay for the software they use in 2006, to an audience at the University of Washington, Bill Gates said \"And as long as they're going to steal it, we want them to steal ours. They'll get sort of addicted, and then we'll somehow figure out how to collect sometime in the next decade.\" The practice allowed Microsoft to gain some dominance over the Chinese marke...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Ignoring unauthorized copying'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Ignoring_unauthorized_copying",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2008",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Ignoring unauthorized copying"
+        ],
+        "latest_year": 2008,
+        "chars": 1046
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Blacklisting of journalists (latest year mentioned 2000)",
+      "summary": "John C. Dvorak said that in the 1980s, Microsoft classified journalists as \"Okay\", \"Sketchy\", or \"Needs work\" and targeted \"Needs work\" journalists in an attempt to have them terminated. Dvorak said that he was denied information about Windows because he was on a blacklist. Mary Jo Foley stated that she was denied interviews with Microsoft personnel for several years following the publication of a story based on a memo describing the number of bugs in Windows 2000 at release.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Microsoft - section 'Blacklisting of journalists'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Microsoft#Blacklisting_of_journalists",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+          "retrieved_at": "2026-09-22T15:08:06+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2000",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Blacklisting of journalists"
+        ],
+        "latest_year": 2000,
+        "chars": 480
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "3 consumer protection, fraud and privacy suits filed against Microsoft since 2025-09-22",
+      "summary": "Most recent: Murdock v. Microsoft Corporation (2026-05-06, 370 Other Fraud); Nieves v. Microsoft Corporation (2025-12-09, 890 Other Statutory Actions); Klein v. Microsoft Corporation (2025-10-07, 890 Other Statutory Actions). Filings are allegations, not findings of liability.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Murdock v. Microsoft Corporation (W.D. Wash., 2:26-cv-01687)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73355279/murdock-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-05-06",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Nieves v. Microsoft Corporation (N.D. Cal., 3:25-cv-10557)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/72013119/nieves-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2025-12-09",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Klein v. Microsoft Corporation (S.D. Cal., 3:25-cv-02669)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/71582663/klein-v-microsoft-corporation/",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2025-10-07",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: Microsoft",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Microsoft%22%20OR%20%22Microsoft%20Corporation%22%20OR%20%22Microsoft%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-05-06",
+      "tags": [
+        "litigation",
+        "consumer"
+      ],
+      "data": {
+        "cases": 3,
+        "theme": "consumer"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Director / officer departure or appointment (8-K Item 5.02) - filed 2026-06-05",
+      "summary": "MICROSOFT CORP filed a 8-K on 2026-06-05 disclosing: Director / officer departure or appointment (8-K Item 5.02).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP 8-K filed 2026-06-05 (accession 0001193125-26-258667)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526258667/d26760d8k.htm",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2026-06-05",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for MICROSOFT CORP (CIK 0000789019)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2026-06-05",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0001193125-26-258667",
+        "items": "5.02"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Director / officer departure or appointment (8-K Item 5.02) - filed 2026-05-14",
+      "summary": "MICROSOFT CORP filed a 8-K on 2026-05-14 disclosing: Director / officer departure or appointment (8-K Item 5.02).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP 8-K filed 2026-05-14 (accession 0001193125-26-224155)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2026-05-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for MICROSOFT CORP (CIK 0000789019)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2026-05-14",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0001193125-26-224155",
+        "items": "5.02,9.01"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Director / officer departure or appointment (8-K Item 5.02) - filed 2025-12-08",
+      "summary": "MICROSOFT CORP filed a 8-K on 2025-12-08 disclosing: Director / officer departure or appointment (8-K Item 5.02).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP 8-K filed 2025-12-08 (accession 0001193125-25-311196)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2025-12-08",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for MICROSOFT CORP (CIK 0000789019)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2025-12-08",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0001193125-25-311196",
+        "items": "5.02,5.07"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Director / officer departure or appointment (8-K Item 5.02) - filed 2025-09-30",
+      "summary": "MICROSOFT CORP filed a 8-K on 2025-09-30 disclosing: Director / officer departure or appointment (8-K Item 5.02).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP 8-K filed 2025-09-30 (accession 0001193125-25-225125)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525225125/d863209d8k.htm",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2025-09-30",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for MICROSOFT CORP (CIK 0000789019)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+          "retrieved_at": "2026-09-22T14:33:09+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2025-09-30",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0001193125-25-225125",
+        "items": "5.02"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "115 federal cases filed against Microsoft since 2025-09-22",
+      "summary": "CourtListener lists 120 federal dockets since 2025-09-22 whose caption names Microsoft; 115 name it as defendant. By nature of suit: unclassified: 50; 830 Patent: 11; 190 Contract: Other: 7; 820 Copyright: 6; Civil Rights: Jobs: 5; 442 Civil Rights: Jobs: 5. 18 are patent, trademark or copyright disputes.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "CourtListener RECAP docket search: Microsoft",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Microsoft%22%20OR%20%22Microsoft%20Corporation%22%20OR%20%22Microsoft%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:07:49+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.8,
+      "observed_at": null,
+      "tags": [
+        "litigation",
+        "court-records"
+      ],
+      "data": {
+        "dockets_total": 120,
+        "reviewed": 120,
+        "as_defendant": 115,
+        "by_nature_of_suit": {
+          "unclassified": 50,
+          "820 Copyright": 6,
+          "550 Prisoner: Civil Rights": 1,
+          "751 Labor: Family and Medical Leave Act": 1,
+          "190 Contract: Other": 7,
+          "240 Torts to Land": 1,
+          "Civil Rights: Jobs": 5,
+          "442 Civil Rights: Jobs": 5,
+          "470 Racketeer/Corrupt Organization": 5,
+          "445 Civil Rights: Americans with Disabilities - Employment": 4,
+          "410 Anti-Trust": 2,
+          "830 Patent": 11,
+          "360 P.I.: Other": 1,
+          "370 Other Fraud": 1,
+          "Personal Property: Other": 1,
+          "791 Labor: E.R.I.S.A.": 1,
+          "880 Defend Trade Secrets Act (of 2016)": 3,
+          "365 Personal Inj. Prod. Liability": 3,
+          "440 Civil Rights: Other": 2,
+          "Patent": 1,
+          "890 Other Statutory Actions": 2,
+          "320 P.I.: Assault Libel & Slander": 1,
+          "Civil Rights: Other": 1
+        }
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Software Distributor Sentenced To 22 Months in Prison for Conspiracy to Traffic in Illicit Microsoft Certificates of Authenticity",
+      "summary": "Company appears to be the victim, not the subject. Tampa, FL – Heidi Richards (52, Brandon) has been sentenced to 22 months in federal prison after a jury found her guilty of conspiring to traffic in illicit Microsoft certificate of authenticity (COA) labels. The Court also ordered Richards to pay a $50,000 fine.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Software Distributor Sentenced To 22 Months in Prison for Conspiracy to Traffic in Illicit Microsoft Certificates of Authenticity",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-mdfl/pr/software-distributor-sentenced-22-months-prison-conspiracy-traffic-illicit-microsoft",
+          "retrieved_at": "2026-09-22T15:08:04+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-03-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for Microsoft",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Microsoft%20Corp&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:08:04+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2026-03-02",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Jury Convicts Software Distributor Of Conspiracy To Traffic In Illicit Microsoft Certificates Of Authenticity",
+      "summary": "Company appears to be the victim, not the subject. Tampa, FL – United States Attorney Gregory W. Kehoe announces that a federal jury has found Heidi Richards (52, Brandon) guilty of conspiring to traffic in illicit Microsoft certificate of authenticity (COA) labels. Richards faces a maximum penalty of five years in prison. Her sentencing hearing is scheduled for February 26, 2026.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Jury Convicts Software Distributor Of Conspiracy To Traffic In Illicit Microsoft Certificates Of Authenticity",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-mdfl/pr/jury-convicts-software-distributor-conspiracy-traffic-illicit-microsoft-certificates",
+          "retrieved_at": "2026-09-22T15:08:04+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2025-11-18",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for Microsoft",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Microsoft%20Corp&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:08:04+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2025-11-18",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for MICROSOFT CORP (CIK 0000789019)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+        "retrieved_at": "2026-09-22T14:33:09+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "4 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:10+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:10+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:11+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:11+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:12+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "6 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:12+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for MICROSOFT CORP (CIK 0000789019)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+        "retrieved_at": "2026-09-22T14:33:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2026-06-30",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CourtListener RECAP docket search: Microsoft",
+        "publisher": "Free Law Project (CourtListener)",
+        "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Microsoft%22%20OR%20%22Microsoft%20Corporation%22%20OR%20%22Microsoft%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+        "retrieved_at": "2026-09-22T15:07:49+00:00",
+        "accessed_via": "CourtListener REST API v4",
+        "published_at": null,
+        "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+      },
+      "collector": "courtlistener",
+      "status": "ok",
+      "detail": "120 dockets since 2025-09-22, 115 as defendant",
+      "records_scanned": 120
+    },
+    {
+      "source": {
+        "name": "DOJ press releases API, headline search for Microsoft",
+        "publisher": "U.S. Department of Justice, Office of Public Affairs",
+        "url": "https://www.justice.gov/api/v1/press_releases.json?title=Microsoft%20Corp&sort=date&direction=DESC&pagesize=50",
+        "retrieved_at": "2026-09-22T15:08:04+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "doj",
+      "status": "ok",
+      "detail": "2 releases since 2023-09-23, 2 name the company in the headline, 0 enforcement-related",
+      "records_scanned": 2
+    },
+    {
+      "source": {
+        "name": "Wikipedia: Microsoft (revision 1375562445)",
+        "publisher": "Wikipedia (Wikimedia Foundation)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Microsoft&oldid=1375562445",
+        "retrieved_at": "2026-09-22T15:08:05+00:00",
+        "accessed_via": "MediaWiki API",
+        "published_at": null,
+        "license": "CC BY-SA 4.0"
+      },
+      "collector": "wikipedia",
+      "status": "ok",
+      "detail": "4 controversy/litigation sections in 'Microsoft'",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "Wikipedia: Criticism of Microsoft (revision 1376029553)",
+        "publisher": "Wikipedia (Wikimedia Foundation)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Microsoft&oldid=1376029553",
+        "retrieved_at": "2026-09-22T15:08:06+00:00",
+        "accessed_via": "MediaWiki API",
+        "published_at": null,
+        "license": "CC BY-SA 4.0"
+      },
+      "collector": "wikipedia",
+      "status": "ok",
+      "detail": "24 controversy/litigation sections in 'Criticism of Microsoft'",
+      "records_scanned": null
+    }
+  ],
+  "errors": []
+}

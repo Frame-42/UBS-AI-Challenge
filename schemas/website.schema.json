@@ -114,6 +114,37 @@
                 }
               }
             }
+          },
+          "report_files": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "selected_reports": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "category_reports": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "report_file": {
+                  "type": "string"
+                },
+                "generated_at": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "report_file",
+                "generated_at"
+              ]
+            }
           }
         },
         "required": [

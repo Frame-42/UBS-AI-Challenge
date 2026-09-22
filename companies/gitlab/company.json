@@ -5,5 +5,8 @@
   ],
   "ticker": "GTLB",
   "domain": "gitlab.com",
-  "country": "US"
+  "country": "US",
+  "wikipedia": [
+    "GitLab"
+  ]
 }

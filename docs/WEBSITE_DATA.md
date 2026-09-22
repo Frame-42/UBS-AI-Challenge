@@ -18,7 +18,9 @@ Input can be `companies/`, one company directory, a single report JSON file, or 
 
 The preferred layout is `companies/<entity_id>/company.json` plus dated reports. The directory name is the stable entity ID. An adjacent manifest is respected even for a single report input. Without a manifest, a report's company name is lowercased and non-ASCII-alphanumeric runs replaced with hyphens to produce the ID. Use manifests for stable IDs across company renames, and use only one identity layout per input dataset. Conflicting names for an ID are rejected.
 
-Reports are selected by parsed `generated_at`, not filename ordering or filesystem modification time. Only the latest snapshot contributes scores. Multiple latest reports with the same timestamp are rejected; older snapshots are counted in `report_count` and left on disk. A newer sparse/error-containing report is not backfilled from older evidence. A manifest without any report remains in the output as an unscored company.
+Reports are selected by parsed `generated_at` **for each explicitly requested category**, not filename order or modification time. A newer reputation-only report retains the last cyber, financial, and fraud reports. If a newer report explicitly requests a category but returns zero findings or errors, its missing score replaces the older score; no fallback to earlier findings occurs. Two latest reports at the same timestamp for the same category are rejected. Disjoint categories may share a timestamp. Each selected category contributes at most one heuristic assessment.
+
+`report_count` counts all snapshots on disk. `category_reports` maps each requested category to its selected `report_file` and `generated_at`. `report_files` lists selected originals; `selected_reports` retains their complete JSON. For multiple selected reports, `report` is a combined view containing only selected category summaries/findings and deduplicated source checks/errors from those reports. Its timestamp and the compatibility field `report_file` refer to the newest selected original, not to the age of every category. Read category timestamps when displaying freshness. A manifest without reports remains unscored.
 
 ## Envelope
 
@@ -42,12 +44,15 @@ Join an entity row with `payload.evidence[row.entity_id]`. Each evidence entry c
 | `company` | Collector company metadata, including aliases, domain, ticker, country when supplied |
 | `report_file` | Selected report path relative to the supplied input directory, or basename for a single file; provenance, not a public URL |
 | `generated_at` | Collector timestamp, null if no report |
+| `category_reports` | Category-to-report path and original collection timestamp |
+| `report_files` | Paths of all selected originals |
+| `selected_reports` | Original report JSON keyed by path, preserving parameters and diagnostics |
 | `report_count` | Number of report snapshots found for the entity |
 | `status` | `"available"` or `"missing_report"`; available does not imply error-free collection |
 | `source_check_counts` | Counts by supplied check status: ok, no_match, error, skipped; absent statuses have count zero |
 | `excluded_zero_signal_categories` | Categories whose zero placeholders were excluded from heuristic scoring; these diagnostics remain about collection even in AI mode |
 | `notes` | Human-readable caveats about scoring basis, report selection, gaps, and errors |
-| `report` | Original selected collector JSON, including company, generated_at, parameters, summary, signals, sources_consulted, errors; null without a report |
+| `report` | Combined selected-category view (or original JSON when only one report is selected); null without a report |
 
 Every signal retains its source objects (name, publisher, URL, retrieval/publication timestamps, intermediary, and license when present). The frontend can link citations directly to their supplied URLs and preserve attribution. Report paths are not automatically served. Treat source text as display text and collection evidence as unverified analyst-review material; no source credibility judgment is added by the adapter.
 
@@ -59,7 +64,7 @@ The adapter imports one category summary only if it has at least one sourced fin
 
 For provisional triage, the output config explicitly uses minimum_required=1 and median aggregation. The original repeated-assessment defaults are not changed. Category n=1 describes the single summary, not the number of findings; finding counts remain in the evidence report. Disagreement quantiles, std, spread, MAD, IQR, and stability are null. Overall n=0 means no simulation was performed. Do not display a zero-width range or high stability for these deterministic summaries. These triage scores are not calibrated UBS risk judgments.
 
-The checked-in snapshot has ten companies and three collected categories: cybersecurity, financial, fraud. The example config also requests reputational and sanctions, which are missing. Eight companies have eligible sourced category summaries and 75% requested-weight coverage under the example weights. Chain IQ and HireRight remain unscored. HireRight has an EDGAR collection error, which is preserved. The scores reflect this saved snapshot; exporting does not refresh the evidence.
+The checked-in snapshot has ten companies, 234 findings, and 33 sourced category summaries. Eight companies have cyber, financial, fraud, and reputation scores at 90% requested-weight coverage. HireRight has reputation only at 15%; Chain IQ remains unscored. Nine reputation scores are supported by 151 findings. Sanctions remain missing. HireRight's prior EDGAR error remains visible with its original report. Exporting does not refresh external evidence.
 
 ## Switch to repeated AI assessments
 
@@ -85,7 +90,7 @@ Only real assessment mode supplies observed AI-disagreement ranges; simulated as
 
 ## Simulate the pending AI valuations
 
-The README's two-step `simulate` → `export --assessments` workflow writes `exports/simulated-assessments.json` and then `exports/risk-data.json`. Each available non-financial entity/category gets 100 seeded noisy assessments. Financial is excluded until real assessments arrive; absent reputational/sanctions findings are not invented. The current example has eight scored entities at 50% weighted coverage and two unscored entities.
+The README's two-step `simulate` → `export --assessments` workflow writes `exports/simulated-assessments.json` and then `exports/risk-data.json`. Each available non-financial entity/category gets 100 seeded noisy assessments. Financial is excluded until real assessments arrive; absent reputational/sanctions findings are not invented. With the current reports, the optional assessment generator includes reputation: eight entities have 65% weighted coverage, HireRight has 15%, and Chain IQ remains unscored.
 
 Synthetic files carry `metadata.synthetic: true`. `WebsiteDataset` detects that marker and returns `score_basis: "simulated_ai_assessments"` with `distribution_semantics: "synthetic_assessment_spread"`. Never label this as measured AI confidence or real vendor risk. Display the demo label with all scores. Mixing synthetic and real input rows is rejected. Replace the complete input file with real agent assessments when available; real financial scores are accepted without changing code.
 
@@ -97,4 +102,4 @@ Defaults and override keys are documented in [FRAMEWORK.md](FRAMEWORK.md#10-synt
 
 Keep a `WebsiteDataset` instance while users change weights. It reuses validated inputs and category summaries. Rebuild it when reports, policy, or assessments change. The API returns detached dictionaries; consumer edits do not mutate the retained snapshot.
 
-The website/backend team decides how to serve or refresh this file and whether to offer a weight-recalculation endpoint. This repository provides the data function and CLI only. No dashboard, route, websocket, or browser application is implemented.
+The website/backend team decides how to serve or refresh this file and whether to offer a weight-recalculation endpoint. This branch provides a local dashboard through `python3 serve.py`; `/api/dashboard` uses the data function and accepts weight changes. The browser checks saved reports every 30 seconds.

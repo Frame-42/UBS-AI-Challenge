@@ -5,5 +5,8 @@
   ],
   "ticker": "SAP",
   "domain": "sap.com",
-  "country": "DE"
+  "country": "DE",
+  "wikipedia": [
+    "SAP SE"
+  ]
 }

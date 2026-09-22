@@ -1,0 +1,394 @@
+{
+  "company": {
+    "name": "HireRight",
+    "aliases": [
+      "HireRight Holdings Corporation",
+      "HireRight Holdings Corp"
+    ],
+    "ticker": "HRT",
+    "domain": "hireright.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": [],
+    "wikipedia": [
+      "HireRight"
+    ]
+  },
+  "generated_at": "2026-09-22T15:09:18+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "courtlistener",
+      "doj",
+      "wikipedia"
+    ],
+    "categories": [
+      "reputational"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "courtlistener": 365,
+      "doj": 1095,
+      "wikipedia": 730
+    }
+  },
+  "summary": [
+    {
+      "category": "reputational",
+      "signals": 4,
+      "max_severity": "medium",
+      "score": 8,
+      "by_severity": {
+        "info": 1,
+        "low": 2,
+        "medium": 1,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "reputational",
+      "title": "10 consumer protection, fraud and privacy suits filed against HireRight since 2025-09-22",
+      "summary": "Most recent: Wright, David v. HireRight LLC (2026-07-21, 480 Consumer Credit); Jacinto v. HireRight, LLC (2026-06-24, 480 Consumer Credit); HAMEEDI v. HIRERIGHT, LLC (2026-06-05, 480 Other Statutes: Consumer Credit). Filings are allegations, not findings of liability.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wright, David v. HireRight LLC (W.D. Wis., 3:26-cv-00660)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73647363/wright-david-v-hireright-llc/",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-07-21",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Jacinto v. HireRight, LLC (M.D. Fla., 3:26-cv-01632)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73525815/jacinto-v-hireright-llc/",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-06-24",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "HAMEEDI v. HIRERIGHT, LLC (E.D. Pa., 2:26-cv-03862)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73445301/hameedi-v-hireright-llc/",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-06-05",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Thompson v. HIRERIGHT, LLC (E.D. Pa., 2:26-cv-02256)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73158351/thompson-v-hireright-llc/",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-04-07",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Rivera v. Hireright, LLC (E.D.N.Y, 2:26-cv-01664)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/72520721/rivera-v-hireright-llc/",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-03-20",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: HireRight",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22HireRight%22%20OR%20%22HireRight%20Holdings%20Corporation%22%20OR%20%22HireRight%20Holdings%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-07-21",
+      "tags": [
+        "litigation",
+        "consumer"
+      ],
+      "data": {
+        "cases": 10,
+        "theme": "consumer"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Legal issues with service (latest year mentioned 2014)",
+      "summary": "HireRight was the subject of a number of class-action and FCRA lawsuits. In 2011 the company paid $28 million to plaintiffs who accused HireRight of failing to provide copies of reports to job applicants and failing to resolve disputes. And on August 8, 2012, the US Department of Justice announced HireRight settled charges of violating the FCRA for $2.6M. Companies that use background check services must follow FCRA procedures or face class-action liability with millions of dollars in exposure. ...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: HireRight - section 'Legal issues with service'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/HireRight#Legal_issues_with_service",
+          "retrieved_at": "2026-09-22T15:04:19+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: HireRight (revision 1364656924)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=HireRight&oldid=1364656924",
+          "retrieved_at": "2026-09-22T15:04:19+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2014",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Legal issues with service"
+        ],
+        "latest_year": 2014,
+        "chars": 823
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "1 employment, discrimination and labour suits filed against HireRight since 2025-09-22",
+      "summary": "Most recent: Woodham v. HireRight, LLC (2025-09-22, 3445 Americans with Disab. Act-Empl). Filings are allegations, not findings of liability.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Woodham v. HireRight, LLC (10th Cir., 25-4119)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/71422992/woodham-v-hireright-llc/",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2025-09-22",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: HireRight",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22HireRight%22%20OR%20%22HireRight%20Holdings%20Corporation%22%20OR%20%22HireRight%20Holdings%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2025-09-22",
+      "tags": [
+        "litigation",
+        "employment"
+      ],
+      "data": {
+        "cases": 1,
+        "theme": "employment"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "32 federal cases filed against HireRight since 2025-09-22",
+      "summary": "CourtListener lists 32 federal dockets since 2025-09-22 whose caption names HireRight; 32 name it as defendant. By nature of suit: unclassified: 21; 480 Consumer Credit: 5; 480 Other Statutes: Consumer Credit: 2; Consumer Credit: 2; 3480 Consumer Credit: 1; 3445 Americans with Disab. Act-Empl: 1. 0 are patent, trademark or copyright disputes.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "CourtListener RECAP docket search: HireRight",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22HireRight%22%20OR%20%22HireRight%20Holdings%20Corporation%22%20OR%20%22HireRight%20Holdings%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:03:40+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.8,
+      "observed_at": null,
+      "tags": [
+        "litigation",
+        "court-records"
+      ],
+      "data": {
+        "dockets_total": 32,
+        "reviewed": 32,
+        "as_defendant": 32,
+        "by_nature_of_suit": {
+          "unclassified": 21,
+          "480 Consumer Credit": 5,
+          "480 Other Statutes: Consumer Credit": 2,
+          "Consumer Credit": 2,
+          "3480 Consumer Credit": 1,
+          "3445 Americans with Disab. Act-Empl": 1
+        }
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for HIRERIGHT INC (CIK 0001168652)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001168652.json",
+        "retrieved_at": "2026-09-22T14:33:02+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "0 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:02+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:03+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"material weakness\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:03+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:04+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:04+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"ransomware\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:04+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"cybersecurity incident\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CourtListener RECAP docket search: HireRight",
+        "publisher": "Free Law Project (CourtListener)",
+        "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22HireRight%22%20OR%20%22HireRight%20Holdings%20Corporation%22%20OR%20%22HireRight%20Holdings%20Corp%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+        "retrieved_at": "2026-09-22T15:03:40+00:00",
+        "accessed_via": "CourtListener REST API v4",
+        "published_at": null,
+        "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+      },
+      "collector": "courtlistener",
+      "status": "ok",
+      "detail": "32 dockets since 2025-09-22, 32 as defendant",
+      "records_scanned": 32
+    },
+    {
+      "source": {
+        "name": "DOJ press releases API, headline search for HireRight",
+        "publisher": "U.S. Department of Justice, Office of Public Affairs",
+        "url": "https://www.justice.gov/api/v1/press_releases.json?title=HireRight%20Holdings%20Corp&sort=date&direction=DESC&pagesize=50",
+        "retrieved_at": "2026-09-22T15:03:47+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "doj",
+      "status": "no_match",
+      "detail": "0 releases since 2023-09-23, 0 name the company in the headline, 0 enforcement-related",
+      "records_scanned": 0
+    },
+    {
+      "source": {
+        "name": "Wikipedia: HireRight (revision 1364656924)",
+        "publisher": "Wikipedia (Wikimedia Foundation)",
+        "url": "https://en.wikipedia.org/w/index.php?title=HireRight&oldid=1364656924",
+        "retrieved_at": "2026-09-22T15:04:19+00:00",
+        "accessed_via": "MediaWiki API",
+        "published_at": null,
+        "license": "CC BY-SA 4.0"
+      },
+      "collector": "wikipedia",
+      "status": "ok",
+      "detail": "1 controversy/litigation sections in 'HireRight'",
+      "records_scanned": null
+    }
+  ],
+  "errors": [
+    "sec_edgar: EDGAR financials failed: HTTP 403 for https://data.sec.gov/api/xbrl/companyfacts/CIK0001168652.json"
+  ]
+}

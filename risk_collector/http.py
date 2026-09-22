@@ -25,7 +25,7 @@ from .models import utcnow
 
 log = logging.getLogger(__name__)
 
-DEFAULT_USER_AGENT = "risk-collector/0.1 (company risk research)"
+DEFAULT_USER_AGENT = "risk-collector/0.1 (+https://github.com/Frame-42/UBS-AI-Challenge; company risk research)"
 
 # Minimum seconds between requests to the same host.
 HOST_MIN_INTERVAL: Dict[str, float] = {
@@ -33,6 +33,9 @@ HOST_MIN_INTERVAL: Dict[str, float] = {
     "data.sec.gov": 0.15,
     "efts.sec.gov": 0.15,
     "www.sec.gov": 0.15,
+    "www.courtlistener.com": 1.0,
+    "www.justice.gov": 0.5,
+    "en.wikipedia.org": 1.0,
 }
 
 

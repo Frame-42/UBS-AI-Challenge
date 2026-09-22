@@ -29,6 +29,70 @@ def producer_report(name='Acme', timestamp='2026-09-22T12:00:00Z'):
 
 
 class CollectionExportTests(unittest.TestCase):
+    def test_reputation_addition_preserves_every_existing_category_and_finding(self):
+        collection = load_collection(ROOT/'companies')
+        payload = WebsiteDataset(collection, CONFIG).score(WEIGHTS)
+        records = {r['entity_id']: r for r in payload['scoreboard']['records']}
+        for directory in sorted((ROOT/'companies').iterdir()):
+            if not directory.is_dir():
+                continue
+            evidence = payload['evidence'][directory.name]
+            original_path = next(directory.glob('*_20260922T14*.json'))
+            original = load_json(original_path)
+            for summary in original['summary']:
+                category = summary['category']
+                self.assertEqual(records[directory.name]['categories'][category]['score'],
+                                 summary['score'] if summary['signals'] else None)
+                provenance = evidence['category_reports'][category]
+                self.assertEqual(provenance['generated_at'], original['generated_at'])
+                self.assertTrue(provenance['report_file'].endswith(original_path.name))
+            for signal in original['signals']:
+                self.assertIn(signal, evidence['report']['signals'])
+            for error in original['errors']:
+                self.assertIn(error, evidence['report']['errors'])
+        self.assertEqual(sum(len(e['report']['signals']) for e in payload['evidence'].values()), 234)
+
+    def test_category_refresh_keeps_other_scores_but_never_backfills_empty_results(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            original = producer_report(timestamp='2026-09-20T12:00:00Z')
+            (root/'old.json').write_text(json.dumps(original))
+            reputation = deepcopy(original)
+            reputation['generated_at'] = '2026-09-21T12:00:00Z'
+            reputation['parameters']['categories'] = ['reputational']
+            reputation['signals'][0]['category'] = 'reputational'
+            reputation['summary'] = [dict(original['summary'][0], category='reputational')]
+            (root/'reputation.json').write_text(json.dumps(reputation))
+            data = load_collection(root)
+            self.assertEqual({a.category for a in data.assessments}, {'cybersecurity', 'reputational'})
+            self.assertEqual({a.category: a.timestamp for a in data.assessments}, {
+                'cybersecurity': original['generated_at'], 'reputational': reputation['generated_at']})
+            empty = deepcopy(original)
+            empty['generated_at'] = '2026-09-22T12:00:00Z'
+            empty['signals'] = []
+            empty['summary'][0].update(score=0, signals=0)
+            empty['errors'] = ['Cyber collection failed']
+            (root/'empty.json').write_text(json.dumps(empty))
+            data = load_collection(root)
+            self.assertEqual([a.category for a in data.assessments], ['reputational'])
+            self.assertIn('Cyber collection failed', data.evidence['acme']['report']['errors'])
+            self.assertEqual(set(data.evidence['acme']['report_files']), {'empty.json', 'reputation.json'})
+
+    def test_disjoint_categories_can_share_timestamp_but_overlaps_are_rejected(self):
+        with tempfile.TemporaryDirectory() as temp:
+            root = Path(temp)
+            original = producer_report()
+            (root/'cyber.json').write_text(json.dumps(original))
+            reputation = deepcopy(original)
+            reputation['parameters']['categories'] = ['reputational']
+            reputation['signals'][0]['category'] = 'reputational'
+            reputation['summary'] = [dict(original['summary'][0], category='reputational')]
+            (root/'reputation.json').write_text(json.dumps(reputation))
+            self.assertEqual(len(load_collection(root).assessments), 2)
+            (root/'duplicate.json').write_text(json.dumps(reputation))
+            with self.assertRaisesRegex(ValidationError, 'Ambiguous latest'):
+                load_collection(root)
+
     def test_actual_collected_dataset_preserves_scores_and_citations(self):
         collection = load_collection(ROOT/'companies')
         with patch('socket.socket', side_effect=AssertionError('No network')):
@@ -38,14 +102,14 @@ class CollectionExportTests(unittest.TestCase):
         self.assertEqual(payload['distribution_semantics'], 'not_available')
         board = payload['scoreboard']
         self.assertEqual(len(board['records']), 10)
-        self.assertEqual(board['assessment_count'], 24)
+        self.assertEqual(board['assessment_count'], 33)
         self.assertEqual(board['config']['minimum_runs']['minimum_required'], 1)
         for entity in board['records']:
             self.assertEqual(entity['overall']['n'], 0)
             self.assertIsNone(entity['overall']['stability'])
             self.assertIsNone(entity['overall']['p90'])
             evidence = payload['evidence'][entity['entity_id']]
-            self.assertEqual(evidence['report_count'], 1)
+            self.assertEqual(evidence['report_count'], 2)
             for summary in evidence['report']['summary']:
                 category = entity['categories'][summary['category']]
                 self.assertEqual(category['score'], summary['score'] if summary['signals'] else None)
@@ -55,16 +119,21 @@ class CollectionExportTests(unittest.TestCase):
             self.assertEqual(entity['categories']['sanctions']['status'], 'missing')
         microsoft = payload['evidence']['microsoft']['report']
         original = load_json(ROOT/'companies/microsoft/microsoft_20260922T143313.json')
-        self.assertEqual(microsoft, original)
+        self.assertTrue(all(signal in microsoft['signals'] for signal in original['signals']))
+        selected = payload['evidence']['microsoft']['selected_reports']
+        self.assertEqual(selected['microsoft/microsoft_20260922T143313.json'], original)
+        reputation = load_json(ROOT/'companies/microsoft/microsoft_20260922T150918.json')
+        self.assertTrue(all(signal in microsoft['signals'] for signal in reputation['signals']))
+        self.assertEqual(len(microsoft['signals']), len(original['signals']) + len(reputation['signals']))
         self.assertTrue(payload['evidence']['hireright']['report']['errors'])
         unscored = [r['entity_id'] for r in board['records'] if r['rank'] is None]
-        self.assertEqual(unscored, ['chain-iq', 'hireright'])
+        self.assertEqual(unscored, ['chain-iq'])
 
     def test_collected_zero_with_sourced_information_is_distinct_from_no_signals(self):
         payload = WebsiteDataset(load_collection(ROOT/'companies'), CONFIG).score(WEIGHTS)
         microsoft = next(r for r in payload['scoreboard']['records'] if r['entity_id']=='microsoft')
         self.assertEqual(microsoft['categories']['financial']['score'], 0)
-        self.assertAlmostEqual(microsoft['overall']['coverage'], .75)
+        self.assertAlmostEqual(microsoft['overall']['coverage'], .9)
         chain = next(r for r in payload['scoreboard']['records'] if r['entity_id']=='chain-iq')
         self.assertIsNone(chain['categories']['financial']['score'])
         self.assertEqual(chain['overall']['coverage'], 0)

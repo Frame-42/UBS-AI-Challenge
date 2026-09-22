@@ -22,11 +22,11 @@ class SimulationTests(unittest.TestCase):
     def test_hundred_runs_spread_bounds_and_financial_exclusion(self):
         data = simulate_assessments(self.collection, self.config)
         counts = Counter((a.entity_id, a.category) for a in data)
-        self.assertEqual(len(data), 1600)
+        self.assertEqual(len(data), 2500)
         self.assertEqual(set(counts.values()), {100})
-        self.assertEqual({a.category for a in data}, {'cybersecurity', 'fraud'})
+        self.assertEqual({a.category for a in data}, {'cybersecurity', 'fraud', 'reputational'})
         self.assertNotIn('chain-iq', {a.entity_id for a in data})
-        self.assertNotIn('hireright', {a.entity_id for a in data})
+        self.assertEqual({a.category for a in data if a.entity_id == 'hireright'}, {'reputational'})
         for entity, category in counts:
             group = [a for a in data if (a.entity_id,a.category)==(entity,category)]
             self.assertEqual({a.run_id for a in group}, set(range(100)))
@@ -77,7 +77,7 @@ class SimulationTests(unittest.TestCase):
             self.assertEqual(overall['score_method'],'monte_carlo_median')
             if overall['score'] is not None:
                 self.assertEqual(overall['n'],5000)
-                self.assertAlmostEqual(overall['coverage'],.5)
+                self.assertAlmostEqual(overall['coverage'], .15 if entity['entity_id'] == 'hireright' else .65)
                 self.assertGreater(overall['spread'],0)
                 self.assertLessEqual(overall['p10'],overall['score'])
                 self.assertGreaterEqual(overall['p90'],overall['score'])
@@ -131,7 +131,7 @@ class SimulationTests(unittest.TestCase):
                                    cwd=ROOT,capture_output=True,text=True,timeout=30)
             self.assertEqual(process.returncode,0,process.stderr)
             self.assertIn('SYNTHETIC',process.stdout)
-            self.assertEqual(len(load_json(raw)),1600)
+            self.assertEqual(len(load_json(raw)),2500)
             process=subprocess.run([sys.executable,'-m','risk_framework','export',*common,
                 '--weights',str(ROOT/'examples/collection_weights.json'),'--assessments',str(raw),'--output',str(output)],
                 cwd=ROOT,capture_output=True,text=True,timeout=30)

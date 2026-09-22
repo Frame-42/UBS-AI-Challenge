@@ -6,5 +6,8 @@
   ],
   "ticker": "HRT",
   "domain": "hireright.com",
-  "country": "US"
+  "country": "US",
+  "wikipedia": [
+    "HireRight"
+  ]
 }

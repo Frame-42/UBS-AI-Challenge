@@ -7,5 +7,9 @@
   ],
   "ticker": "AMZN",
   "domain": "amazon.com",
-  "country": "US"
+  "country": "US",
+  "wikipedia": [
+    "Amazon Web Services",
+    "Criticism of Amazon"
+  ]
 }

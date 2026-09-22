@@ -100,7 +100,7 @@ class CollectedData:
 
 
 def load_collection(path: str | Path) -> CollectedData:
-    """Select the latest report per entity; older snapshots never become ensemble runs.
+    """Select the latest requested snapshot per category; snapshots are not ensemble runs.
 
     Accept companies/<id>/company.json + reports, a flat reports directory,
     a single company directory, or a single report file.
@@ -155,13 +155,48 @@ def load_collection(path: str | Path) -> CollectedData:
     assessments = []
     for entity_id in sorted(entities):
         history = sorted(histories.get(entity_id, []), key=lambda item: item[0], reverse=True)
-        report = history[0][2] if history else None
-        if len(history) > 1 and history[0][0] == history[1][0]:
-            raise ValidationError(f"Ambiguous latest reports with identical timestamps: {entity_id}")
-        file = history[0][1] if history else None
+        selected = {}
+        for item in history:
+            date, file, snapshot = item
+            for category in snapshot["parameters"]["categories"]:
+                if category not in selected:
+                    selected[category] = item
+                elif selected[category][0] == date:
+                    raise ValidationError(f"Ambiguous latest reports with identical timestamps: {entity_id}/{category}")
+        selected_files = {item[1] for item in selected.values()}
+        snapshots = [item for item in history if item[1] in selected_files]
+        relative = lambda file: str(file.relative_to(root) if root.is_dir() else file.name)
+        category_reports = {
+            category: {"report_file": relative(item[1]), "generated_at": item[2]["generated_at"]}
+            for category, item in sorted(selected.items())
+        }
+        selected_reports = {relative(file): deepcopy(snapshot) for _, file, snapshot in snapshots}
+        newest = snapshots[0] if snapshots else history[0] if history else None
+        report = deepcopy(newest[2]) if newest else None
+        file = newest[1] if newest else None
         notes = ["Collector summary scores are heuristic triage signals, not repeated AI assessments."]
-        if len(history) > 1:
-            notes.append(f"Selected latest report; {len(history)-1} older snapshot(s) excluded from scoring.")
+        if len(snapshots) > 1:
+            # A category-only refresh must not erase unrelated categories. Conversely,
+            # an explicitly requested empty category replaces its older findings.
+            report["parameters"] = {"categories": sorted(selected), "selection": "latest_per_category"}
+            report["summary"] = [deepcopy(summary) for category, (_, _, snapshot) in sorted(selected.items())
+                                 for summary in snapshot["summary"] if summary["category"] == category]
+            report["signals"] = [deepcopy(signal) for category, (_, _, snapshot) in sorted(selected.items())
+                                 for signal in snapshot["signals"] if signal["category"] == category]
+            # Diagnostics remain attached to each original report. Deduplicate the
+            # aggregate view without discarding the originals or their timestamps.
+            for key in ("sources_consulted", "errors"):
+                seen = set()
+                report[key] = []
+                for _, _, snapshot in snapshots:
+                    for value in snapshot[key]:
+                        encoded = json.dumps(value, sort_keys=True)
+                        if encoded not in seen:
+                            seen.add(encoded)
+                            report[key].append(deepcopy(value))
+            notes.append(f"Combined latest category snapshots from {len(snapshots)} reports; consult category timestamps and original reports for provenance.")
+        if len(history) > len(snapshots):
+            notes.append(f"Selected latest category snapshots; {len(history)-len(snapshots)} fully superseded report(s) excluded from scoring.")
         if report is None:
             notes.append("No collection report is available for this entity.")
         if report and (report["errors"] or any(c["status"] in ("error", "skipped") for c in report["sources_consulted"])):
@@ -174,16 +209,20 @@ def load_collection(path: str | Path) -> CollectedData:
             assessments.append(Assessment(
                 entity_id=entity_id, entity_name=entities[entity_id], entity_type="vendor",
                 category=summary["category"], risk_score=summary["score"],
-                run_id=report["generated_at"], timestamp=report["generated_at"],
+                run_id=category_reports[summary["category"]]["generated_at"],
+                timestamp=category_reports[summary["category"]]["generated_at"],
                 agent_id="risk_collector:heuristic-summary",
-                metadata={"score_basis": "collector_heuristic", "signal_count": summary["signals"]},
+                metadata={"score_basis": "collector_heuristic", "signal_count": summary["signals"],
+                          "report_file": category_reports[summary["category"]]["report_file"]},
             ))
         if excluded:
             notes.append("Zero-signal category summaries are excluded rather than interpreted as low risk.")
         checks = Counter(c["status"] for c in report["sources_consulted"]) if report else Counter()
         evidence[entity_id] = {
             "company": deepcopy(report["company"] if report else companies[entity_id]),
-            "report_file": str(file.relative_to(root) if root.is_dir() else file.name) if file else None,
+            "report_file": relative(file) if file else None,
+            "report_files": list(selected_reports), "category_reports": category_reports,
+            "selected_reports": selected_reports,
             "generated_at": report["generated_at"] if report else None,
             "report_count": len(history), "status": "available" if report else "missing_report",
             "source_check_counts": dict(sorted(checks.items())),
