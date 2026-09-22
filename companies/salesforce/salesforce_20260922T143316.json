@@ -1,0 +1,488 @@
+{
+  "company": {
+    "name": "Salesforce",
+    "aliases": [
+      "Salesforce, Inc.",
+      "Salesforce.com"
+    ],
+    "ticker": "CRM",
+    "domain": "salesforce.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:33:16+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 2,
+      "max_severity": "medium",
+      "score": 5,
+      "by_severity": {
+        "info": 1,
+        "low": 0,
+        "medium": 1,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 2,
+      "max_severity": "low",
+      "score": 2,
+      "by_severity": {
+        "info": 0,
+        "low": 2,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "financial",
+      "title": "Current ratio 0.76 below 1.0",
+      "summary": "Current assets 28,222m USD vs current liabilities 37,118m USD at 2026-01-31 indicate short-term liquidity pressure.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Salesforce, Inc. annual report for fiscal year ending 2026-01-31 (accession 0001108524-26-000060)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for Salesforce, Inc. (CIK 0001108524)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2026-01-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "current_ratio": 0.76
+      }
+    },
+    {
+      "category": "financial",
+      "title": "Financial snapshot FY ending 2026-01-31",
+      "summary": "assets: 112,305m USD; liabilities: 53,163m USD; equity: 59,142m USD; current assets: 28,222m USD; current liabilities: 37,118m USD; net income: 7,457m USD; revenue: n/a; operating cash flow: 14,996m USD",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Salesforce, Inc. annual report for fiscal year ending 2026-01-31 (accession 0001108524-26-000060)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for Salesforce, Inc. (CIK 0001108524)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2026-01-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "period_end": "2026-01-31",
+        "unit": "USD",
+        "assets": 112305000000.0,
+        "liabilities": 53163000000.0,
+        "equity": 59142000000.0,
+        "current_assets": 28222000000.0,
+        "current_liabilities": 37118000000.0,
+        "net_income": 7457000000.0,
+        "revenue": null,
+        "operating_cash_flow": 14996000000.0,
+        "prior_period_end": "2025-01-31",
+        "prior": {
+          "net_income": 6197000000.0,
+          "revenue": null
+        }
+      }
+    },
+    {
+      "category": "fraud",
+      "title": "Filings mention a material weakness in internal control (2 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"material weakness\" in 2 document(s) filed by Salesforce, Inc. since 2025-09-22 (forms: 10-K, 8-K). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Salesforce, Inc. 8-K filed 2026-03-12 (d887348dex11.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000119312526104282/d887348dex11.htm",
+          "retrieved_at": "2026-09-22T14:33:14+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-03-12",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Salesforce, Inc. 10-K filed 2026-03-02 (crm-20260131.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "retrieved_at": "2026-09-22T14:33:14+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-03-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"material weakness\" (Salesforce, Inc.)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:14+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-03-12",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"material weakness\"",
+        "documents": 2
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention ransomware (4 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"ransomware\" in 4 document(s) filed by Salesforce, Inc. since 2025-09-22 (forms: 10-K, 10-Q). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Salesforce, Inc. 10-Q filed 2026-08-27 (crm-20260731.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "retrieved_at": "2026-09-22T14:33:15+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-08-27",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Salesforce, Inc. 10-Q filed 2025-12-04 (crm-20251031.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000238/crm-20251031.htm",
+          "retrieved_at": "2026-09-22T14:33:15+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-12-04",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Salesforce, Inc. 10-Q filed 2026-05-28 (crm-20260430.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000127/crm-20260430.htm",
+          "retrieved_at": "2026-09-22T14:33:15+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-05-28",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Salesforce, Inc. 10-K filed 2026-03-02 (crm-20260131.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "retrieved_at": "2026-09-22T14:33:15+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-03-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"ransomware\" (Salesforce, Inc.)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:15+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-08-27",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"ransomware\"",
+        "documents": 4
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention a cybersecurity incident (4 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"cybersecurity incident\" in 4 document(s) filed by Salesforce, Inc. since 2025-09-22 (forms: 10-K, 10-Q). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Salesforce, Inc. 10-K filed 2026-03-02 (crm-20260131.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000060/crm-20260131.htm",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-03-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Salesforce, Inc. 10-Q filed 2026-08-27 (crm-20260731.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000190/crm-20260731.htm",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-08-27",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Salesforce, Inc. 10-Q filed 2026-05-28 (crm-20260430.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852426000127/crm-20260430.htm",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-05-28",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Salesforce, Inc. 10-Q filed 2025-12-04 (crm-20251031.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1108524/000110852425000238/crm-20251031.htm",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-12-04",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"cybersecurity incident\" (Salesforce, Inc.)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:16+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-03-02",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"cybersecurity incident\"",
+        "documents": 4
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for Salesforce, Inc. (CIK 0001108524)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001108524.json",
+        "retrieved_at": "2026-09-22T14:33:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "5 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (Salesforce, Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:14+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (Salesforce, Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:14+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (Salesforce, Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:15+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (Salesforce, Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:15+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (Salesforce, Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:15+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "4 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (Salesforce, Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:16+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001108524&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "4 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for Salesforce, Inc. (CIK 0001108524)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001108524.json",
+        "retrieved_at": "2026-09-22T14:33:16+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2026-01-31",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "no_match",
+      "detail": "0 KEV entries since 2025-09-22 (0 all-time) for vendor Salesforce",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=salesforce.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": []
+}

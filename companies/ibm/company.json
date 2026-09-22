@@ -1,0 +1,10 @@
+{
+  "name": "IBM",
+  "aliases": [
+    "International Business Machines",
+    "International Business Machines Corporation"
+  ],
+  "ticker": "IBM",
+  "domain": "ibm.com",
+  "country": "US"
+}

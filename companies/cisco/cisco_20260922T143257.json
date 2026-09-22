@@ -1,0 +1,1325 @@
+{
+  "company": {
+    "name": "Cisco",
+    "aliases": [
+      "Cisco Systems",
+      "Cisco Systems, Inc."
+    ],
+    "ticker": "CSCO",
+    "domain": "cisco.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:32:57+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 3,
+      "max_severity": "medium",
+      "score": 7,
+      "by_severity": {
+        "info": 1,
+        "low": 1,
+        "medium": 1,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 21,
+      "max_severity": "high",
+      "score": 100,
+      "by_severity": {
+        "info": 0,
+        "low": 0,
+        "medium": 19,
+        "high": 2,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "financial",
+      "title": "Current ratio 0.93 below 1.0",
+      "summary": "Current assets 38,665m USD vs current liabilities 41,525m USD at 2026-07-25 indicate short-term liquidity pressure.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "CISCO SYSTEMS, INC. annual report for fiscal year ending 2026-07-25 (accession 0000858877-26-000132)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/",
+          "retrieved_at": "2026-09-22T14:32:56+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for CISCO SYSTEMS, INC. (CIK 0000858877)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000858877.json",
+          "retrieved_at": "2026-09-22T14:32:56+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2026-07-25",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "current_ratio": 0.931
+      }
+    },
+    {
+      "category": "financial",
+      "title": "Exit or disposal costs / restructuring (8-K Item 2.05) - filed 2026-05-13",
+      "summary": "CISCO SYSTEMS, INC. filed a 8-K on 2026-05-13 disclosing: Exit or disposal costs / restructuring (8-K Item 2.05).",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "CISCO SYSTEMS, INC. 8-K filed 2026-05-13 (accession 0000858877-26-000075)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000075/csco-20260513.htm",
+          "retrieved_at": "2026-09-22T14:32:53+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2026-05-13",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for CISCO SYSTEMS, INC. (CIK 0000858877)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0000858877.json",
+          "retrieved_at": "2026-09-22T14:32:53+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2026-05-13",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0000858877-26-000075",
+        "items": "2.02,2.05,9.01"
+      }
+    },
+    {
+      "category": "financial",
+      "title": "Financial snapshot FY ending 2026-07-25",
+      "summary": "assets: 129,637m USD; liabilities: 79,352m USD; equity: 50,285m USD; current assets: 38,665m USD; current liabilities: 41,525m USD; net income: 13,267m USD; revenue: n/a; operating cash flow: 14,177m USD",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "CISCO SYSTEMS, INC. annual report for fiscal year ending 2026-07-25 (accession 0000858877-26-000132)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/",
+          "retrieved_at": "2026-09-22T14:32:56+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for CISCO SYSTEMS, INC. (CIK 0000858877)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000858877.json",
+          "retrieved_at": "2026-09-22T14:32:56+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2026-07-25",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "period_end": "2026-07-25",
+        "unit": "USD",
+        "assets": 129637000000.0,
+        "liabilities": 79352000000.0,
+        "equity": 50285000000.0,
+        "current_assets": 38665000000.0,
+        "current_liabilities": 41525000000.0,
+        "net_income": 13267000000.0,
+        "revenue": null,
+        "operating_cash_flow": 14177000000.0,
+        "prior_period_end": "2025-07-26",
+        "prior": {
+          "net_income": 10180000000.0,
+          "revenue": null
+        }
+      }
+    },
+    {
+      "category": "fraud",
+      "title": "Filings mention a material weakness in internal control (2 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"material weakness\" in 2 document(s) filed by CISCO SYSTEMS, INC. since 2025-09-22 (forms: 10-K, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "CISCO SYSTEMS, INC. 10-K filed 2026-09-02 (csco-20260725.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887726000132/csco-20260725.htm",
+          "retrieved_at": "2026-09-22T14:32:54+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-09-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISCO SYSTEMS, INC. ARS filed 2025-10-28 (csco014386-ars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/858877/000085887725000152/csco014386-ars.pdf",
+          "retrieved_at": "2026-09-22T14:32:54+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-10-28",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"material weakness\" (CISCO SYSTEMS, INC.)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:32:54+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-09-02",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"material weakness\"",
+        "documents": 2
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20316: Cisco Secure Firewall Management Center Use of Hard-coded Password Vulnerability actively exploited",
+      "summary": "Cisco Secure Firewall Management Center (FMC) vulnerability added to CISA KEV on 2026-07-29. Cisco Secure Firewall Management Center (FMC) formerly known as Firepower Management Center contains a use of hard-coded password vulnerability that could allow an unauthenticated, remote attacker to log in to an affected device using a low-privileged account to access sensitive data within the impacted systems. Known use in ransomware campaigns.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20316",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20316",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-07-29",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-07-29",
+      "tags": [
+        "vulnerability",
+        "product-security",
+        "ransomware"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20316",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Management Center (FMC)",
+        "dateAdded": "2026-07-29",
+        "dueDate": "2026-08-01",
+        "knownRansomwareCampaignUse": "Known",
+        "cwes": [
+          "CWE-259"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20131: Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management Deserialization of Untrusted Data Vulnerability actively exploited",
+      "summary": "Cisco Secure Firewall Management Center (FMC) vulnerability added to CISA KEV on 2026-03-19. Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain a deserialization of untrusted data vulnerability in the web-based management interface that could allow an unauthenticated, remote attacker to execute arbitrary Java code as root on an affected device. Known use in ransomware campaigns.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20131",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20131",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-03-19",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-03-19",
+      "tags": [
+        "vulnerability",
+        "product-security",
+        "ransomware"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20131",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Management Center (FMC)",
+        "dateAdded": "2026-03-19",
+        "dueDate": "2026-03-22",
+        "knownRansomwareCampaignUse": "Known",
+        "cwes": [
+          "CWE-502"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-76460: Cisco Identity Services Engine Incorrect Use of Privileged APIs Vulnerability actively exploited",
+      "summary": "Cisco Identity Services Engine vulnerability added to CISA KEV on 2026-09-16. Cisco Identity Services Engine (ISE) and Cisco ISE Passive Identity Connector (ISE-PIC) contain an incorrect use of privileged APIs vulnerability that could allow an unauthenticated, remote attacker to gain unauthorized access to the affected device by bypassing the web-based management interface.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-76460",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76460",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-09-16",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-09-16",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-76460",
+        "vendorProject": "Cisco",
+        "product": "Identity Services Engine",
+        "dateAdded": "2026-09-16",
+        "dueDate": "2026-09-19",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-648"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-76461: Cisco Secure Email Gateway SQL Injection Vulnerability actively exploited",
+      "summary": "Cisco Secure Email Gateway vulnerability added to CISA KEV on 2026-09-14. Cisco AsyncOS software for Cisco Secure Email Gateway (SEG) contains a SQL injection vulnerability that could allow an unauthenticated, remote attacker to execute arbitrary commands with root privileges on the underlying operating system.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-76461",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-76461",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-09-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-09-14",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-76461",
+        "vendorProject": "Cisco",
+        "product": "Secure Email Gateway",
+        "dateAdded": "2026-09-14",
+        "dueDate": "2026-09-17",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-89"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20079: Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability actively exploited",
+      "summary": "Cisco Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management vulnerability added to CISA KEV on 2026-09-09. Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20079",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20079",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-09-09",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-09-09",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20079",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
+        "dateAdded": "2026-09-09",
+        "dueDate": "2026-09-12",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-288"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20349: Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability actively exploited",
+      "summary": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD)  vulnerability added to CISA KEV on 2026-08-11. Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) contain a heap inspection vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20349",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20349",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-08-11",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-08-11",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20349",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) ",
+        "dateAdded": "2026-08-11",
+        "dueDate": "2026-08-14",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-244"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2008-4128: Cisco IOS Cross-Site Request Forgery Vulnerability actively exploited",
+      "summary": "Cisco IOS vulnerability added to CISA KEV on 2026-07-13. Cisco IOS 12.4 contains multiple cross-site forgery vulnerabilities that allows remote attackers to execute arbitrary commands via (1) a certain \"show privilege\" command to the /level/15/exec/- URI, and (2) a certain \"alias exec\" command to the /level/15/exec/-/configure/http URI.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2008-4128",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-4128",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-07-13",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-07-13",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2008-4128",
+        "vendorProject": "Cisco",
+        "product": "IOS",
+        "dateAdded": "2026-07-13",
+        "dueDate": "2026-07-16",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-352"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20230: Cisco Unified Communications Manager Server-Side Request Forgery (SSRF) Vulnerability actively exploited",
+      "summary": "Cisco Unified Communications Manager vulnerability added to CISA KEV on 2026-06-25. Cisco Unified Communications Manager (Unified CM) and Cisco Unified Communications Manager Session Management Edition (Unified CM SME) contain a server-side request forgery (SSRF) Vulnerability that could allow an unauthenticated, remote attacker to write files to the underlying operating system that could be used later to elevate to root.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20230",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20230",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-06-25",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-06-25",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20230",
+        "vendorProject": "Cisco",
+        "product": "Unified Communications Manager",
+        "dateAdded": "2026-06-25",
+        "dueDate": "2026-06-28",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-918"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20262: Cisco Catalyst SD-WAN Manager Directory or Path Traversal Vulnerability actively exploited",
+      "summary": "Cisco Catalyst SD-WAN Manager vulnerability added to CISA KEV on 2026-06-15. Cisco Catalyst SD-WAN Manager contains a directory or path traversal vulnerability that could allow an authenticated, remote attacker to create a file or overwrite any file on the filesystem of an affected system.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20262",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20262",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-06-15",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-06-15",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20262",
+        "vendorProject": "Cisco",
+        "product": "Catalyst SD-WAN Manager",
+        "dateAdded": "2026-06-15",
+        "dueDate": "2026-06-29",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-22"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20245: Cisco Catalyst SD-WAN Manager Improper Encoding or Escaping of Output Vulnerability actively exploited",
+      "summary": "Cisco Catalyst SD-WAN Manager vulnerability added to CISA KEV on 2026-06-09. Cisco Catalyst SD-WAN Manager formerly SD-WAN vManage contains an improper encoding or escaping of output vulnerability. This vulnerability could allow an authenticated, local attacker to execute arbitrary commands as root by supplying a crafted file to the affected system.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20245",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20245",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-06-09",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-06-09",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20245",
+        "vendorProject": "Cisco",
+        "product": "Catalyst SD-WAN Manager",
+        "dateAdded": "2026-06-09",
+        "dueDate": "2026-06-23",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-116"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20182: Cisco Catalyst SD-WAN Controller Authentication Bypass Vulnerability actively exploited",
+      "summary": "Cisco Catalyst SD-WAN vulnerability added to CISA KEV on 2026-05-14. Cisco Catalyst SD-WAN Controller & Manager contain an authentication bypass vulnerability that allows an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20182",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20182",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-14",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20182",
+        "vendorProject": "Cisco",
+        "product": "Catalyst SD-WAN",
+        "dateAdded": "2026-05-14",
+        "dueDate": "2026-05-17",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-287"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20122: Cisco Catalyst SD-WAN Manager Incorrect Use of Privileged APIs Vulnerability actively exploited",
+      "summary": "Cisco Catalyst SD-WAN Manger vulnerability added to CISA KEV on 2026-04-20. Cisco Catalyst SD-WAN Manager contains an incorrect use of privileged APIs vulnerability due to improper file handling on the API interface of an affected system. An attacker could exploit this vulnerability by uploading a malicious file on the local file system. A successful exploit could allow the attacker to overwrite arbitrary files on the affected system and gain vmanage user privileges.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20122",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20122",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20122",
+        "vendorProject": "Cisco",
+        "product": "Catalyst SD-WAN Manger",
+        "dateAdded": "2026-04-20",
+        "dueDate": "2026-04-23",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-648"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20133: Cisco Catalyst SD-WAN Manager Exposure of Sensitive Information to an Unauthorized Actor Vulnerability actively exploited",
+      "summary": "Cisco Catalyst SD-WAN Manager vulnerability added to CISA KEV on 2026-04-20. Cisco Catalyst SD-WAN Manager contains an exposure of sensitive information to an unauthorized actor vulnerability that could allow remote attackers to view sensitive information on affected systems.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20133",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20133",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20133",
+        "vendorProject": "Cisco",
+        "product": "Catalyst SD-WAN Manager",
+        "dateAdded": "2026-04-20",
+        "dueDate": "2026-04-23",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-200"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20128: Cisco Catalyst SD-WAN Manager Storing Passwords in a Recoverable Format Vulnerability actively exploited",
+      "summary": "Cisco Catalyst SD-WAN Manager vulnerability added to CISA KEV on 2026-04-20. Cisco Catalyst SD-WAN Manager contains a storing passwords in a recoverable format vulnerability that allows an authenticated, local attacker to gain DCA user privileges by accessing a credential file for the DCA user on the filesystem as a low-privileged user.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20128",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20128",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20128",
+        "vendorProject": "Cisco",
+        "product": "Catalyst SD-WAN Manager",
+        "dateAdded": "2026-04-20",
+        "dueDate": "2026-04-23",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-257"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2022-20775: Cisco SD-WAN Path Traversal Vulnerability actively exploited",
+      "summary": "Cisco SD-WAN vulnerability added to CISA KEV on 2026-02-25. Cisco SD-WAN CLI contains a path traversal vulnerability that could allow an authenticated local attacker to gain elevated privileges via improper access controls on commands within the application CLI. A successful exploit could allow the attacker to execute arbitrary commands as the root user.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2022-20775",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2022-20775",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-02-25",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-02-25",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2022-20775",
+        "vendorProject": "Cisco",
+        "product": "SD-WAN",
+        "dateAdded": "2026-02-25",
+        "dueDate": "2026-02-27",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-25",
+          "CWE-282"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20127: Cisco Catalyst SD-WAN Controller and Manager Authentication Bypass Vulnerability actively exploited",
+      "summary": "Cisco Catalyst SD-WAN Controller and Manager vulnerability added to CISA KEV on 2026-02-25. Cisco Catalyst SD-WAN Controller, formerly SD-WAN vSmart, and Cisco Catalyst SD-WAN Manager, formerly SD-WAN vManage, contain an authentication bypass vulnerability could allow an unauthenticated, remote attacker to bypass authentication and obtain administrative privileges on an affected system. This vulnerability exists because the peering authentication mechanism in an affected system is not working properly. An attacker could exploit this vulnerability by sending crafted requests to an affected system. A successful exploit could allow the attacker to log in to an affected Cisco Catalyst SD-WAN Controller as an internal, high-privileged, non-root user account. Using this account, the attacker could access NETCONF, which would then allow the attacker to manipulate network configuration for the SD-WAN fabric.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20127",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20127",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-02-25",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-02-25",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20127",
+        "vendorProject": "Cisco",
+        "product": "Catalyst SD-WAN Controller and Manager",
+        "dateAdded": "2026-02-25",
+        "dueDate": "2026-02-27",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-287"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-20045: Cisco Unified Communications Products Code Injection Vulnerability actively exploited",
+      "summary": "Cisco Unified Communications Manager vulnerability added to CISA KEV on 2026-01-21. Cisco Unified Communications Manager (Unified CM), Cisco Unified Communications Manager Session Management Edition (Unified CM SME), Cisco Unified Communications Manager IM & Presence Service (Unified CM IM&P), Cisco Unity Connection, and Cisco Webex Calling Dedicated Instance contain a code injection vulnerability that could allow the attacker to obtain user-level access to the underlying operating system and then elevate privileges to root.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-20045",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-20045",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-01-21",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-01-21",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-20045",
+        "vendorProject": "Cisco",
+        "product": "Unified Communications Manager",
+        "dateAdded": "2026-01-21",
+        "dueDate": "2026-02-11",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-94"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2025-20393: Cisco Multiple Products Improper Input Validation Vulnerability actively exploited",
+      "summary": "Cisco Multiple Products vulnerability added to CISA KEV on 2025-12-17. Cisco Secure Email Gateway, Secure Email, AsyncOS Software, and Web Manager appliances contains an improper input validation vulnerability that allows threat actors to execute arbitrary commands with root privileges on the underlying operating system of an affected appliance.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2025-20393",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-20393",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2025-12-17",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2025-12-17",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2025-20393",
+        "vendorProject": "Cisco",
+        "product": "Multiple Products",
+        "dateAdded": "2025-12-17",
+        "dueDate": "2025-12-24",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-20"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2025-20352: Cisco IOS and IOS XE Software SNMP Denial of Service and Remote Code Execution Vulnerability actively exploited",
+      "summary": "Cisco IOS and IOS XE vulnerability added to CISA KEV on 2025-09-29. Cisco IOS and IOS XE contains a stack-based buffer overflow vulnerability in the Simple Network Management Protocol (SNMP) subsystem that could allow for denial of service or remote code execution. A successful exploit could allow a low-privileged attacker to cause the affected system to reload, resulting in a DoS condition, or allow a high-privileged attacker to execute arbitrary code as the root user and obtain full control of the affected system.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2025-20352",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-20352",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2025-09-29",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2025-09-29",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2025-20352",
+        "vendorProject": "Cisco",
+        "product": "IOS and IOS XE",
+        "dateAdded": "2025-09-29",
+        "dueDate": "2025-10-20",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-121"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2025-20362: Cisco Secure Firewall Adaptive Security (ASA) Appliance and Secure Firewall Threat Defense (FTD) Missing Authorization Vulnerability actively exploited",
+      "summary": "Cisco Secure Firewall Adaptive Security Appliance and Secure Firewall Threat Defense vulnerability added to CISA KEV on 2025-09-25. Cisco Secure Firewall Adaptive Security (ASA) Appliance and Secure Firewall Threat Defense (FTD) Software VPN Web Server contain a missing authorization vulnerability. This vulnerability could be chained with CVE-2025-20333.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2025-20362",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-20362",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2025-09-25",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2025-09-25",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2025-20362",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Adaptive Security Appliance and Secure Firewall Threat Defense",
+        "dateAdded": "2025-09-25",
+        "dueDate": "2025-09-26",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-862"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2025-20333: Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Buffer Overflow Vulnerability actively exploited",
+      "summary": "Cisco Secure Firewall Adaptive Security Appliance and Secure Firewall Threat Defense vulnerability added to CISA KEV on 2025-09-25. Cisco Secure Firewall Adaptive Security (ASA) Appliance and Secure Firewall Threat Defense (FTD) Software VPN Web Server contain a buffer overflow vulnerability that allows for remote code execution. This vulnerability could be chained with CVE-2025-20362.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2025-20333",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-20333",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2025-09-25",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2025-09-25",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2025-20333",
+        "vendorProject": "Cisco",
+        "product": "Secure Firewall Adaptive Security Appliance and Secure Firewall Threat Defense",
+        "dateAdded": "2025-09-25",
+        "dueDate": "2025-09-26",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-120"
+        ]
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for CISCO SYSTEMS, INC. (CIK 0000858877)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0000858877.json",
+        "retrieved_at": "2026-09-22T14:32:53+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "5 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (CISCO SYSTEMS, INC.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:53+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (CISCO SYSTEMS, INC.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:54+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (CISCO SYSTEMS, INC.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:54+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (CISCO SYSTEMS, INC.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:54+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (CISCO SYSTEMS, INC.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:55+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"ransomware\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (CISCO SYSTEMS, INC.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:55+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0000858877&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"cybersecurity incident\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for CISCO SYSTEMS, INC. (CIK 0000858877)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000858877.json",
+        "retrieved_at": "2026-09-22T14:32:56+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2026-07-25",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "ok",
+      "detail": "21 KEV entries since 2025-09-22 (99 all-time) for vendor Cisco",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=cisco.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,380 @@
+{
+  "company": {
+    "name": "AWS",
+    "aliases": [
+      "Amazon Web Services",
+      "Amazon",
+      "Amazon.com, Inc."
+    ],
+    "ticker": "AMZN",
+    "domain": "amazon.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:32:51+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 1,
+      "max_severity": "info",
+      "score": 0,
+      "by_severity": {
+        "info": 1,
+        "low": 0,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "financial",
+      "title": "Financial snapshot FY ending 2025-12-31",
+      "summary": "assets: 818,042m USD; liabilities: 406,977m USD; equity: 411,065m USD; current assets: 229,083m USD; current liabilities: 218,005m USD; net income: 77,670m USD; revenue: 716,924m USD; operating cash flow: 139,514m USD",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "AMAZON COM INC annual report for fiscal year ending 2025-12-31 (accession 0001018724-26-000004)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/",
+          "retrieved_at": "2026-09-22T14:32:50+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for AMAZON COM INC (CIK 0001018724)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+          "retrieved_at": "2026-09-22T14:32:50+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2025-12-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "period_end": "2025-12-31",
+        "unit": "USD",
+        "assets": 818042000000.0,
+        "liabilities": 406977000000.0,
+        "equity": 411065000000.0,
+        "current_assets": 229083000000.0,
+        "current_liabilities": 218005000000.0,
+        "net_income": 77670000000.0,
+        "revenue": 716924000000.0,
+        "operating_cash_flow": 139514000000.0,
+        "prior_period_end": "2024-12-31",
+        "prior": {
+          "net_income": 59248000000.0,
+          "revenue": 637959000000.0
+        }
+      }
+    },
+    {
+      "category": "fraud",
+      "title": "Filings mention a material weakness in internal control (2 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"material weakness\" in 2 document(s) filed by AMAZON COM INC since 2025-09-22 (forms: 10-K, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "AMAZON COM INC 10-K filed 2026-02-06 (amzn-20251231.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000004/amzn-20251231.htm",
+          "retrieved_at": "2026-09-22T14:32:49+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-02-06",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "AMAZON COM INC ARS filed 2026-04-09 (tm263815d4_ars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041036/tm263815d4_ars.pdf",
+          "retrieved_at": "2026-09-22T14:32:49+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-04-09",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"material weakness\" (AMAZON COM INC)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:32:49+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-02-06",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"material weakness\"",
+        "documents": 2
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention ransomware (3 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"ransomware\" in 3 document(s) filed by AMAZON COM INC since 2025-09-22 (forms: 424B3, S-4, S-4/A). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "AMAZON COM INC S-4/A filed 2026-08-14 (tm2617924-3_s4a.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926096195/tm2617924-3_s4a.htm",
+          "retrieved_at": "2026-09-22T14:32:50+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-08-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "AMAZON COM INC 424B3 filed 2026-08-18 (tm2617924-6_424b3.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926098339/tm2617924-6_424b3.htm",
+          "retrieved_at": "2026-09-22T14:32:50+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-08-18",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "AMAZON COM INC S-4 filed 2026-07-31 (tm2617924-1_s4.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926089294/tm2617924-1_s4.htm",
+          "retrieved_at": "2026-09-22T14:32:50+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-07-31",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"ransomware\" (AMAZON COM INC)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:32:50+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-08-14",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"ransomware\"",
+        "documents": 3
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for AMAZON COM INC (CIK 0001018724)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001018724.json",
+        "retrieved_at": "2026-09-22T14:32:46+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:48+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:49+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:49+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "3 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"cybersecurity incident\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for AMAZON COM INC (CIK 0001018724)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2025-12-31",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "no_match",
+      "detail": "0 KEV entries since 2025-09-22 (0 all-time) for vendor AWS",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=amazon.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": []
+}
