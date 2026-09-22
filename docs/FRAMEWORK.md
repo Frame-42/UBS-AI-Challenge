@@ -1,6 +1,6 @@
 # Third-Party Risk Intelligence: scoring methodology and contract
 
-The framework converts supplied repeated AI assessments into category summaries and a user-weighted risk scoreboard. It does not retrieve evidence or assess whether the supplied evidence is complete, credible, or current. A risk score is an analytical prioritization signal, not proof that a vendor is unsafe. Higher values always mean higher risk.
+The scoring layer converts supplied repeated AI assessments into category summaries and a user-weighted risk scoreboard. The local dashboard currently selects the collector-triage adapter described in section 9; Monte Carlo assessment scoring is available through the framework API/CLI. It does not retrieve evidence or assess whether the supplied evidence is complete, credible, or current. A risk score is an analytical prioritization signal, not proof that a vendor is unsafe. Higher values always mean higher risk.
 
 ## 1. Scope and input validation
 
@@ -191,7 +191,7 @@ The seed is a nonnegative integer; simulation runs must be a positive integer. S
 
 `python3 -m unittest discover -s tests -v` runs the full offline suite. The README's CLI examples exercise the same service as programmatic consumers. JSON stdout is clean; `--format table` offers a readable local view and `--output PATH` writes a file. The CLI prevents output from overwriting any of its supplied input paths. An optional `--entities roster.json` uses the same ID-to-name mapping as the programmatic roster.
 
-Recomputation requires no network or persistence infrastructure: construct a snapshot after upstream data changes, keep it for weight adjustments, and hand a fresh JSON envelope to the downstream application. There is no automatic background refresh, append API, historical database, or websocket service.
+Recomputation requires no network or persistence infrastructure: construct a snapshot after upstream data changes, keep it for weight adjustments, and hand a fresh JSON envelope to the downstream application. The scoring layer has no automatic background refresh, append API, historical database, or websocket service. The local dashboard polls its HTTP endpoint to detect saved collection changes; that presentation behavior is documented in [DASHBOARD.md](DASHBOARD.md).
 
 ## 9. Collector integration and provisional triage
 

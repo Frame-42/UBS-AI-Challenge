@@ -1,6 +1,6 @@
-# Data contract for a future website
+# Website data contracts and portable exports
 
-The integration exports a complete local snapshot without an HTTP server or frontend. A website can load the generated JSON as a static asset, or its own backend can call `WebsiteDataset.score(weights)` and return that same object. No collection or LLM call is needed when weights change.
+The scoring layer returns a portable JSON snapshot through `WebsiteDataset.score(weights)` or the export CLI. The local dashboard consumes the same collector-mode data through `GET /api/dashboard`, with one additional `dashboard.default_weights` object. No collection or LLM call is needed when weights change. See [DASHBOARD.md](DASHBOARD.md) for the live endpoint and browser behavior.
 
 ## Generate the current snapshot
 
@@ -22,7 +22,7 @@ Reports are selected by parsed `generated_at`, not filename ordering or filesyst
 
 ## Envelope
 
-The machine-readable contract is [website.schema.json](../schemas/website.schema.json); it references the existing [scoreboard.schema.json](../schemas/scoreboard.schema.json). Keep both schemas together when validating offline.
+The portable contract is [website.schema.json](../schemas/website.schema.json), referencing [scoreboard.schema.json](../schemas/scoreboard.schema.json). The local API success response uses [dashboard.schema.json](../schemas/dashboard.schema.json): it extends the portable fields with browser defaults and restricts the live score basis to collector triage. Keep all referenced schemas together when validating offline. The portable schema deliberately rejects the API-only `dashboard` field; remove that field when validating an API response as a portable export, or validate it directly against the dashboard schema.
 
 | Field | Meaning |
 | --- | --- |
@@ -61,7 +61,7 @@ For provisional triage, the output config explicitly uses minimum_required=1 and
 
 The checked-in snapshot has ten companies and three collected categories: cybersecurity, financial, fraud. The example config also requests reputational and sanctions, which are missing. Eight companies have eligible sourced category summaries and 75% requested-weight coverage under the example weights. Chain IQ and HireRight remain unscored. HireRight has an EDGAR collection error, which is preserved. The scores reflect this saved snapshot; exporting does not refresh the evidence.
 
-## Switch to repeated AI assessments
+## Export supplied AI assessments
 
 Once the upstream team supplies canonical JSON/JSONL assessments, pass their path through `--assessments` alongside the same report/weight/config arguments. Programmatically:
 
@@ -79,7 +79,7 @@ payload = dataset.score(weights)
 updated = dataset.score({**weights, "financial": 50})
 ```
 
-This uses `ai_assessments` and `ai_assessment_disagreement`. Repeated assessments replace all heuristic scores; they are never blended. The normal minimum_required=10/preferred=100 policy applies unless explicitly configured otherwise. Empty assessments leave companies unscored. IDs must match the collected entity roster, and category names must match the selected config; no implicit category aliases exist. Keep the evidence batch IDs in assessment metadata and retain the raw assessments for audit. The caller ensures they correspond to the selected report snapshots.
+This export uses `ai_assessments` and `ai_assessment_disagreement`. It does not switch the running dashboard, which currently rejects non-collector score bases. Repeated assessments replace all heuristic scores; they are never blended. The normal minimum_required=10/preferred=100 policy applies unless explicitly configured otherwise. Empty assessments leave companies unscored. IDs must match the collected entity roster, and category names must match the selected config; no implicit category aliases exist. Keep the evidence batch IDs in assessment metadata and retain the raw assessments for audit. The caller ensures they correspond to the selected report snapshots.
 
 Only real assessment mode supplies observed AI-disagreement ranges; simulated assessment mode supplies explicitly synthetic spread. These are not statistical confidence intervals or probabilities of true vendor risk. Even in this mode, check per-row eligibility and null values: some companies may lack enough assessments.
 
@@ -97,4 +97,4 @@ Defaults and override keys are documented in [FRAMEWORK.md](FRAMEWORK.md#10-synt
 
 Keep a `WebsiteDataset` instance while users change weights. It reuses validated inputs and category summaries. Rebuild it when reports, policy, or assessments change. The API returns detached dictionaries; consumer edits do not mutate the retained snapshot.
 
-The website/backend team decides how to serve or refresh this file and whether to offer a weight-recalculation endpoint. This repository provides the data function and CLI only. No dashboard, route, websocket, or browser application is implemented.
+The included local server exposes collector-mode scoring through `GET /api/dashboard`; it does not serve or load exported assessment files. The browser manages its own weights and requests recalculation from that endpoint. There are no websockets or background collection tasks. To add assessment-mode rendering later, change the server inputs, cache invalidation, browser labels/range displays, and API contract deliberately; see [ARCHITECTURE.md](ARCHITECTURE.md#extending-the-application).

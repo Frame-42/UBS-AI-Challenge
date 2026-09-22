@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Local dashboard API response v1.1",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "$ref": "website.schema.json#/properties/schema_version"
+    },
+    "score_basis": {
+      "const": "collector_heuristic"
+    },
+    "distribution_semantics": {
+      "const": "not_available"
+    },
+    "collection_digest": {
+      "$ref": "website.schema.json#/properties/collection_digest"
+    },
+    "scoreboard": {
+      "$ref": "website.schema.json#/properties/scoreboard"
+    },
+    "evidence": {
+      "$ref": "website.schema.json#/properties/evidence"
+    },
+    "dashboard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "default_weights"
+      ],
+      "properties": {
+        "default_weights": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "score_basis",
+    "distribution_semantics",
+    "collection_digest",
+    "scoreboard",
+    "evidence",
+    "dashboard"
+  ]
+}

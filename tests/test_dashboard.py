@@ -6,11 +6,12 @@ import threading
 import unittest
 from http.server import ThreadingHTTPServer
 from pathlib import Path
+from unittest.mock import patch
 from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import urlopen
 
-from serve import DashboardData, DashboardHandler, ROOT
+from serve import DashboardData, DashboardHandler, ROOT, SnapshotError, query_weights
 
 
 class DashboardDataTests(unittest.TestCase):
@@ -55,6 +56,53 @@ class DashboardDataTests(unittest.TestCase):
             self.assertEqual(updated['evidence']['microsoft']['report_count'], 2)
 
 
+    def test_response_metadata_cannot_mutate_defaults(self):
+        data = DashboardData()
+        first = data.score()
+        first['dashboard']['default_weights'].clear()
+        second = data.score()
+        self.assertTrue(second['dashboard']['default_weights'])
+        self.assertEqual(first['scoreboard'], second['scoreboard'])
+
+    def test_invalid_snapshot_keeps_cache_and_recovers_after_repair(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(ROOT / 'companies', root / 'companies')
+            shutil.copytree(ROOT / 'examples', root / 'examples')
+            data = DashboardData(root)
+            first = data.score()
+            retained = data.dataset
+            path = root / 'examples/collection_weights.json'
+            original = path.read_text()
+            path.write_text('{"financial": -1}')
+            with self.assertRaises(SnapshotError):
+                data.score()
+            self.assertIs(data.dataset, retained)
+            path.write_text(original)
+            self.assertEqual(data.score(), first)
+
+    def test_policy_file_change_invalidates_cache(self):
+        with tempfile.TemporaryDirectory() as directory:
+            defaults = Path(directory) / 'defaults.json'
+            defaults.write_text('{}')
+            with patch('serve.POLICY_DEFAULTS', defaults):
+                data = DashboardData()
+                data.score()
+                retained = data.dataset
+                defaults.write_text('{"changed":true}')
+                data.score()
+                self.assertIsNot(data.dataset, retained)
+
+    def test_query_contract_rejects_ambiguous_inputs(self):
+        self.assertIsNone(query_weights(''))
+        self.assertEqual(query_weights('weights=%7B%22financial%22%3A100%7D'), {'financial':100})
+        for query in ['weights=', 'weights', 'weights=null', 'weights=[]',
+                      'weights={"fraud":1,"fraud":2}', 'weights={"fraud":NaN}',
+                      'weights={"fraud":1}&weights={"fraud":2}', 'other=1']:
+            with self.subTest(query=query), self.assertRaises(ValueError):
+                query_weights(query)
+
+
 class DashboardHTTPTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -80,7 +128,7 @@ class DashboardHTTPTests(unittest.TestCase):
         self.assertEqual(payload, DashboardData().score(weights))
 
     def test_invalid_weights_and_non_asset_paths_rejected(self):
-        for weights in ('[]', '{', '{"cybersecurity":-1}', '{"cybersecurity":0}'):
+        for weights in ('[]', 'null', '{', '{"cybersecurity":-1}', '{"cybersecurity":0}', '{"fraud":1,"fraud":2}', '{"fraud":NaN}'):
             with self.assertRaises(HTTPError) as error:
                 urlopen(self.url + '/api/dashboard?' + urlencode({'weights': weights}))
             self.assertEqual(error.exception.code, 400)
@@ -91,3 +139,17 @@ class DashboardHTTPTests(unittest.TestCase):
                 urlopen(self.url + path)
             self.assertEqual(error.exception.code, 404)
             error.exception.close()
+
+    def test_unavailable_snapshot_returns_503_not_bad_request(self):
+        with patch.object(self.server.RequestHandlerClass.data, 'score', side_effect=SnapshotError('invalid saved report')):
+            with self.assertRaises(HTTPError) as error:
+                urlopen(self.url + '/api/dashboard')
+            self.assertEqual(error.exception.code, 503)
+            self.assertIn('snapshot unavailable', json.load(error.exception)['error'])
+            error.exception.close()
+
+    def test_dashboard_assets_are_served(self):
+        for path in ('/', '/index.html', '/styles.css', '/app.js'):
+            with self.subTest(path=path), urlopen(self.url + path) as response:
+                self.assertEqual(response.status, 200)
+                self.assertTrue(response.read())
