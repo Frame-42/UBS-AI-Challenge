@@ -69,7 +69,8 @@ let signals = [
   {vendor:'infosys',severity:'moderate',title:'Service transition milestones added to monitoring',source:'Operations · Demo scenario',time:startTime-94*60000,type:'layers'},
   {vendor:'visa',severity:'low',title:'Payment continuity exercise completed successfully',source:'Resilience · Demo scenario',time:startTime-130*60000,type:'shield'},
 ];
-const state = {query:'',category:'all',region:'all',risk:'all',page:1,sort:'desc',sortKey:'weighted',weights:{cyber:50,reputation:50,fraud:50},live:true,selected:null,updatedAt:startTime};
+const defaultWeights = {cyber:33.4,reputation:33.3,fraud:33.3};
+const state = {query:'',category:'all',region:'all',risk:'all',page:1,sort:'desc',sortKey:'weighted',weights:{...defaultWeights},live:true,selected:null,updatedAt:startTime};
 const pageSize = 8;
 const riskLevel = score => score >= 60 ? 'high' : score >= 30 ? 'moderate' : 'low';
 const riskName = score => ({high:'High risk',moderate:'Moderate',low:'Low risk'}[riskLevel(score)]);
@@ -92,14 +93,31 @@ function renderWeights() {
     const input=$('#weight-'+d.key),percentage=(weights[d.key]*100).toFixed(1);
     input.value=state.weights[d.key];
     input.style.setProperty('--range-progress',input.value+'%');
-    input.setAttribute('aria-valuetext',`${state.weights[d.key]} relative weight, ${percentage}% of weighted score`);
-    $('#weight-'+d.key+'-output').textContent=percentage+'%';
+    input.setAttribute('aria-valuetext',`${percentage}% of weighted score`);
+    const number=$('#weight-'+d.key+'-number');
+    if(number!==document.activeElement)number.value=state.weights[d.key];
   });
+  const custom=riskDimensions.some(d=>state.weights[d.key]!==defaultWeights[d.key]);
+  $('#weights-custom').hidden=!custom;
+  $('#weights-button').classList.toggle('is-custom',custom);
+  $('#weights-button').title=riskDimensions.map(d=>`${d.label} ${state.weights[d.key]}%`).join(' · ');
   $('#weight-formula').textContent='Weighted score = '+riskDimensions.map(d=>`${(weights[d.key]*100).toFixed(1)}% × ${d.label.toLowerCase()}`).join(' + ')+'. Click a score heading to sort; click a subscore to see its source.';
+}
+function rebalanceWeights(key,value) {
+  // Use integer tenths so displayed percentages always total exactly 100%.
+  const units=Math.max(0,Math.min(1000,Math.round(value*10)));
+  const others=riskDimensions.map(d=>d.key).filter(other=>other!==key);
+  const remaining=1000-units;
+  const oldTotal=state.weights[others[0]]+state.weights[others[1]];
+  const first=oldTotal>0?Math.round(remaining*state.weights[others[0]]/oldTotal):Math.round(remaining/2);
+  state.weights[key]=units/10;
+  state.weights[others[0]]=first/10;
+  state.weights[others[1]]=(remaining-first)/10;
 }
 function updateWeights() {
   state.page=1;
   renderWeights();renderMetrics();renderTable();refreshDetail();
+  positionWeights();
 }
 function changeLabel(v) { const n = change(v); return n > 0 ? `+${n}` : String(n); }
 function sparkline(values, stroke, width = 80, height = 28, fill = false) {
@@ -113,12 +131,12 @@ function renderMetrics() {
   const high = vendors.filter(v => weightedScore(v) >= 60).length;
   const average = Math.round(vendors.reduce((sum,v) => sum+weightedScore(v),0)/vendors.length);
   const cards = [
-    {label:'Monitored vendors',value:vendors.length,icon:'building',foot:'<strong>6 categories</strong><span>across 3 regions</span>',history:[5,5,6,6,8,8,10,10,12],color:'#aaadb8'},
-    {label:'Elevated risk',value:high,icon:'shield-alert',foot:'<strong class="risk-text">Review recommended</strong>',history:[1,1,2,2,1,2,2,3,high],color:'#d98b99',class:'elevated'},
-    {label:'Average weighted score',value:average,unit:'/ 100',icon:'chart',foot:'<strong class="neutral-text">Higher score = higher risk</strong>',history:[45,46,44,41,42,40,39,38,average],color:'#9fb9ab'},
-    {label:'Recent signals',value:signals.length,icon:'activity',foot:`<strong>${state.live?'Monitoring active':'Monitoring paused'}</strong><span>simulated feed</span>`,history:[1,2,2,3,3,4,4,5,signals.length],color:'#c8a5b0'},
+    {label:'Monitored vendors',value:vendors.length,foot:'6 categories · 3 regions'},
+    {label:'Elevated risk',value:high,foot:'Weighted score ≥ 60',class:'elevated'},
+    {label:'Average weighted score',value:average,unit:'/ 100',foot:'Current weighting'},
+    {label:'Recent signals',value:signals.length,foot:state.live?'Simulation running':'Simulation paused'},
   ];
-  $('#metrics').innerHTML = cards.map(c => `<div class="metric-card ${c.class || ''}"><div class="metric-label">${c.label}<span>${icon(c.icon)}</span></div><div class="metric-number">${c.value}${c.unit ? `<small>${c.unit}</small>` : ''}</div><div class="metric-bottom">${c.foot}</div></div>`).join('');
+  $('#metrics').innerHTML = cards.map(c => `<div class="metric-card ${c.class || ''}"><div class="metric-label">${c.label}</div><div class="metric-reading"><div class="metric-number">${c.value}${c.unit ? `<small>${c.unit}</small>` : ''}</div><div class="metric-bottom">${c.foot}</div></div></div>`).join('');
 
 }
 function baseVendors() { return vendors; }
@@ -144,7 +162,7 @@ function renderTable() {
   });
   $('#vendor-rows').innerHTML = result.length ? result.slice(offset,offset+pageSize).map(v => {
     const score=weightedScore(v);
-    return `<tr data-vendor-row="${v.id}"><td><button class="vendor-cell" data-open="${v.id}" aria-label="View ${v.name} risk assessment">${logo(v)}<span><strong>${v.name}</strong><small>${v.category}</small></span></button></td><td><div class="score-cell risk-${riskLevel(score)}"><span class="score-value">${score}</span><span class="score-track"><i style="width:${score}%"></i></span></div></td>${riskDimensions.map(d=>`<td><button class="table-subscore risk-${riskLevel(subscore(v,d.key))}" data-vendor-source="${v.id}" data-dimension="${d.key}" aria-label="${v.name} ${d.label} risk ${subscore(v,d.key)} out of 100. View source.">${subscore(v,d.key)}${icon('arrow-up-right')}</button></td>`).join('')}<td>${badge(score)}</td></tr>`;
+    return `<tr data-vendor-row="${v.id}"><td><button class="vendor-cell" data-open="${v.id}" aria-label="View ${v.name} risk assessment">${logo(v)}<span><strong>${v.name}</strong><small>${v.category}</small></span></button></td><td><div class="score-cell risk-${riskLevel(score)}"><span class="score-track" aria-hidden="true"><i style="width:${score}%"></i></span><span class="score-value">${score}</span></div></td>${riskDimensions.map(d=>`<td><button class="table-subscore risk-${riskLevel(subscore(v,d.key))}" data-vendor-source="${v.id}" data-dimension="${d.key}" aria-label="${v.name} ${d.label} risk ${subscore(v,d.key)} out of 100. View source."><span class="subscore-track" aria-hidden="true"><i style="width:${subscore(v,d.key)}%"></i></span><span class="subscore-value">${subscore(v,d.key)}</span>${icon('arrow-up-right')}</button></td>`).join('')}<td>${badge(score)}</td></tr>`;
   }).join('') : `<tr><td colspan="6"><div class="empty-state"><strong>No vendors found</strong><p>Adjust the search or filters.</p><button class="text-button" id="empty-reset">Clear filters</button></div></td></tr>`;
   $('#table-count').textContent = result.length ? `Showing ${offset+1}–${Math.min(offset+pageSize,result.length)} of ${result.length} vendors` : '0 vendors';
   $('#page-label').textContent = `${state.page} / ${pages}`;
@@ -162,10 +180,36 @@ function detailChart(v) {
   const stroke=color(weightedScore(v));
   return `<svg viewBox="0 0 390 105" preserveAspectRatio="none" role="img" aria-label="Illustrative seven-day scores: ${history.join(', ')}"><defs><linearGradient id="detail-gradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="${stroke}" stop-opacity=".18"/><stop offset="100%" stop-color="${stroke}" stop-opacity="0"/></linearGradient></defs><path d="M0 20H390M0 50H390M0 80H390" stroke="#eee9ed" stroke-dasharray="3 4" fill="none"/><polygon points="0,105 ${points} 390,105" fill="url(#detail-gradient)"/><polyline points="${points}" stroke="${stroke}" fill="none" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="390" cy="${100-weightedScore(v)}" r="3.5" fill="${stroke}" stroke="white" stroke-width="2"/></svg>`;
 }
+function driverMarkup(v) {
+  const weights=normalizedWeights();
+  const driver=riskDimensions.reduce((best,d)=>subscore(v,d.key)*weights[d.key]>subscore(v,best.key)*weights[best.key]?d:best);
+  const contribution=subscore(v,driver.key)*weights[driver.key];
+  return `<strong>${driver.label}</strong> contributes the most to this score: <strong>${contribution.toFixed(1)} points</strong> at ${(weights[driver.key]*100).toFixed(1)}% weight.<button class="text-button" data-source="${driver.key}">View evidence ${icon('arrow-right')}</button>`;
+}
 function renderDetail() {
   const v=vendors.find(v=>v.id===state.selected); if(!v)return;
   const related=signals.filter(s=>s.vendor===v.id).slice(0,3);
-  $('#vendor-detail').innerHTML=`<div class="detail-topbar"><span>${icon('shield')}VENDOR ASSESSMENT <span class="demo-tag">SIMULATED</span></span><button class="icon-button" id="close-detail" aria-label="Close vendor assessment">${icon('x')}</button></div><div class="detail-body"><div class="detail-identity">${logo(v)}<div><h2 id="detail-name">${v.name}</h2><p>${v.service}</p></div></div><div class="detail-meta"><span>${icon('pin')}${v.country}</span><span>·</span><span>${v.category}</span></div><section class="detail-score-card" aria-label="Current risk score"><div class="detail-score-top"><span>Weighted risk score</span>${badge(weightedScore(v))}</div><div class="detail-score-main"><div class="detail-score-number risk-${riskLevel(weightedScore(v))}" id="live-detail-score">${weightedScore(v)}<small>/ 100</small></div><div class="detail-score-trend ${change(v)>0?'risk-high':'risk-low'}" id="live-detail-change">${changeLabel(v)} points<small>over the last 7 days</small></div></div><div class="detail-chart" id="live-detail-chart">${detailChart(v)}</div><div class="chart-axis"><span>6 days ago</span><span>Simulated weighted trend · 0–100</span><span>Today</span></div></section><section class="detail-section"><h3>${icon('sparkles')}Live risk summary</h3><div class="detail-summary"><div class="summary-label"><span>ASSESSMENT BRIEF</span><span>SYNTHETIC</span></div><p>${v.summary}</p><p id="live-summary" style="margin-top:10px">Current weighted score: <strong>${weightedScore(v)}/100</strong> · ${riskName(weightedScore(v)).toLowerCase()}. Refreshed at ${formatTime(state.updatedAt)} UTC.</p></div></section><section class="detail-section"><h3>Risk subscores <span class="number-pill">0–100</span></h3><div id="live-factors">${factorMarkup(v)}</div></section><section class="detail-section"><h3>${icon('file')}Sources & evidence <span class="number-pill">3 reports</span></h3><div id="detail-sources">${sourceMarkup(v)}</div></section><section class="detail-section"><h3>${icon('activity')}Recent signals</h3><div id="detail-signals">${related.length?related.map(s=>signalMarkup(s)).join(''):'<p class="detail-summary">No new signals in this demo session. Routine monitoring remains active.</p>'}</div></section><section class="detail-section"><h3>${icon('check-circle')}Suggested next step</h3><p class="detail-summary">${v.action}</p></section><div class="detail-footer"><span>Fictional assessment for demonstration.<br>No external data or risk model connected.</span></div></div>`;
+  const latest=v.sources.map(source=>source.published).sort().at(-1);
+  const latestDate=new Date(latest+'T00:00:00Z').toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'});
+  $('#vendor-detail').innerHTML=`
+    <div class="detail-topbar"><span>VENDOR ASSESSMENT <span class="demo-tag">SIMULATED</span></span><button class="icon-button" id="close-detail" aria-label="Close vendor assessment">${icon('x')}</button></div>
+    <div class="detail-body">
+      <div class="detail-identity">${logo(v)}<div><h2 id="detail-name">${v.name}</h2><p>${v.service}</p></div></div>
+      <div class="detail-meta"><span>${v.country}</span><span>·</span><span>${v.category}</span></div>
+      <div class="evidence-meta"><span>${v.sources.length} demo source records</span><span>Latest report: ${latestDate}</span></div>
+      <section class="detail-score-card" aria-label="Current risk score">
+        <div class="detail-score-top"><span>Weighted risk score</span>${badge(weightedScore(v))}</div>
+        <div class="detail-score-main"><div class="detail-score-number risk-${riskLevel(weightedScore(v))}" id="live-detail-score">${weightedScore(v)}<small>/ 100</small></div><div class="detail-score-trend ${change(v)>0?'risk-high':'risk-low'}" id="live-detail-change">${changeLabel(v)} points<small>over the last 7 days</small></div></div>
+        <details class="trend-disclosure"><summary>7-day weighted trend ${icon('chevron-down')}</summary><div class="detail-chart" id="live-detail-chart">${detailChart(v)}</div><div class="chart-axis"><span>6 days ago</span><span>Simulated history · Current weights</span><span>Today</span></div></details>
+      </section>
+      <div class="risk-driver" id="live-driver">${driverMarkup(v)}</div>
+      <section class="detail-section"><h3>Risk dimensions <span class="number-pill">0–100</span></h3><div id="live-factors">${factorMarkup(v)}</div></section>
+      <section class="detail-section"><h3>Assessment</h3><div class="detail-summary"><p>${v.summary}</p><p id="live-summary" style="margin-top:10px">Current weighted score: <strong>${weightedScore(v)}/100</strong> · ${riskName(weightedScore(v)).toLowerCase()}. Refreshed at ${formatTime(state.updatedAt)} UTC.</p></div></section>
+      <section class="detail-section"><h3>Sources & evidence <span class="number-pill">${v.sources.length} reports</span></h3><div id="detail-sources">${sourceMarkup(v)}</div></section>
+      <section class="detail-section"><h3>Recent signals</h3><div id="detail-signals">${related.length?related.map(s=>signalMarkup(s)).join(''):'<p class="detail-summary">No new signals in this demo session.</p>'}</div></section>
+      <section class="detail-section"><h3>Suggested next step</h3><p class="detail-summary">${v.action}</p></section>
+      <div class="detail-footer">Fictional assessment and sources. No external data connected.</div>
+    </div>`;
 }
 function subscore(v,key) { return Math.max(0,Math.min(100,v.subscores[key]+v.score-v.baseScore)); }
 
@@ -189,11 +233,12 @@ function refreshDetail() {
   $('#live-detail-chart').innerHTML=detailChart(v);
   $('#live-summary').innerHTML=`Current weighted score: <strong>${weightedScore(v)}/100</strong> · ${riskName(weightedScore(v)).toLowerCase()}. Refreshed at ${formatTime(state.updatedAt)} UTC.`;
   $('#live-factors').innerHTML=factorMarkup(v);
+  $('#live-driver').innerHTML=driverMarkup(v);
   const related=signals.filter(s=>s.vendor===v.id).slice(0,3);
   if(related.length)$('#detail-signals').innerHTML=related.map(s=>signalMarkup(s)).join('');
 }
 let lastTrigger=null;
-function openVendor(id,trigger) { state.selected=id; lastTrigger=trigger || document.activeElement; renderDetail(); if(!$('#vendor-dialog').open)$('#vendor-dialog').showModal(); document.body.style.overflow='hidden'; $('#vendor-dialog').scrollTop=0; $('#close-detail').focus(); }
+function openVendor(id,trigger) { closeWeights(false); state.selected=id; lastTrigger=trigger || document.activeElement; renderDetail(); if(!$('#vendor-dialog').open)$('#vendor-dialog').showModal(); document.body.style.overflow='hidden'; $('#vendor-dialog').scrollTop=0; $('#close-detail').focus(); }
 let toastTimer;
 function toast(message) { clearTimeout(toastTimer); $('#toast').textContent=message; $('#toast').classList.add('visible'); toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3500); }
 
@@ -230,15 +275,75 @@ $('#next-page').addEventListener('click',()=>{state.page++;renderTable();});
 $('#reset-filters').addEventListener('click',clearFilters);
 $('#export-button').addEventListener('click',()=>exportCSV());
 $('#live-toggle').addEventListener('click',()=>{state.live=!state.live;$('#live-toggle').setAttribute('aria-pressed',String(state.live));$('#live-text').textContent=state.live?'Live demo':'Paused';document.body.classList.toggle('simulation-paused',!state.live);renderMetrics();toast(state.live?'Simulation resumed · Scores refresh every 12 seconds':'Simulation paused · Your current snapshot is preserved');});
-document.querySelectorAll('dialog').forEach(dialog=>{dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();}});dialog.addEventListener('close',()=>{document.body.style.overflow='';if(dialog.id==='vendor-dialog'){state.selected=null;if(lastTrigger?.isConnected)lastTrigger.focus();else $('#vendor-search').focus();}});});
+document.querySelectorAll('#vendor-dialog').forEach(dialog=>{dialog.addEventListener('click',event=>{if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();}});dialog.addEventListener('close',()=>{document.body.style.overflow='';if(dialog.id==='vendor-dialog'){state.selected=null;if(lastTrigger?.isConnected)lastTrigger.focus();else $('#vendor-search').focus();}});});
 document.addEventListener('keydown',event=>{if(event.key==='/'&&!document.querySelector('dialog[open]')&&!['INPUT','SELECT','TEXTAREA'].includes(document.activeElement.tagName)){event.preventDefault();$('#vendor-search').focus();}});
 document.querySelectorAll('[data-weight]').forEach(input=>input.addEventListener('input',()=>{
-  const key=input.dataset.weight;
-  state.weights[key]=Number(input.value);
-  if(Object.values(state.weights).every(value=>value===0)){state.weights[key]=1;toast('At least one weight must be above zero.');}
+  rebalanceWeights(input.dataset.weight,Number(input.value));
   updateWeights();
 }));
-$('#reset-weights').addEventListener('click',()=>{state.weights={cyber:50,reputation:50,fraud:50};updateWeights();});
+document.querySelectorAll('[data-weight-number]').forEach(input=>{
+  input.addEventListener('input',()=>{
+    if(input.value===''||!Number.isFinite(input.valueAsNumber))return;
+    const bounded=Math.max(0,Math.min(100,input.valueAsNumber));
+    if(bounded!==input.valueAsNumber)input.value=bounded;
+    rebalanceWeights(input.dataset.weightNumber,bounded);
+    updateWeights();
+  });
+  input.addEventListener('change',()=>{input.value=state.weights[input.dataset.weightNumber];});
+  input.addEventListener('blur',()=>{input.value=state.weights[input.dataset.weightNumber];});
+});
+$('#reset-weights').addEventListener('click',()=>{state.weights={...defaultWeights};updateWeights();});
+
+const weightsDialog=$('#weights-popover');
+const weightsButton=$('#weights-button');
+const sheetMedia=matchMedia('(max-width: 560px)');
+function positionWeights() {
+  if(!weightsDialog.open||sheetMedia.matches)return;
+  const anchor=weightsButton.getBoundingClientRect();
+  const width=weightsDialog.offsetWidth,height=weightsDialog.offsetHeight;
+  const below=anchor.bottom+8;
+  const top=below+height<=innerHeight-12?below:Math.max(12,anchor.top-height-8);
+  weightsDialog.style.left=Math.max(12,Math.min(anchor.right-width,document.documentElement.clientWidth-width-12))+'px';
+  weightsDialog.style.top=top+'px';
+}
+function openWeights() {
+  if(weightsDialog.open)return;
+  weightsDialog.style.removeProperty('left');weightsDialog.style.removeProperty('top');
+  if(sheetMedia.matches){weightsDialog.setAttribute('aria-modal','true');weightsDialog.showModal();document.body.style.overflow='hidden';}
+  else {weightsDialog.removeAttribute('aria-modal');weightsDialog.show();}
+  weightsButton.setAttribute('aria-expanded','true');
+  positionWeights();
+  $('#weight-cyber').focus({preventScroll:true});
+}
+function closeWeights(restoreFocus=true) {
+  if(!weightsDialog.open)return;
+  weightsDialog.close();
+  weightsButton.setAttribute('aria-expanded','false');
+  if(!$('#vendor-dialog').open)document.body.style.overflow='';
+  if(restoreFocus)weightsButton.focus({preventScroll:true});
+}
+weightsButton.addEventListener('click',()=>weightsDialog.open?closeWeights():openWeights());
+$('#close-weights').addEventListener('click',()=>closeWeights());
+weightsDialog.addEventListener('cancel',event=>{event.preventDefault();closeWeights();});
+document.addEventListener('pointerdown',event=>{
+  if(!weightsDialog.open||weightsButton.contains(event.target))return;
+  const rect=weightsDialog.getBoundingClientRect();
+  if(!weightsDialog.contains(event.target)||(event.target===weightsDialog&&(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)))closeWeights(false);
+});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&weightsDialog.open){event.preventDefault();closeWeights();}
+});
+document.addEventListener('focusin',event=>{
+  if(weightsDialog.open&&!sheetMedia.matches&&!weightsDialog.contains(event.target)&&!weightsButton.contains(event.target))closeWeights(false);
+});
+window.addEventListener('resize',positionWeights);
+window.addEventListener('scroll',positionWeights,{passive:true});
+sheetMedia.addEventListener('change',()=>{
+  if(!weightsDialog.open)return;
+  const focused=document.activeElement;
+  closeWeights(false);openWeights();
+  if(weightsDialog.contains(focused))focused.focus({preventScroll:true});
+});
 hydrateIcons();renderWeights();renderMetrics();renderTable();
 
 // Replace this simulation with an API subscription when the risk model is ready.
