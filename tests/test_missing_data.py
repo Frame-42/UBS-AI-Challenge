@@ -1,6 +1,6 @@
 import unittest
 from risk_framework import RiskFramework
-from helpers import config, rows
+from tests.helpers import config, rows
 
 
 class MissingDataTests(unittest.TestCase):

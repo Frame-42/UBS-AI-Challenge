@@ -1,6 +1,6 @@
 import unittest
 from risk_framework import RiskFramework, rank_entities
-from helpers import config, rows
+from tests.helpers import config, rows
 
 
 class RankingTests(unittest.TestCase):

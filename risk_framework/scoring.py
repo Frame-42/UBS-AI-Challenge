@@ -86,7 +86,7 @@ def normalize_weights(weights: Mapping[str, float], categories: Iterable[str]) -
 
 def score_overall(entity_id: str, scores: Mapping[str, Sequence[float]],
                   categories: Mapping[str, CategoryResult], weights: Mapping[str, float],
-                  config: Config) -> OverallResult:
+                  config: Config, *, simulate: bool = True) -> OverallResult:
     """Sample category marginals independently; this does not estimate true-risk probabilities."""
     normalized = normalize_weights(weights, categories)
     positive = [key for key in sorted(categories) if normalized[key] > 0]
@@ -108,17 +108,18 @@ def score_overall(entity_id: str, scores: Mapping[str, Sequence[float]],
         effective = normalize_weights({key: weights.get(key, 0.0) for key in available}, available)
         contributions = {key: effective[key] * categories[key].score for key in available}
         headline = min(config.risk_scale.max, max(config.risk_scale.min, math.fsum(contributions.values())))
-        draws = {}
-        for key in available:
-            # Stable across input order, other entities, and changes to user weights.
-            seed_material = f"{config.overall_simulation.seed}:{len(entity_id)}:{entity_id}:{key}"
-            seed = int.from_bytes(hashlib.sha256(seed_material.encode()).digest(), "big")
-            rng = random.Random(seed)
-            population = sorted(scores[key])
-            draws[key] = [rng.choice(population) for _ in range(config.overall_simulation.runs)]
-        simulated = [min(config.risk_scale.max, max(config.risk_scale.min,
-                     math.fsum(effective[key] * draws[key][i] for key in available)))
-                     for i in range(config.overall_simulation.runs)]
+        if simulate:
+            draws = {}
+            for key in available:
+                # Stable across input order, other entities, and changes to user weights.
+                seed_material = f"{config.overall_simulation.seed}:{len(entity_id)}:{entity_id}:{key}"
+                seed = int.from_bytes(hashlib.sha256(seed_material.encode()).digest(), "big")
+                rng = random.Random(seed)
+                population = sorted(scores[key])
+                draws[key] = [rng.choice(population) for _ in range(config.overall_simulation.runs)]
+            simulated = [min(config.risk_scale.max, max(config.risk_scale.min,
+                         math.fsum(effective[key] * draws[key][i] for key in available)))
+                         for i in range(config.overall_simulation.runs)]
     stats = describe(simulated)
     return OverallResult(
         **asdict(stats), score=headline,

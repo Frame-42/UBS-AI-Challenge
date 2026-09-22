@@ -13,7 +13,7 @@ dependencies = []
 risk-framework = "risk_framework.__main__:main"
 
 [tool.setuptools]
-packages = ["risk_framework"]
+packages = ["risk_framework", "risk_collector", "risk_collector.collectors"]
 
 [tool.setuptools.package-data]
 risk_framework = ["defaults.json"]

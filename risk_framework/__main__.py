@@ -6,6 +6,8 @@ from pathlib import Path
 
 from . import RiskFramework, ValidationError, load_assessments, load_config, load_json, to_json
 from .models import Scoreboard
+from .collection import load_collection
+from .export import WebsiteDataset, export_json
 
 
 def _display(value: float | None) -> str:
@@ -39,8 +41,29 @@ def main(argv: list[str] | None = None) -> int:
     score.add_argument("--entities", help="Optional JSON entity-ID-to-name roster, including entities without data")
     score.add_argument("--format", choices=("json", "table"), default="json")
     score.add_argument("--output", help="Write to this file instead of stdout")
+    export = sub.add_parser("export", help="Join collected reports and scores into website-ready JSON")
+    export.add_argument("--reports", required=True, help="Collection report file or directory")
+    export.add_argument("--weights", required=True, help="JSON category-to-weight object")
+    export.add_argument("--config", help="Partial JSON policy override")
+    export.add_argument("--assessments", help="Optional repeated AI assessment JSON/JSONL; replaces heuristic scoring")
+    export.add_argument("--output", default="exports/risk-data.json", help="Website JSON snapshot path")
     args = parser.parse_args(argv)
     try:
+        if args.command == "export":
+            collection = load_collection(args.reports)
+            dataset = WebsiteDataset(collection, load_config(args.config),
+                                     assessments=load_assessments(args.assessments) if args.assessments else None)
+            payload = dataset.score(load_json(args.weights))
+            protected = [*collection.input_files, Path(args.weights)]
+            protected.extend(Path(p) for p in (args.config, args.assessments) if p)
+            # Avoid placing an output inside the report tree where it would become an input.
+            reports_path = Path(args.reports)
+            if reports_path.is_dir() and Path(args.output).resolve().is_relative_to(reports_path.resolve()):
+                raise ValidationError("Export output must be outside the collection report directory")
+            export_json(payload, args.output, protected_paths=protected)
+            print(f"Wrote {len(payload['scoreboard']['records'])} entities to {args.output} "
+                  f"({payload['score_basis']})")
+            return 0
         framework = RiskFramework(load_assessments(args.input), load_config(args.config),
                                   entities=load_json(args.entities) if args.entities else None)
         result = framework.score_all(load_json(args.weights))

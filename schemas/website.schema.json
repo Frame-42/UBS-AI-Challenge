@@ -1,0 +1,164 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Website risk data snapshot v1.0",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "score_basis": {
+      "enum": [
+        "collector_heuristic",
+        "ai_assessments"
+      ]
+    },
+    "distribution_semantics": {
+      "enum": [
+        "not_available",
+        "ai_assessment_disagreement"
+      ]
+    },
+    "collection_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "scoreboard": {
+      "$ref": "scoreboard.schema.json"
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "company": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "report_file": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "generated_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "report_count": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "status": {
+            "enum": [
+              "available",
+              "missing_report"
+            ]
+          },
+          "source_check_counts": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "excluded_zero_signal_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "notes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "report": {
+            "type": [
+              "object",
+              "null"
+            ],
+            "required": [
+              "company",
+              "generated_at",
+              "parameters",
+              "summary",
+              "signals",
+              "sources_consulted",
+              "errors"
+            ],
+            "properties": {
+              "signals": {
+                "type": "array"
+              },
+              "sources_consulted": {
+                "type": "array"
+              },
+              "errors": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "company",
+          "report_file",
+          "generated_at",
+          "report_count",
+          "status",
+          "source_check_counts",
+          "excluded_zero_signal_categories",
+          "notes",
+          "report"
+        ]
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "score_basis": {
+            "const": "collector_heuristic"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "distribution_semantics": {
+            "const": "not_available"
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "distribution_semantics": {
+            "const": "ai_assessment_disagreement"
+          }
+        }
+      }
+    }
+  ],
+  "required": [
+    "schema_version",
+    "score_basis",
+    "distribution_semantics",
+    "collection_digest",
+    "scoreboard",
+    "evidence"
+  ]
+}

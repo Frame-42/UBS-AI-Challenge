@@ -1,0 +1,432 @@
+{
+  "company": {
+    "name": "IBM",
+    "aliases": [
+      "International Business Machines",
+      "International Business Machines Corporation"
+    ],
+    "ticker": "IBM",
+    "domain": "ibm.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:33:09+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 2,
+      "max_severity": "medium",
+      "score": 5,
+      "by_severity": {
+        "info": 1,
+        "low": 0,
+        "medium": 1,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 2,
+      "max_severity": "medium",
+      "score": 6,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 1,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "financial",
+      "title": "Current ratio 0.96 below 1.0",
+      "summary": "Current assets 36,944m USD vs current liabilities 38,658m USD at 2025-12-31 indicate short-term liquidity pressure.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "INTERNATIONAL BUSINESS MACHINES CORP annual report for fiscal year ending 2025-12-31 (accession 0000051143-26-000010)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/",
+          "retrieved_at": "2026-09-22T14:33:08+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for INTERNATIONAL BUSINESS MACHINES CORP (CIK 0000051143)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000051143.json",
+          "retrieved_at": "2026-09-22T14:33:08+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2025-12-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "current_ratio": 0.956
+      }
+    },
+    {
+      "category": "financial",
+      "title": "Financial snapshot FY ending 2025-12-31",
+      "summary": "assets: 151,880m USD; liabilities: 119,139m USD; equity: 32,648m USD; current assets: 36,944m USD; current liabilities: 38,658m USD; net income: 10,593m USD; revenue: 67,535m USD; operating cash flow: 13,193m USD",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "INTERNATIONAL BUSINESS MACHINES CORP annual report for fiscal year ending 2025-12-31 (accession 0000051143-26-000010)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/",
+          "retrieved_at": "2026-09-22T14:33:08+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for INTERNATIONAL BUSINESS MACHINES CORP (CIK 0000051143)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000051143.json",
+          "retrieved_at": "2026-09-22T14:33:08+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2025-12-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "period_end": "2025-12-31",
+        "unit": "USD",
+        "assets": 151880000000.0,
+        "liabilities": 119139000000.0,
+        "equity": 32648000000.0,
+        "current_assets": 36944000000.0,
+        "current_liabilities": 38658000000.0,
+        "net_income": 10593000000.0,
+        "revenue": 67535000000.0,
+        "operating_cash_flow": 13193000000.0,
+        "prior_period_end": "2024-12-31",
+        "prior": {
+          "net_income": 6023000000.0,
+          "revenue": 62753000000.0
+        }
+      }
+    },
+    {
+      "category": "fraud",
+      "title": "Filings mention a material weakness in internal control (1 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"material weakness\" in 1 document(s) filed by INTERNATIONAL BUSINESS MACHINES CORP since 2025-09-22 (forms: 10-K). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "INTERNATIONAL BUSINESS MACHINES CORP 10-K filed 2026-02-24 (ibm-20251231_d2.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231_d2.htm",
+          "retrieved_at": "2026-09-22T14:33:06+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-02-24",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"material weakness\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:06+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-02-24",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"material weakness\"",
+        "documents": 1
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-9198: IBM Langflow Code Injection Vulnerability actively exploited",
+      "summary": "IBM Langflow vulnerability added to CISA KEV on 2026-08-04. Langflow contains a code injection vulnerability that allows unauthenticated attackers to achieve full remote code execution on default Langflow deployments.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-9198",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-9198",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-08-04",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-08-04",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-9198",
+        "vendorProject": "IBM",
+        "product": "Langflow",
+        "dateAdded": "2026-08-04",
+        "dueDate": "2026-08-07",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-94"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention ransomware (1 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"ransomware\" in 1 document(s) filed by INTERNATIONAL BUSINESS MACHINES CORP since 2025-09-22 (forms: 10-K). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "INTERNATIONAL BUSINESS MACHINES CORP 10-K filed 2026-02-24 (ibm-20251231.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231.htm",
+          "retrieved_at": "2026-09-22T14:33:07+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-02-24",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"ransomware\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:07+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-02-24",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"ransomware\"",
+        "documents": 1
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for INTERNATIONAL BUSINESS MACHINES CORP (CIK 0000051143)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0000051143.json",
+        "retrieved_at": "2026-09-22T14:33:06+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:06+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:06+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:07+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:07+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:07+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (INTERNATIONAL BUSINESS MACHINES CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:08+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0000051143&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"cybersecurity incident\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for INTERNATIONAL BUSINESS MACHINES CORP (CIK 0000051143)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000051143.json",
+        "retrieved_at": "2026-09-22T14:33:08+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2025-12-31",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "ok",
+      "detail": "1 KEV entries since 2025-09-22 (8 all-time) for vendor IBM",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=ibm.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": []
+}

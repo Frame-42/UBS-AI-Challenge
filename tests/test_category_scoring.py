@@ -1,7 +1,7 @@
 import unittest
 
 from risk_framework import score_category
-from helpers import config
+from tests.helpers import config
 
 
 class CategoryTests(unittest.TestCase):

@@ -1,7 +1,7 @@
 import unittest
 from risk_framework import Assessment, RiskFramework, ValidationError, load_config, normalize_weights
 from risk_framework.validation import parse_json
-from helpers import config, rows
+from tests.helpers import config, rows
 
 
 class ValidationTests(unittest.TestCase):

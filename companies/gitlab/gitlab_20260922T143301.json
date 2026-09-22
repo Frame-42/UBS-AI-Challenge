@@ -1,0 +1,655 @@
+{
+  "company": {
+    "name": "GitLab",
+    "aliases": [
+      "GitLab Inc."
+    ],
+    "ticker": "GTLB",
+    "domain": "gitlab.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:33:01+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 3,
+      "max_severity": "high",
+      "score": 15,
+      "by_severity": {
+        "info": 1,
+        "low": 1,
+        "medium": 0,
+        "high": 1,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 5,
+      "max_severity": "medium",
+      "score": 18,
+      "by_severity": {
+        "info": 0,
+        "low": 2,
+        "medium": 3,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "financial",
+      "title": "Net loss for two consecutive years",
+      "summary": "Net income -56m USD (FY 2026-01-31); prior year -6m USD.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "Gitlab Inc. annual report for fiscal year ending 2026-01-31 (accession 0001628280-26-018731)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for Gitlab Inc. (CIK 0001653482)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2026-01-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {}
+    },
+    {
+      "category": "financial",
+      "title": "Exit or disposal costs / restructuring (8-K Item 2.05) - filed 2026-06-02",
+      "summary": "Gitlab Inc. filed a 8-K on 2026-06-02 disclosing: Exit or disposal costs / restructuring (8-K Item 2.05).",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Gitlab Inc. 8-K filed 2026-06-02 (accession 0001628280-26-039805)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039805/gtlb-20260601.htm",
+          "retrieved_at": "2026-09-22T14:32:58+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2026-06-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for Gitlab Inc. (CIK 0001653482)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0001653482.json",
+          "retrieved_at": "2026-09-22T14:32:58+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2026-06-02",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0001628280-26-039805",
+        "items": "2.02,2.05,7.01,9.01"
+      }
+    },
+    {
+      "category": "financial",
+      "title": "Financial snapshot FY ending 2026-01-31",
+      "summary": "assets: 1,723m USD; liabilities: 686m USD; equity: 991m USD; current assets: 1,656m USD; current liabilities: 652m USD; net income: -56m USD; revenue: 955m USD; operating cash flow: 233m USD",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Gitlab Inc. annual report for fiscal year ending 2026-01-31 (accession 0001628280-26-018731)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for Gitlab Inc. (CIK 0001653482)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2026-01-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "period_end": "2026-01-31",
+        "unit": "USD",
+        "assets": 1722747000.0,
+        "liabilities": 686499000.0,
+        "equity": 990668000.0,
+        "current_assets": 1655779000.0,
+        "current_liabilities": 652143000.0,
+        "net_income": -55956000.0,
+        "revenue": 955224000.0,
+        "operating_cash_flow": 232856000.0,
+        "prior_period_end": "2025-01-31",
+        "prior": {
+          "net_income": -6326000.0,
+          "revenue": 759249000.0
+        }
+      }
+    },
+    {
+      "category": "fraud",
+      "title": "Filings mention a material weakness in internal control (3 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"material weakness\" in 3 document(s) filed by Gitlab Inc. since 2025-09-22 (forms: 10-K, 10-Q, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Gitlab Inc. 10-Q filed 2025-12-03 (gtlb-20251031.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054840/gtlb-20251031.htm",
+          "retrieved_at": "2026-09-22T14:32:59+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-12-03",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Gitlab Inc. ARS filed 2026-05-01 (a2026gitlabars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000087/a2026gitlabars.pdf",
+          "retrieved_at": "2026-09-22T14:32:59+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-05-01",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Gitlab Inc. 10-K filed 2026-03-17 (gtlb-20260131.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/gtlb-20260131.htm",
+          "retrieved_at": "2026-09-22T14:32:59+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-03-17",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"material weakness\" (Gitlab Inc.)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:32:59+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2025-12-03",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"material weakness\"",
+        "documents": 3
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-85706: GitLab Community Edition and Enterprise Edition Path Traversal Vulnerability actively exploited",
+      "summary": "GitLab Community Edition and Enterprise Edition vulnerability added to CISA KEV on 2026-09-11. GitLab Community Edition and Enterprise Edition contains a path traversal vulnerability that allows an unauthenticated user to read arbitrary files due to an improper path confinement and missing authentication enforcement in the repository commits API.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-85706",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85706",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-09-11",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-09-11",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-85706",
+        "vendorProject": "GitLab",
+        "product": "Community Edition and Enterprise Edition",
+        "dateAdded": "2026-09-11",
+        "dueDate": "2026-09-14",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-35"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2021-22175: GitLab Server-Side Request Forgery (SSRF) Vulnerability actively exploited",
+      "summary": "GitLab GitLab vulnerability added to CISA KEV on 2026-02-18. GitLab contains a server-side request forgery (SSRF) vulnerability when requests to the internal network for webhooks are enabled.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2021-22175",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-22175",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-02-18",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-02-18",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2021-22175",
+        "vendorProject": "GitLab",
+        "product": "GitLab",
+        "dateAdded": "2026-02-18",
+        "dueDate": "2026-03-11",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-918"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2021-39935: GitLab Community and Enterprise Editions Server-Side Request Forgery (SSRF) Vulnerability actively exploited",
+      "summary": "GitLab Community and Enterprise Editions vulnerability added to CISA KEV on 2026-02-03. GitLab Community and Enterprise Editions contain a server-side request forgery vulnerability which could allow unauthorized external users to perform Server Side Requests via the CI Lint API. ",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2021-39935",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2021-39935",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-02-03",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-02-03",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2021-39935",
+        "vendorProject": "GitLab",
+        "product": "Community and Enterprise Editions",
+        "dateAdded": "2026-02-03",
+        "dueDate": "2026-02-24",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-918"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention ransomware (5 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"ransomware\" in 5 document(s) filed by Gitlab Inc. since 2025-09-22 (forms: 10-K, 10-Q, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Gitlab Inc. 10-Q filed 2026-06-02 (gtlb-20260430.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026039793/gtlb-20260430.htm",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-06-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Gitlab Inc. 10-Q filed 2025-12-03 (gtlb-20251031.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828025054840/gtlb-20251031.htm",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-12-03",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Gitlab Inc. 10-Q filed 2026-09-02 (gtlb-20260731.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026059943/gtlb-20260731.htm",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-09-02",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Gitlab Inc. ARS filed 2026-05-01 (a2026gitlabars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000087/a2026gitlabars.pdf",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-05-01",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Gitlab Inc. 10-K filed 2026-03-17 (gtlb-20260131.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/gtlb-20260131.htm",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-03-17",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"ransomware\" (Gitlab Inc.)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-06-02",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"ransomware\"",
+        "documents": 5
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention a cybersecurity incident (2 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"cybersecurity incident\" in 2 document(s) filed by Gitlab Inc. since 2025-09-22 (forms: 10-K, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Gitlab Inc. ARS filed 2026-05-01 (a2026gitlabars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000165348226000087/a2026gitlabars.pdf",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-05-01",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Gitlab Inc. 10-K filed 2026-03-17 (gtlb-20260131.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1653482/000162828026018731/gtlb-20260131.htm",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-03-17",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"cybersecurity incident\" (Gitlab Inc.)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:00+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-05-01",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"cybersecurity incident\"",
+        "documents": 2
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for Gitlab Inc. (CIK 0001653482)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001653482.json",
+        "retrieved_at": "2026-09-22T14:32:58+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "8 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (Gitlab Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:58+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (Gitlab Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:59+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "3 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (Gitlab Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:59+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (Gitlab Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:59+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (Gitlab Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:00+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "5 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (Gitlab Inc.)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:00+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001653482&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for Gitlab Inc. (CIK 0001653482)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001653482.json",
+        "retrieved_at": "2026-09-22T14:33:00+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2026-01-31",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "ok",
+      "detail": "3 KEV entries since 2025-09-22 (5 all-time) for vendor GitLab",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=gitlab.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": []
+}

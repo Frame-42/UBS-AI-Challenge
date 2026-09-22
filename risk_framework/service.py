@@ -87,7 +87,8 @@ class RiskFramework:
                             else self._observed_categories | set(weights))
         return categories, normalize_weights(weights, categories)
 
-    def _score(self, entity_id: str, categories: list[str], weights: Mapping[str, float]) -> EntityResult:
+    def _score(self, entity_id: str, categories: list[str], weights: Mapping[str, float],
+               *, simulate: bool = True) -> EntityResult:
         if entity_id not in self._scores:
             raise ValidationError(f"Unknown entity_id: {entity_id}")
         summaries = {key: self._summaries[entity_id].get(key) or score_category((), self.config)
@@ -95,7 +96,7 @@ class RiskFramework:
         return EntityResult(
             entity_id=entity_id, entity_name=self._names.get(entity_id, entity_id),
             entity_type=self._types.get(entity_id), categories=summaries,
-            overall=score_overall(entity_id, self._scores[entity_id], summaries, weights, self.config),
+            overall=score_overall(entity_id, self._scores[entity_id], summaries, weights, self.config, simulate=simulate),
         )
 
     def score_entity(self, entity_id: str, weights: Mapping[str, float]) -> EntityResult:
@@ -103,12 +104,12 @@ class RiskFramework:
         categories, _ = self._categories_and_weights(weights)
         return self._score(entity_id, categories, weights)
 
-    def score_all(self, weights: Mapping[str, float]) -> Scoreboard:
+    def score_all(self, weights: Mapping[str, float], *, simulate: bool = True) -> Scoreboard:
         """Recompute overall distributions and rankings using cached category results."""
         categories, normalized = self._categories_and_weights(weights)
         return Scoreboard(
             schema_version="1.0", assessment_count=len(self._assessments),
             input_digest=self.input_digest, config=self.config.to_dict(), weights=dict(weights),
             normalized_weights=normalized,
-            records=rank_entities(self._score(entity, categories, weights) for entity in self._scores),
+            records=rank_entities(self._score(entity, categories, weights, simulate=simulate) for entity in self._scores),
         )

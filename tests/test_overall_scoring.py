@@ -1,7 +1,7 @@
 import unittest
 
 from risk_framework import RiskFramework, normalize_weights, to_json
-from helpers import config, rows
+from tests.helpers import config, rows
 
 
 class OverallTests(unittest.TestCase):

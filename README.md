@@ -2,9 +2,49 @@
 
 Turn repeated AI risk assessments into transparent category scores, disagreement ranges, weighted overall scores, and ranked JSON for a separate scoreboard. Higher values always mean higher risk, on a 0–100 scale.
 
-The framework begins with assessments supplied by another team. It does not research vendors, retrieve evidence, call LLMs, orchestrate agents, or provide a frontend, database, or UBS integration. A risk score is an analytical prioritization signal, not proof that a vendor is unsafe.
+This repository contains the public-source collector (`risk_collector`), the scoring layer (`risk_framework`), and an offline JSON export joining their outputs. The scoring layer does not call LLMs or retrieve evidence. There is no frontend, database, or UBS internal integration. A risk score is an analytical prioritization signal, not proof that a vendor is unsafe.
 
-## Run it
+## Export the collected company data
+
+The checked-in `companies/` directory contains reports for ten companies. Produce one JSON file that a future website can load:
+
+```bash
+python3 -m risk_framework export \
+  --reports companies \
+  --weights examples/collection_weights.json \
+  --config examples/collection_config.json \
+  --output exports/risk-data.json
+```
+
+This command is offline and uses the latest report per company. The output joins ranked category/overall scores to the original sourced findings, source checks, report timestamps, and collection errors. It is written atomically, so a consumer never reads a partially written snapshot. `exports/` is ignored by Git; regenerate the file after input changes.
+
+**The collected scores are heuristic triage summaries, not repeated AI judgments.** The export identifies them with `score_basis: "collector_heuristic"`; disagreement ranges and stability are null, and no Monte Carlo simulations run. A category with no sourced findings remains unscored, including an upstream zero placeholder. A zero score supported by actual informational findings is retained as the collector's triage score. These numbers have not been calibrated as UBS vendor-risk assessments.
+
+The saved reports cover `cybersecurity`, `financial`, and `fraud`. Requested `reputational` and `sanctions` data remain missing. Chain IQ and HireRight have no findings and remain unranked; HireRight's collection error stays visible. These are limitations of the saved collection, not claims that these companies are low risk. Example weights are editable demonstration preferences.
+
+When repeated agent assessments are available, add `--assessments path/to/assessments.json`. Use IDs matching the company directories (`microsoft`, `aws`, `chain-iq`, etc.) and category names matching your configuration. This switches the entire scoreboard to `score_basis: "ai_assessments"`, preserves the original median/eligibility/resampling policy, and keeps collector evidence attached. It never mixes heuristic scores with AI runs. An empty assessment file stays empty; there is no heuristic fallback.
+
+The future website contract is [schemas/website.schema.json](schemas/website.schema.json), explained in [docs/WEBSITE_DATA.md](docs/WEBSITE_DATA.md). The site reads `scoreboard.records` for rankings and joins `evidence[entity_id]` for findings and citations. Check `score_basis` and `distribution_semantics` before displaying uncertainty.
+
+```python
+from risk_framework import WebsiteDataset, load_collection, load_config, load_json
+
+dataset = WebsiteDataset(
+    load_collection("companies"),
+    load_config("examples/collection_config.json"),
+)
+weights = load_json("examples/collection_weights.json")
+payload = dataset.score(weights)
+reweighted = dataset.score({**weights, "financial": 50})
+```
+
+Keep `dataset` for weight changes; recreate it after reports or agent assessments change. Neither reweighting nor exporting makes network or LLM calls. Collection operation, source descriptions, and caveats are documented in [docs/DATA_COLLECTION.md](docs/DATA_COLLECTION.md). To list available collectors without collecting anything:
+
+```bash
+python3 -m risk_collector --list-collectors
+```
+
+## Run the repeated-assessment example
 
 Use Python 3.11 or newer from the repository root. There are **no runtime or test dependencies**, API keys, or network calls.
 
@@ -47,6 +87,8 @@ JSON / JSONL assessments + optional entity roster
 
 | Location | Responsibility |
 | --- | --- |
+| `risk_collector/`, `companies/` | Public-source collection and saved company reports |
+| `risk_framework/collection.py`, `export.py` | Report validation, latest-snapshot selection, website export |
 | `risk_framework/models.py` | Assessment and result dataclasses |
 | `risk_framework/config.py`, `defaults.json` | Validated scoring policy and defaults |
 | `risk_framework/scoring.py` | Category statistics, weights, resampling, ranking |
