@@ -1,3 +1,15 @@
 __pycache__/
 *.py[cod]
 .DS_Store
+.venv/
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+.env
+scoreboard.json
+.cache/
+reports/
+exports/
+.idea/

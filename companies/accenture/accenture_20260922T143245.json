@@ -1,0 +1,424 @@
+{
+  "company": {
+    "name": "Accenture",
+    "aliases": [
+      "Accenture plc"
+    ],
+    "ticker": "ACN",
+    "domain": "accenture.com",
+    "country": "IE",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:32:45+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 1,
+      "max_severity": "info",
+      "score": 0,
+      "by_severity": {
+        "info": 1,
+        "low": 0,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 2,
+      "max_severity": "low",
+      "score": 2,
+      "by_severity": {
+        "info": 0,
+        "low": 2,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "financial",
+      "title": "Financial snapshot FY ending 2025-08-31",
+      "summary": "assets: 65,395m USD; liabilities: 34,199m USD; equity: 31,195m USD; current assets: 28,901m USD; current liabilities: 20,352m USD; net income: 7,678m USD; revenue: 69,673m USD; operating cash flow: 11,474m USD",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Accenture plc annual report for fiscal year ending 2025-08-31 (accession 0001467373-25-000217)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/",
+          "retrieved_at": "2026-09-22T14:32:45+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for Accenture plc (CIK 0001467373)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001467373.json",
+          "retrieved_at": "2026-09-22T14:32:45+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2025-08-31",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "period_end": "2025-08-31",
+        "unit": "USD",
+        "assets": 65394897000.0,
+        "liabilities": 34199451000.0,
+        "equity": 31195446000.0,
+        "current_assets": 28900689000.0,
+        "current_liabilities": 20352097000.0,
+        "net_income": 7678433000.0,
+        "revenue": 69672977000.0,
+        "operating_cash_flow": 11474399000.0,
+        "prior_period_end": "2024-08-31",
+        "prior": {
+          "net_income": 7264787000.0,
+          "revenue": 64896464000.0
+        }
+      }
+    },
+    {
+      "category": "fraud",
+      "title": "Filings mention a material weakness in internal control (3 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"material weakness\" in 3 document(s) filed by Accenture plc since 2025-09-22 (forms: 10-K, 8-K, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Accenture plc 8-K filed 2026-07-10 (d181172dex11.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000119312526300813/d181172dex11.htm",
+          "retrieved_at": "2026-09-22T14:32:39+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-07-10",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Accenture plc 10-K filed 2025-10-10 (acn-20250831.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm",
+          "retrieved_at": "2026-09-22T14:32:39+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-10-10",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Accenture plc ARS filed 2025-12-12 (acn014223-ars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000130817925000653/acn014223-ars.pdf",
+          "retrieved_at": "2026-09-22T14:32:39+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-12-12",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"material weakness\" (Accenture plc)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:32:39+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-07-10",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"material weakness\"",
+        "documents": 3
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention ransomware (2 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"ransomware\" in 2 document(s) filed by Accenture plc since 2025-09-22 (forms: 10-K, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Accenture plc 10-K filed 2025-10-10 (acn-20250831.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm",
+          "retrieved_at": "2026-09-22T14:32:44+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-10-10",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Accenture plc ARS filed 2025-12-12 (acn014223-ars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000130817925000653/acn014223-ars.pdf",
+          "retrieved_at": "2026-09-22T14:32:44+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-12-12",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"ransomware\" (Accenture plc)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:32:44+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2025-10-10",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"ransomware\"",
+        "documents": 2
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention a cybersecurity incident (2 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"cybersecurity incident\" in 2 document(s) filed by Accenture plc since 2025-09-22 (forms: 10-K, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Accenture plc 10-K filed 2025-10-10 (acn-20250831.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737325000217/acn-20250831.htm",
+          "retrieved_at": "2026-09-22T14:32:44+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-10-10",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "Accenture plc ARS filed 2025-12-12 (acn014223-ars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000130817925000653/acn014223-ars.pdf",
+          "retrieved_at": "2026-09-22T14:32:44+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-12-12",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"cybersecurity incident\" (Accenture plc)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:32:44+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2025-10-10",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"cybersecurity incident\"",
+        "documents": 2
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for Accenture plc (CIK 0001467373)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001467373.json",
+        "retrieved_at": "2026-09-22T14:32:34+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:36+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:39+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "3 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:41+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:43+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:44+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:44+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for Accenture plc (CIK 0001467373)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001467373.json",
+        "retrieved_at": "2026-09-22T14:32:45+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2025-08-31",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "no_match",
+      "detail": "0 KEV entries since 2025-09-22 (0 all-time) for vendor Accenture",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=accenture.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": []
+}

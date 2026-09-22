@@ -8,37 +8,33 @@
   <title>Vendor risk intelligence</title>
   <link rel="icon" href="data:,">
   <link rel="stylesheet" href="styles.css">
-  <script src="sources.js" defer></script>
   <script src="app.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to dashboard</a>
   <div class="app-shell">
     <main id="main" tabindex="-1">
-      <div class="page-heading"><div><span class="page-kicker">THIRD-PARTY RISK · DEMO DATA</span><h1 id="page-title">Vendor risk dashboard</h1><p id="page-description">Cyber, reputation, and fraud · Scores 0–100, higher means greater risk</p></div><div class="heading-actions"><button class="live-button" id="live-toggle" aria-pressed="true"><span class="live-dot"></span><span id="live-text">Live demo</span></button><button class="button button-primary" id="export-button"><span data-icon="download"></span>Export report</button></div></div>
+      <div class="page-heading"><div><span class="page-kicker">THIRD-PARTY RISK</span><h1 id="page-title">Vendor risk dashboard</h1><p id="page-description">Collected source assessments · Scores 0–100, higher means greater risk</p></div><div class="heading-actions"><button class="live-button" id="live-toggle" aria-pressed="true"><span class="live-dot"></span><span id="live-text">Auto-refresh</span></button><button class="button button-primary" id="export-button" disabled><span data-icon="download"></span>Export report</button></div></div>
+      <div id="data-status" class="data-status" role="status" hidden></div>
       <div id="overview-content">
         <section class="metrics" aria-label="Portfolio metrics" id="metrics"></section>
       </div>
       <div class="content-grid" id="portfolio-content">
         <section class="panel portfolio-panel" aria-labelledby="portfolio-title">
-          <div class="panel-heading"><div><h2 id="portfolio-title">Vendors <span class="number-pill" id="vendor-total">12</span></h2><p>Select a subscore to inspect its source.</p></div><button class="text-button reset-filters" id="reset-filters">Clear filters</button></div>
-          <div class="table-controls"><label class="search-field"><span data-icon="search"></span><input id="vendor-search" type="search" placeholder="Search vendors…" aria-label="Search vendors"><kbd>/</kbd></label><label class="select-wrap"><select id="category-filter" aria-label="Filter by category"><option value="all">All categories</option><option>Cloud infrastructure</option><option>Enterprise software</option><option>Semiconductors</option><option>Payments</option><option>Market data</option><option>IT services</option></select><span data-icon="chevron-down"></span></label><label class="select-wrap region-filter"><select id="region-filter" aria-label="Filter by region"><option value="all">All regions</option><option>Americas</option><option>Europe</option><option>Asia Pacific</option></select><span data-icon="chevron-down"></span></label><button class="weights-button" id="weights-button" aria-haspopup="dialog" aria-expanded="false" aria-controls="weights-popover"><span data-icon="sliders"></span>Weights<span id="weights-custom" hidden>· Custom</span><span class="weights-chevron" data-icon="chevron-down"></span></button></div>
-          <div class="risk-filter-row"><div class="risk-tabs" role="group" aria-label="Filter by risk level"><button data-risk="all" class="active">All vendors <span>12</span></button><button data-risk="high"><i class="dot high"></i>High risk <span>3</span></button><button data-risk="moderate"><i class="dot moderate"></i>Moderate <span>4</span></button><button data-risk="low"><i class="dot low"></i>Low risk <span>5</span></button></div></div>
-          <div class="table-scroll" tabindex="0" role="region" aria-label="Vendor risk scores. Scroll horizontally on smaller screens."><table><thead><tr><th scope="col" class="vendor-column">Vendor</th><th scope="col"><button data-sort="weighted">Weighted score<span data-icon="sort"></span></button></th><th scope="col"><button data-sort="cyber">Cyber<span data-icon="sort"></span></button></th><th scope="col"><button data-sort="reputation">Reputation<span data-icon="sort"></span></button></th><th scope="col"><button data-sort="fraud">Fraud<span data-icon="sort"></span></button></th><th scope="col">Status</th></tr></thead><tbody id="vendor-rows"></tbody></table></div>
+          <div class="panel-heading"><div><h2 id="portfolio-title">Vendors <span class="number-pill" id="vendor-total">0</span></h2><p>Select a subscore to inspect its source.</p></div><button class="text-button reset-filters" id="reset-filters">Clear filters</button></div>
+          <div class="table-controls"><label class="search-field"><span data-icon="search"></span><input id="vendor-search" type="search" placeholder="Search vendors…" aria-label="Search vendors"><kbd>/</kbd></label><label class="select-wrap"><select id="category-filter" aria-label="Filter by score coverage"><option value="all">All coverage</option><option value="scored">Scored</option><option value="unscored">Unscored</option></select><span data-icon="chevron-down"></span></label><label class="select-wrap region-filter"><select id="region-filter" aria-label="Filter by country"><option value="all">All countries</option></select><span data-icon="chevron-down"></span></label><button class="weights-button" id="weights-button" disabled aria-haspopup="dialog" aria-expanded="false" aria-controls="weights-popover"><span data-icon="sliders"></span>Weights<span id="weights-custom" hidden>· Custom</span><span class="weights-chevron" data-icon="chevron-down"></span></button></div>
+          <div class="risk-filter-row"><div class="risk-tabs" role="group" aria-label="Filter by risk level" id="risk-tabs"></div></div>
+          <div class="table-scroll" tabindex="0" role="region" aria-label="Vendor risk scores. Scroll horizontally on smaller screens."><table><thead id="table-head"></thead><tbody id="vendor-rows"></tbody></table></div>
           <div class="table-footer"><span id="table-count"></span><div class="pagination"><button id="prev-page" class="icon-button" aria-label="Previous page" data-icon="chevron-left"></button><span id="page-label"></span><button id="next-page" class="icon-button" aria-label="Next page" data-icon="chevron-right"></button></div></div>
         </section>
       </div>
-      <footer class="page-footer"><span>All assessments and sources are fictional.</span><span>Simulated updates every 12s<span class="footer-dot">·</span><span id="last-updated">Updated just now</span><span class="footer-dot">·</span>UTC</span></footer>
+      <footer class="page-footer"><span>Collector triage · Coverage reflects available scores</span><span id="last-updated">Loading collection…</span></footer>
     </main>
   </div>
   <dialog id="weights-popover" class="weights-popover" aria-labelledby="weighting-title" aria-describedby="weights-description">
     <div class="weights-header"><h2 id="weighting-title">Risk weights</h2><div><button class="text-button" id="reset-weights">Reset</button><button class="icon-button" id="close-weights" aria-label="Close risk weights" data-icon="x"></button></div></div>
-    <p id="weights-description">Changing one weight rebalances the other two.</p>
-    <div class="weight-controls">
-      <div class="weight-control"><div class="weight-label-row"><label for="weight-cyber">Cyber</label><span class="weight-number-wrap"><input type="number" id="weight-cyber-number" data-weight-number="cyber" min="0" max="100" step="0.1" value="33.4" inputmode="decimal" aria-label="Cyber weight, percent"><span>%</span></span></div><input type="range" id="weight-cyber" data-weight="cyber" min="0" max="100" step="0.1" value="33.4"></div>
-      <div class="weight-control"><div class="weight-label-row"><label for="weight-reputation">Reputation</label><span class="weight-number-wrap"><input type="number" id="weight-reputation-number" data-weight-number="reputation" min="0" max="100" step="0.1" value="33.3" inputmode="decimal" aria-label="Reputation weight, percent"><span>%</span></span></div><input type="range" id="weight-reputation" data-weight="reputation" min="0" max="100" step="0.1" value="33.3"></div>
-      <div class="weight-control"><div class="weight-label-row"><label for="weight-fraud">Fraud</label><span class="weight-number-wrap"><input type="number" id="weight-fraud-number" data-weight-number="fraud" min="0" max="100" step="0.1" value="33.3" inputmode="decimal" aria-label="Fraud weight, percent"><span>%</span></span></div><input type="range" id="weight-fraud" data-weight="fraud" min="0" max="100" step="0.1" value="33.3"></div>
-    </div>
+    <p id="weights-description">Changing one weight rebalances the others. Missing scores reduce coverage.</p>
+    <div class="weight-controls" id="weight-controls"></div>
     <div class="weights-footer"><span>Updates immediately</span><span>Total <strong>100%</strong></span></div>
     <p class="sr-only" id="weight-formula"></p>
   </dialog>

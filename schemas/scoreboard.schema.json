@@ -1,0 +1,722 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Third-party risk scoreboard v1.1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": "1.1"
+    },
+    "assessment_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "input_digest": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "config": {
+      "type": "object",
+      "properties": {
+        "categories": {
+          "anyOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+              },
+              "minItems": 1,
+              "uniqueItems": true
+            }
+          ]
+        },
+        "risk_scale": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "max": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            }
+          },
+          "required": [
+            "min",
+            "max"
+          ],
+          "additionalProperties": false
+        },
+        "category_aggregation": {
+          "type": "object",
+          "properties": {
+            "method": {
+              "enum": [
+                "median",
+                "mean",
+                "percentile",
+                "risk_adjusted"
+              ]
+            },
+            "percentile": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100
+            },
+            "alpha": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "method",
+            "percentile",
+            "alpha"
+          ],
+          "additionalProperties": false
+        },
+        "overall_simulation": {
+          "type": "object",
+          "properties": {
+            "runs": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "headline_method": {
+              "enum": [
+                "monte_carlo_median",
+                "monte_carlo_mean",
+                "weighted_categories"
+              ]
+            }
+          },
+          "required": [
+            "runs",
+            "seed",
+            "headline_method"
+          ],
+          "additionalProperties": false
+        },
+        "stability": {
+          "type": "object",
+          "properties": {
+            "high_max_p10_p90_spread": {
+              "type": "number",
+              "minimum": 0
+            },
+            "medium_max_p10_p90_spread": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "high_max_p10_p90_spread",
+            "medium_max_p10_p90_spread"
+          ],
+          "additionalProperties": false
+        },
+        "risk_levels": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+              },
+              "upper": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 100
+              }
+            },
+            "required": [
+              "label",
+              "upper"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "minimum_runs": {
+          "type": "object",
+          "properties": {
+            "preferred": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "minimum_required": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "preferred",
+            "minimum_required"
+          ],
+          "additionalProperties": false
+        },
+        "missing_categories": {
+          "enum": [
+            "renormalize",
+            "withhold"
+          ]
+        },
+        "assessment_simulation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "runs": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "spread_std_min": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "spread_std_max": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "excluded_categories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "runs",
+            "seed",
+            "spread_std_min",
+            "spread_std_max",
+            "excluded_categories"
+          ]
+        }
+      },
+      "required": [
+        "categories",
+        "risk_scale",
+        "category_aggregation",
+        "overall_simulation",
+        "stability",
+        "risk_levels",
+        "minimum_runs",
+        "missing_categories",
+        "assessment_simulation"
+      ],
+      "additionalProperties": false
+    },
+    "weights": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      }
+    },
+    "normalized_weights": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entity"
+      }
+    },
+    "contains_synthetic_assessments": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "schema_version",
+    "assessment_count",
+    "input_digest",
+    "config",
+    "weights",
+    "normalized_weights",
+    "records",
+    "contains_synthetic_assessments"
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "category": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mean": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "median": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "std": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "minimum": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "maximum": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p10": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p25": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p75": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p90": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "iqr": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "mad": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "spread": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "risk_level": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stability": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW",
+            null
+          ]
+        },
+        "status": {
+          "enum": [
+            "available",
+            "missing",
+            "insufficient_runs"
+          ]
+        },
+        "sufficient": {
+          "type": "boolean"
+        },
+        "below_preferred_runs": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "n",
+        "mean",
+        "median",
+        "std",
+        "minimum",
+        "maximum",
+        "p10",
+        "p25",
+        "p75",
+        "p90",
+        "iqr",
+        "mad",
+        "spread",
+        "score",
+        "risk_level",
+        "stability",
+        "status",
+        "sufficient",
+        "below_preferred_runs"
+      ],
+      "additionalProperties": false
+    },
+    "overall": {
+      "type": "object",
+      "properties": {
+        "n": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mean": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "median": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "std": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "minimum": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "maximum": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p10": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p25": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p75": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "p90": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "iqr": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "mad": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "spread": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "risk_level": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "stability": {
+          "enum": [
+            "HIGH",
+            "MEDIUM",
+            "LOW",
+            null
+          ]
+        },
+        "coverage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "incomplete": {
+          "type": "boolean"
+        },
+        "status": {
+          "enum": [
+            "available",
+            "incomplete_withheld",
+            "unscorable"
+          ]
+        },
+        "effective_weights": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "contributions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "missing_categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "uniqueItems": true
+        },
+        "insufficient_categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "uniqueItems": true
+        },
+        "below_preferred_categories": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+          },
+          "uniqueItems": true
+        },
+        "weighted_category_score": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score_method": {
+          "enum": [
+            "monte_carlo_median",
+            "monte_carlo_mean",
+            "weighted_categories"
+          ]
+        }
+      },
+      "required": [
+        "n",
+        "mean",
+        "median",
+        "std",
+        "minimum",
+        "maximum",
+        "p10",
+        "p25",
+        "p75",
+        "p90",
+        "iqr",
+        "mad",
+        "spread",
+        "score",
+        "risk_level",
+        "stability",
+        "coverage",
+        "incomplete",
+        "status",
+        "effective_weights",
+        "contributions",
+        "missing_categories",
+        "insufficient_categories",
+        "below_preferred_categories",
+        "score_method",
+        "weighted_category_score"
+      ],
+      "additionalProperties": false
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "entity_id": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        "entity_name": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        "entity_type": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "overall": {
+          "$ref": "#/$defs/overall"
+        },
+        "categories": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/category"
+          }
+        },
+        "rank": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        }
+      },
+      "required": [
+        "entity_id",
+        "entity_name",
+        "entity_type",
+        "overall",
+        "categories",
+        "rank"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

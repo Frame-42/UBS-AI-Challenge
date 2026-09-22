@@ -1,0 +1,1534 @@
+{
+  "company": {
+    "name": "Microsoft",
+    "aliases": [
+      "Microsoft Corporation",
+      "Microsoft Corp"
+    ],
+    "ticker": "MSFT",
+    "domain": "microsoft.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:33:13+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 1,
+      "max_severity": "info",
+      "score": 0,
+      "by_severity": {
+        "info": 1,
+        "low": 0,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 1,
+      "max_severity": "low",
+      "score": 1,
+      "by_severity": {
+        "info": 0,
+        "low": 1,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 27,
+      "max_severity": "high",
+      "score": 100,
+      "by_severity": {
+        "info": 0,
+        "low": 2,
+        "medium": 21,
+        "high": 4,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "financial",
+      "title": "Financial snapshot FY ending 2026-06-30",
+      "summary": "assets: 758,376m USD; liabilities: 315,989m USD; equity: 442,387m USD; current assets: 207,710m USD; current liabilities: 168,825m USD; net income: 133,749m USD; revenue: n/a; operating cash flow: 182,935m USD",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP annual report for fiscal year ending 2026-06-30 (accession 0001193125-26-323660)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/",
+          "retrieved_at": "2026-09-22T14:33:13+00:00",
+          "accessed_via": "SEC XBRL API",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "SEC XBRL company facts for MICROSOFT CORP (CIK 0000789019)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+          "retrieved_at": "2026-09-22T14:33:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.9,
+      "observed_at": "2026-06-30",
+      "tags": [
+        "financials",
+        "xbrl"
+      ],
+      "data": {
+        "period_end": "2026-06-30",
+        "unit": "USD",
+        "assets": 758376000000.0,
+        "liabilities": 315989000000.0,
+        "equity": 442387000000.0,
+        "current_assets": 207710000000.0,
+        "current_liabilities": 168825000000.0,
+        "net_income": 133749000000.0,
+        "revenue": null,
+        "operating_cash_flow": 182935000000.0,
+        "prior_period_end": "2025-06-30",
+        "prior": {
+          "net_income": 101832000000.0,
+          "revenue": null
+        }
+      }
+    },
+    {
+      "category": "fraud",
+      "title": "Filings mention a material weakness in internal control (2 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"material weakness\" in 2 document(s) filed by MICROSOFT CORP since 2025-09-22 (forms: 10-K, ARS). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP ARS filed 2025-10-21 (d61995dars.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245177/d61995dars.pdf",
+          "retrieved_at": "2026-09-22T14:33:10+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-10-21",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "MICROSOFT CORP 10-K filed 2026-07-29 (msft-20260630.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "retrieved_at": "2026-09-22T14:33:10+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-07-29",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"material weakness\" (MICROSOFT CORP)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:10+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2025-10-21",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"material weakness\"",
+        "documents": 2
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-45659: Microsoft SharePoint Server Deserialization of Untrusted Data Vulnerability actively exploited",
+      "summary": "Microsoft SharePoint Server vulnerability added to CISA KEV on 2026-07-01. Microsoft SharePoint Server contains a deserialization of untrusted data vulnerability which allows an authorized attacker to execute code over a network. Known use in ransomware campaigns.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-45659",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45659",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-07-01",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-07-01",
+      "tags": [
+        "vulnerability",
+        "product-security",
+        "ransomware"
+      ],
+      "data": {
+        "cveID": "CVE-2026-45659",
+        "vendorProject": "Microsoft",
+        "product": "SharePoint Server",
+        "dateAdded": "2026-07-01",
+        "dueDate": "2026-07-04",
+        "knownRansomwareCampaignUse": "Known",
+        "cwes": [
+          "CWE-502"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-33825: Microsoft Defender Insufficient Granularity of Access Control Vulnerability actively exploited",
+      "summary": "Microsoft Defender vulnerability added to CISA KEV on 2026-04-22. Microsoft Defender contains an insufficient granularity of access control vulnerability that could allow an authorized attacker to escalate privileges locally. Known use in ransomware campaigns.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-33825",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33825",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-22",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-22",
+      "tags": [
+        "vulnerability",
+        "product-security",
+        "ransomware"
+      ],
+      "data": {
+        "cveID": "CVE-2026-33825",
+        "vendorProject": "Microsoft",
+        "product": "Defender",
+        "dateAdded": "2026-04-22",
+        "dueDate": "2026-05-06",
+        "knownRansomwareCampaignUse": "Known",
+        "cwes": [
+          "CWE-1220"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2025-60710: Microsoft Windows Link Following Vulnerability actively exploited",
+      "summary": "Microsoft Windows vulnerability added to CISA KEV on 2026-04-13. Microsoft Windows contains a link following vulnerability that allows for privilege escalation Known use in ransomware campaigns.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2025-60710",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2025-60710",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-13",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-13",
+      "tags": [
+        "vulnerability",
+        "product-security",
+        "ransomware"
+      ],
+      "data": {
+        "cveID": "CVE-2025-60710",
+        "vendorProject": "Microsoft",
+        "product": "Windows",
+        "dateAdded": "2026-04-13",
+        "dueDate": "2026-04-27",
+        "knownRansomwareCampaignUse": "Known",
+        "cwes": [
+          "CWE-59"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2023-21529: Microsoft Exchange Server Deserialization of Untrusted Data Vulnerability actively exploited",
+      "summary": "Microsoft Exchange Server vulnerability added to CISA KEV on 2026-04-13. Microsoft Exchange Server contains a deserialization of untrusted data that allows an authenticated attacker to achieve remote code execution. Known use in ransomware campaigns.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2023-21529",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2023-21529",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-13",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-13",
+      "tags": [
+        "vulnerability",
+        "product-security",
+        "ransomware"
+      ],
+      "data": {
+        "cveID": "CVE-2023-21529",
+        "vendorProject": "Microsoft",
+        "product": "Exchange Server",
+        "dateAdded": "2026-04-13",
+        "dueDate": "2026-04-27",
+        "knownRansomwareCampaignUse": "Known",
+        "cwes": [
+          "CWE-502"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-81963: Microsoft Windows Link Following Vulnerability actively exploited",
+      "summary": "Microsoft Windows vulnerability added to CISA KEV on 2026-09-08. Microsoft Windows Update Stack contains a link following vulnerability that allows a local attacker to escalate privileges locally up to SYSTEM.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-81963",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-81963",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-09-08",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-09-08",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-81963",
+        "vendorProject": "Microsoft",
+        "product": "Windows",
+        "dateAdded": "2026-09-08",
+        "dueDate": "2026-09-22",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-59",
+          "CWE-284"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-85880: Microsoft Windows Heap-Based Buffer Overflow Vulnerability actively exploited",
+      "summary": "Microsoft Windows vulnerability added to CISA KEV on 2026-09-08. Microsoft Windows Advanced Local Procedure Call contains a heap-based buffer overflow vulnerability that allows an attacker to elevate privileges locally.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-85880",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-85880",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-09-08",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-09-08",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-85880",
+        "vendorProject": "Microsoft",
+        "product": "Windows",
+        "dateAdded": "2026-09-08",
+        "dueDate": "2026-09-22",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-122",
+          "CWE-908"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2019-1068: Microsoft SQL Server Remote Code Execution Vulnerability actively exploited",
+      "summary": "Microsoft SQL Server vulnerability added to CISA KEV on 2026-08-26. Microsoft SQL Server contains a remote code execution vulnerability that could allow an attacker to execute code in the context of the SQL Server Database Engine service account.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2019-1068",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2019-1068",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-08-26",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-08-26",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2019-1068",
+        "vendorProject": "Microsoft",
+        "product": "SQL Server",
+        "dateAdded": "2026-08-26",
+        "dueDate": "2026-08-29",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": []
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-33824: Microsoft Internet Key Exchange (IKE) Service Extensions Double Free Vulnerability actively exploited",
+      "summary": "Microsoft Internet Key Exchange (IKE) Service Extensions vulnerability added to CISA KEV on 2026-08-18. Microsoft Internet Key Exchange (IKE) Service Extensions contains a double free vulnerability that could enable remote code execution.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-33824",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-33824",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-08-18",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-08-18",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-33824",
+        "vendorProject": "Microsoft",
+        "product": "Internet Key Exchange (IKE) Service Extensions",
+        "dateAdded": "2026-08-18",
+        "dueDate": "2026-08-21",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-415"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-55040: Microsoft SharePoint Weak Authentication Vulnerability actively exploited",
+      "summary": "Microsoft SharePoint vulnerability added to CISA KEV on 2026-08-18. Microsoft SharePoint contains a weak authentication vulnerability which allows an unauthorized attacker to bypass a security feature over a network.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-55040",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-55040",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-08-18",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-08-18",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-55040",
+        "vendorProject": "Microsoft",
+        "product": "SharePoint",
+        "dateAdded": "2026-08-18",
+        "dueDate": "2026-08-21",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-1390"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-68820: Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability actively exploited",
+      "summary": "Microsoft Windows Ancillary Function Driver for WinSock  vulnerability added to CISA KEV on 2026-08-11. Microsoft Windows Ancillary Function Driver for WinSock contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-68820",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-68820",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-08-11",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-08-11",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-68820",
+        "vendorProject": "Microsoft",
+        "product": "Windows Ancillary Function Driver for WinSock ",
+        "dateAdded": "2026-08-11",
+        "dueDate": "2026-08-25",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-416"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-50522: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability  actively exploited",
+      "summary": "Microsoft SharePoint vulnerability added to CISA KEV on 2026-07-22. Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-50522",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-50522",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-07-22",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-07-22",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-50522",
+        "vendorProject": "Microsoft",
+        "product": "SharePoint",
+        "dateAdded": "2026-07-22",
+        "dueDate": "2026-07-25",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-502"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-58644: Microsoft SharePoint Deserialization of Untrusted Data Vulnerability actively exploited",
+      "summary": "Microsoft SharePoint vulnerability added to CISA KEV on 2026-07-16. Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-58644",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-58644",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-07-16",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-07-16",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-58644",
+        "vendorProject": "Microsoft",
+        "product": "SharePoint",
+        "dateAdded": "2026-07-16",
+        "dueDate": "2026-07-19",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-502"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-56155: Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability  actively exploited",
+      "summary": "Microsoft Active Directory Federation Services vulnerability added to CISA KEV on 2026-07-14. Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-56155",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56155",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-07-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-07-14",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-56155",
+        "vendorProject": "Microsoft",
+        "product": "Active Directory Federation Services",
+        "dateAdded": "2026-07-14",
+        "dueDate": "2026-07-28",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-1220"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-56164: Microsoft SharePoint Server Missing Authentication for Critical Function Vulnerability actively exploited",
+      "summary": "Microsoft SharePoint Server vulnerability added to CISA KEV on 2026-07-14. Microsoft SharePoint contains a missing authentication for critical function vulnerability that allows an unauthorized attacker to elevate privileges over a network.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-56164",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-56164",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-07-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-07-14",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-56164",
+        "vendorProject": "Microsoft",
+        "product": "SharePoint Server",
+        "dateAdded": "2026-07-14",
+        "dueDate": "2026-07-17",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-306"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2008-4250: Microsoft Windows Buffer Overflow Vulnerability actively exploited",
+      "summary": "Microsoft Windows vulnerability added to CISA KEV on 2026-05-20. Microsoft Windows contains a buffer overflow vulnerability in the Windows Server Service that allows remote attackers to execute arbitrary code via a crafted RPC request that triggers an overflow during path canonicalization.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2008-4250",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2008-4250",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2008-4250",
+        "vendorProject": "Microsoft",
+        "product": "Windows",
+        "dateAdded": "2026-05-20",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-94"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2009-1537: Microsoft DirectX NULL Byte Overwrite Vulnerability actively exploited",
+      "summary": "Microsoft DirectX vulnerability added to CISA KEV on 2026-05-20. Microsoft DirectX contains a NULL byte overwrite vulnerability in the QuickTime Movie Parser Filter in quartz.dll in DirectShow which could allow remote attackers to execute arbitrary code via a crafted QuickTime media file.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2009-1537",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-1537",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2009-1537",
+        "vendorProject": "Microsoft",
+        "product": "DirectX",
+        "dateAdded": "2026-05-20",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": []
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2010-0249: Microsoft Internet Explorer Use-After-Free Vulnerability actively exploited",
+      "summary": "Microsoft Internet Explorer vulnerability added to CISA KEV on 2026-05-20. Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code by accessing a pointer associated with a deleted object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2010-0249",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0249",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2010-0249",
+        "vendorProject": "Microsoft",
+        "product": "Internet Explorer",
+        "dateAdded": "2026-05-20",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-416"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2010-0806: Microsoft Internet Explorer Use-After-Free Vulnerability actively exploited",
+      "summary": "Microsoft Internet Explorer vulnerability added to CISA KEV on 2026-05-20. Microsoft Internet Explorer contains an use-after-free vulnerability that could allow remote attackers to execute arbitrary code via vectors involving access to an invalid pointer after the deletion of an object. The impacted product could be end-of-life (EoL) and/or end-of-service (EoS). Users should discontinue product utilization.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2010-0806",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2010-0806",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2010-0806",
+        "vendorProject": "Microsoft",
+        "product": "Internet Explorer",
+        "dateAdded": "2026-05-20",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-399"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-41091: Microsoft Defender Link Following Vulnerability actively exploited",
+      "summary": "Microsoft Defender vulnerability added to CISA KEV on 2026-05-20. Microsoft Defender contains a link following vulnerability that allows an authorized attacker to elevate privileges locally.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-41091",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-41091",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-41091",
+        "vendorProject": "Microsoft",
+        "product": "Defender",
+        "dateAdded": "2026-05-20",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-59"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-45498: Microsoft Defender Denial of Service Vulnerability actively exploited",
+      "summary": "Microsoft Defender vulnerability added to CISA KEV on 2026-05-20. Microsoft Defender contains an unspecified vulnerability that allows for denial of service.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-45498",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-45498",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-20",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-20",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-45498",
+        "vendorProject": "Microsoft",
+        "product": "Defender",
+        "dateAdded": "2026-05-20",
+        "dueDate": "2026-06-03",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": []
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-42897: Microsoft Exchange Server Cross-Site Scripting Vulnerability actively exploited",
+      "summary": "Microsoft Microsoft vulnerability added to CISA KEV on 2026-05-15. Microsoft Exchange Server contains a cross-site scripting vulnerability during web page generation in Outlook Web Access and when certain interaction conditions are met, arbitrary JavaScript can be executed in the browser context.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-42897",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-42897",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-05-15",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-05-15",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-42897",
+        "vendorProject": "Microsoft",
+        "product": "Microsoft",
+        "dateAdded": "2026-05-15",
+        "dueDate": "2026-05-29",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-79"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-32202: Microsoft Windows Protection Mechanism Failure Vulnerability actively exploited",
+      "summary": "Microsoft Windows vulnerability added to CISA KEV on 2026-04-28. Microsoft Windows Shell contains a protection mechanism failure vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-32202",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32202",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-28",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-28",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-32202",
+        "vendorProject": "Microsoft",
+        "product": "Windows",
+        "dateAdded": "2026-04-28",
+        "dueDate": "2026-05-12",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-693"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2009-0238: Microsoft Office Remote Code Execution actively exploited",
+      "summary": "Microsoft Office vulnerability added to CISA KEV on 2026-04-14. Microsoft Office Excel contains a remote code execution vulnerability that could allow an attacker to take complete control of an affected system if a user opens a specially crafted Excel file that includes a malformed object.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2009-0238",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2009-0238",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-14",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2009-0238",
+        "vendorProject": "Microsoft",
+        "product": "Office",
+        "dateAdded": "2026-04-14",
+        "dueDate": "2026-04-28",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-94"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2026-32201: Microsoft SharePoint Server Improper Input Validation Vulnerability actively exploited",
+      "summary": "Microsoft SharePoint Server vulnerability added to CISA KEV on 2026-04-14. Microsoft SharePoint Server contains an improper input validation vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2026-32201",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-32201",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-14",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2026-32201",
+        "vendorProject": "Microsoft",
+        "product": "SharePoint Server",
+        "dateAdded": "2026-04-14",
+        "dueDate": "2026-04-28",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-20"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "CVE-2012-1854: Microsoft Visual Basic for Applications Insecure Library Loading Vulnerability actively exploited",
+      "summary": "Microsoft Visual Basic for Applications (VBA) vulnerability added to CISA KEV on 2026-04-13. Microsoft Visual Basic for Applications (VBA) contains an insecure library loading vulnerability that could allow for remote code execution.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "NVD entry CVE-2012-1854",
+          "publisher": "NIST National Vulnerability Database",
+          "url": "https://nvd.nist.gov/vuln/detail/CVE-2012-1854",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": "CISA KEV catalog",
+          "published_at": "2026-04-13",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "CISA Known Exploited Vulnerabilities Catalog",
+          "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+          "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+          "retrieved_at": "2026-09-22T14:17:13+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "cisa_kev",
+      "confidence": 0.9,
+      "observed_at": "2026-04-13",
+      "tags": [
+        "vulnerability",
+        "product-security"
+      ],
+      "data": {
+        "cveID": "CVE-2012-1854",
+        "vendorProject": "Microsoft",
+        "product": "Visual Basic for Applications (VBA)",
+        "dateAdded": "2026-04-13",
+        "dueDate": "2026-04-27",
+        "knownRansomwareCampaignUse": "Unknown",
+        "cwes": [
+          "CWE-426"
+        ]
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention a cybersecurity incident (1 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"cybersecurity incident\" in 1 document(s) filed by MICROSOFT CORP since 2025-09-22 (forms: 10-K). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP 10-K filed 2026-07-29 (msft-20260630.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-07-29",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"cybersecurity incident\" (MICROSOFT CORP)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2026-07-29",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"cybersecurity incident\"",
+        "documents": 1
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "title": "Filings mention ransomware (6 document(s) since 2025-09-22)",
+      "summary": "EDGAR full-text search found \"ransomware\" in 6 document(s) filed by MICROSOFT CORP since 2025-09-22 (forms: 10-K, 10-Q, DEF 14A). May be boilerplate risk-factor language - read the cited filings.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "MICROSOFT CORP 10-Q filed 2025-10-29 (msft-20250930.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-10-29",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "MICROSOFT CORP 10-Q filed 2026-01-28 (msft-20251231.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-01-28",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "MICROSOFT CORP 10-Q filed 2026-04-29 (msft-20260331.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-04-29",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "MICROSOFT CORP 10-K filed 2026-07-29 (msft-20260630.htm)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2026-07-29",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "MICROSOFT CORP DEF 14A filed 2025-10-21 (d908201ddef14a1.pdf)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525245150/d908201ddef14a1.pdf",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "EDGAR full-text search",
+          "published_at": "2025-10-21",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR full-text search: \"ransomware\" (MICROSOFT CORP)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "retrieved_at": "2026-09-22T14:33:12+00:00",
+          "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.5,
+      "observed_at": "2025-10-29",
+      "tags": [
+        "sec-filing",
+        "full-text"
+      ],
+      "data": {
+        "query": "\"ransomware\"",
+        "documents": 6
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for MICROSOFT CORP (CIK 0000789019)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0000789019.json",
+        "retrieved_at": "2026-09-22T14:33:09+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "4 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:10+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:10+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:11+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:11+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:12+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "6 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (MICROSOFT CORP)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:12+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0000789019&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for MICROSOFT CORP (CIK 0000789019)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json",
+        "retrieved_at": "2026-09-22T14:33:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2026-06-30",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "ok",
+      "detail": "48 KEV entries since 2025-09-22 (388 all-time) for vendor Microsoft",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=microsoft.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": []
+}

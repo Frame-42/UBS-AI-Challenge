@@ -1,0 +1,91 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Raw AI risk assessment",
+  "description": "One record. Canonical JSON input is an array of these; JSONL has one per nonblank line. Batch duplicate-ID, metadata consistency, finite-number, and configured-category constraints are additionally enforced by the service.",
+  "type": "object",
+  "properties": {
+    "entity_id": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+    },
+    "category": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+    },
+    "risk_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "entity_name": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "entity_type": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "run_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        {
+          "type": "integer",
+          "minimum": 0
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "timestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "agent_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "entity_id",
+    "category",
+    "risk_score"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,57 @@
+{
+  "categories": null,
+  "risk_scale": {
+    "min": 0,
+    "max": 100
+  },
+  "category_aggregation": {
+    "method": "median",
+    "percentile": 90,
+    "alpha": 0.25
+  },
+  "overall_simulation": {
+    "runs": 5000,
+    "seed": 42,
+    "headline_method": "monte_carlo_median"
+  },
+  "stability": {
+    "high_max_p10_p90_spread": 15,
+    "medium_max_p10_p90_spread": 30
+  },
+  "risk_levels": [
+    {
+      "label": "LOW",
+      "upper": 20
+    },
+    {
+      "label": "GUARDED",
+      "upper": 40
+    },
+    {
+      "label": "MODERATE",
+      "upper": 60
+    },
+    {
+      "label": "HIGH",
+      "upper": 80
+    },
+    {
+      "label": "CRITICAL",
+      "upper": 100
+    }
+  ],
+  "minimum_runs": {
+    "preferred": 100,
+    "minimum_required": 10
+  },
+  "missing_categories": "renormalize",
+  "assessment_simulation": {
+    "runs": 100,
+    "seed": 20260922,
+    "spread_std_min": 4,
+    "spread_std_max": 12,
+    "excluded_categories": [
+      "financial"
+    ]
+  }
+}

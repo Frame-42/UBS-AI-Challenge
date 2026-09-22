@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ubs-risk-framework"
+version = "0.1.0"
+description = "Transparent aggregation of repeated third-party AI risk assessments"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+risk-framework = "risk_framework.__main__:main"
+
+[tool.setuptools]
+packages = ["risk_framework", "risk_collector", "risk_collector.collectors"]
+
+[tool.setuptools.package-data]
+risk_framework = ["defaults.json"]

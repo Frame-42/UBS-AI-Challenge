@@ -1,0 +1,214 @@
+{
+  "company": {
+    "name": "HireRight",
+    "aliases": [
+      "HireRight Holdings Corporation",
+      "HireRight Holdings Corp"
+    ],
+    "ticker": "HRT",
+    "domain": "hireright.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": []
+  },
+  "generated_at": "2026-09-22T14:33:05+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "cisa_kev",
+      "hibp"
+    ],
+    "categories": [
+      "financial",
+      "fraud",
+      "cybersecurity"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "cisa_kev": 365,
+      "hibp": 1825
+    }
+  },
+  "summary": [
+    {
+      "category": "financial",
+      "signals": 0,
+      "max_severity": "none",
+      "score": 0,
+      "by_severity": {
+        "info": 0,
+        "low": 0,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "fraud",
+      "signals": 0,
+      "max_severity": "none",
+      "score": 0,
+      "by_severity": {
+        "info": 0,
+        "low": 0,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    },
+    {
+      "category": "cybersecurity",
+      "signals": 0,
+      "max_severity": "none",
+      "score": 0,
+      "by_severity": {
+        "info": 0,
+        "low": 0,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for HIRERIGHT INC (CIK 0001168652)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001168652.json",
+        "retrieved_at": "2026-09-22T14:33:02+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "0 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:02+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:03+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"material weakness\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:03+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:04+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:04+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"ransomware\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (HIRERIGHT INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:33:04+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001168652&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"cybersecurity incident\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CISA Known Exploited Vulnerabilities Catalog",
+        "publisher": "U.S. Cybersecurity and Infrastructure Security Agency (CISA)",
+        "url": "https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json",
+        "retrieved_at": "2026-09-22T14:17:13+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "cisa_kev",
+      "status": "no_match",
+      "detail": "0 KEV entries since 2025-09-22 (0 all-time) for vendor HireRight",
+      "records_scanned": 1717
+    },
+    {
+      "source": {
+        "name": "Have I Been Pwned - breached websites catalogue",
+        "publisher": "Have I Been Pwned (Troy Hunt)",
+        "url": "https://haveibeenpwned.com/api/v3/breaches",
+        "retrieved_at": "2026-09-22T14:17:14+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY 4.0 - attribution to haveibeenpwned.com required"
+      },
+      "collector": "hibp",
+      "status": "no_match",
+      "detail": "0 breaches since 2021-09-23 (domain=hireright.com)",
+      "records_scanned": 1038
+    }
+  ],
+  "errors": [
+    "sec_edgar: EDGAR financials failed: HTTP 404 for https://data.sec.gov/api/xbrl/companyfacts/CIK0001168652.json"
+  ]
+}

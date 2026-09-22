@@ -1,38 +1,49 @@
-# Vendor risk intelligence
+# Vendor risk dashboard
 
-A responsive, dependency-free frontend prototype for a global bank. Built with HTML, CSS, and JavaScript on the `website` branch.
+A red-and-white vendor risk dashboard connected to the public-source collection and scoring framework. The `website-integration` branch combines `website` with `integration/data-collection-risk-framework`.
 
 ## Run locally
+
+Requires Python 3.11 or newer. No dependencies or build step are needed.
 
 ```sh
 python3 serve.py
 ```
 
-Open **http://localhost:8000**. No installation or build step is required. You can also open `index.html` directly.
+Open **http://localhost:8000**. Use `--port 8001` if another preview is already running. The dashboard requires this server; opening the HTML directly does not provide its data API.
 
-## Explore
+## Data and scoring
 
-- Search, filter, sort, and paginate vendors directly in the dashboard.
-- Click a vendor to open its assessment, cyber, reputation, and fraud subscores, trends, signals, and concrete fictional source records.
-- Export the filtered dashboard as a CSV snapshot using the header button.
-- Open **Weights** beside the search filters to adjust sliders or enter exact percentages. The desktop popover becomes a bottom sheet on mobile; changes apply immediately.
-- Pause/resume simulated updates using the Live control.
-- Use `/` to search and Escape to dismiss the detail panel.
+All vendor identities, scores, findings, citations, and collection timestamps come from the latest saved report per company in `companies/`. `serve.py` calls `WebsiteDataset(load_collection(...), load_config(...))` and serves its result through `GET /api/dashboard`. Weight changes use the same endpoint with a JSON `weights` query parameter and are calculated by the framework, preserving its risk thresholds, missing-data policy, and ranking semantics.
 
-All assessments, scores, sources, publishers, incidents, locations, and news are **fictional demo data**, including entries associated with real vendor names. Scores measure risk on a 0–100 scale (higher means greater risk): low below 30, moderate 30–59, high 60+. Updates are simulated every 12 seconds; no external data or risk model is connected.
+The dashboard uses **collector heuristic triage**. These scores prioritize analyst review; they are not calibrated bank risk assessments. It displays the framework's `overall.score`, category scores, and weighted coverage. Missing categories appear as unavailable; they are never replaced by zero. Available weights are renormalized by the framework. Sorting keeps unscored vendors last in either direction.
 
-## Implementation
+The checked-in collection contains ten vendors. Eight have sourced scores in cybersecurity, financial, and fraud; reputational and sanctions findings are unavailable. Chain IQ and HireRight remain unscored. Collection errors, including HireRight's EDGAR error, are visible in vendor details. Informational findings can support a genuine zero score.
 
-- `index.html`: application shell and accessible dialogs.
-- `styles.css`: responsive red-and-white design system.
-- `app.js`: demo data, application state, views, and simulation.
-- `sources.js`: three fictional reports per vendor, with subscores and specific findings.
-- `serve.py`: development-only local HTTP server (binds to localhost).
+Default weights and category definitions come from `examples/collection_weights.json` and `examples/collection_config.json`. The compact **Weights** menu controls all five dimensions. Changing a weight proportionally rebalances the others to total 100%; scores refresh after the scoring API responds. Table columns sort by individual subscores. Click any vendor or subscore to inspect collected findings and source links, publishers, retrieval dates, publication dates where available, and source-check outcomes. The CSV includes current scores, coverage, requested weights, report paths, and collection timestamps.
 
-To integrate a risk algorithm later, replace the `vendors` fixture and the update timer in `app.js` with an API response/subscription. Keep the score scale and timestamps explicit. The server is for local previews only; this is not a production banking application.
+The browser checks the saved collection every 30 seconds while the tab is visible and auto-refresh is enabled. This does not retrieve new external evidence. The server rebuilds its cached dataset when report files or scoring configuration change. Collection dates remain distinct from the time the dashboard last checked. Failed refreshes preserve the last successful view and display an error; exports are disabled until a successful response.
 
-Each vendor has three source records (cyber, reputation, fraud), with a report title, fictional publisher, publication date, document ID, and expandable excerpt. Source buttons on the subscores open the corresponding record. These records are invented fixtures, not external links or retrieved evidence. The displayed weighted score is the rounded weighted mean of the three subscores. Each slider and number input sets its actual percentage (0–100, in 0.1% increments). The other two weights rebalance proportionally to keep the total exactly 100%; if both were zero, the remaining percentage is split equally. Reset restores approximately equal weights (33.4%, 33.3%, 33.3%) to accommodate one-decimal rounding. Custom weights are indicated on the toolbar button. Weight changes update ranking, risk badges and filters, summary metrics, vendor assessments, and exports. Click any score heading to sort by that dimension; click a subscore to open its source directly. CSV exports include the three subscores and normalized weights. These controls are a prototype calculation, not a validated risk model.
+## Refresh collected evidence
 
-On small screens, the vendor table scrolls horizontally to keep all three subscore columns available. The simulated historical weighted trend applies each fixture’s daily change to all three subscores, then recomputes using the current weights; it is not historical market data. Weights apply throughout the dashboard and reset to the default weights on page reload. The interface is a single dashboard without separate portfolio or watchlist views.
+Run the collector separately, then the dashboard picks up the new report:
 
-The interface uses a compact metrics strip, popover weighting controls, and shared 0–100 bars for comparisons. Vendor details identify the dimension with the largest weighted contribution and show source counts and publication dates; the historical trend is expandable. No confidence intervals are inferred from the demo data.
+```sh
+python3 -m risk_collector --company-file companies/microsoft/company.json --out companies/microsoft
+```
+
+See [collection operation and source descriptions](docs/DATA_COLLECTION.md) for configuration, including SEC User-Agent requirements. Collection may require network access. Reweighting saved reports is offline.
+
+## Implementation and checks
+
+- `index.html`, `styles.css`, `app.js`: dashboard, weighting popover, and source inspection.
+- `serve.py`: localhost server and cached framework-backed scoring endpoint.
+- `risk_collector/`, `companies/`: collectors and saved source reports.
+- `risk_framework/`: validation, scoring, and website data adapter.
+- `schemas/`: framework data contracts.
+
+```sh
+python3 -m unittest discover -s tests -v
+```
+
+The server binds to localhost and serves only dashboard assets and the data endpoint. It is intended for local use. The framework's broader CLI capabilities and data contracts are documented in [FRAMEWORK.md](docs/FRAMEWORK.md) and [WEBSITE_DATA.md](docs/WEBSITE_DATA.md).

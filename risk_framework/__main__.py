@@ -1,0 +1,102 @@
+"""Offline command line interface. JSON stdout is the default integration surface."""
+from __future__ import annotations
+
+import argparse
+from dataclasses import asdict
+from pathlib import Path
+
+from . import RiskFramework, ValidationError, load_assessments, load_config, load_json, to_json
+from .models import Scoreboard
+from .collection import load_collection
+from .export import WebsiteDataset, export_json
+from .simulation import simulate_assessments
+
+
+def _display(value: float | None) -> str:
+    return "n/a" if value is None else f"{value:.1f}"
+
+
+def table(result: Scoreboard) -> str:
+    label = "SYNTHETIC demonstration spread" if result.contains_synthetic_assessments else "AI assessment disagreement"
+    lines = [f"{label} ranges (p10–p90); higher scores mean higher risk."]
+    for row in result.records:
+        overall = row.overall
+        lines.append(f"{row.rank or '-':>3}  {row.entity_name}: {_display(overall.score)} "
+                     f"[{_display(overall.p10)}, {_display(overall.p90)}] "
+                     f"{overall.risk_level or 'UNSCORED'} | stability {overall.stability or 'n/a'} | "
+                     f"coverage {overall.coverage:.1%} | {overall.status}"
+                     f"{' | INCOMPLETE' if overall.incomplete else ''}")
+        for category, value in row.categories.items():
+            lines.append(f"     {category}: {_display(value.score)} "
+                         f"[{_display(value.p10)}, {_display(value.p90)}] "
+                         f"stability {value.stability or 'n/a'} | n={value.n} | {value.status}"
+                         f"{' | below preferred runs' if value.below_preferred_runs else ''}")
+    return "\n".join(lines) + "\n"
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    sub = parser.add_subparsers(dest="command", required=True)
+    score = sub.add_parser("score", help="Validate assessments and produce a ranked scoreboard")
+    score.add_argument("--input", required=True, help="Assessment JSON array or JSONL")
+    score.add_argument("--weights", required=True, help="JSON category-to-weight object")
+    score.add_argument("--config", help="Partial JSON policy override")
+    score.add_argument("--entities", help="Optional JSON entity-ID-to-name roster, including entities without data")
+    score.add_argument("--format", choices=("json", "table"), default="json")
+    score.add_argument("--output", help="Write to this file instead of stdout")
+    export = sub.add_parser("export", help="Join collected reports and scores into website-ready JSON")
+    export.add_argument("--reports", required=True, help="Collection report file or directory")
+    export.add_argument("--weights", required=True, help="JSON category-to-weight object")
+    export.add_argument("--config", help="Partial JSON policy override")
+    export.add_argument("--assessments", help="Optional repeated AI assessment JSON/JSONL; replaces heuristic scoring")
+    export.add_argument("--output", default="exports/risk-data.json", help="Website JSON snapshot path")
+    mock = sub.add_parser("simulate", help="Generate explicitly synthetic repeated assessments from collected summaries")
+    mock.add_argument("--reports", required=True, help="Collection report file or directory")
+    mock.add_argument("--config", help="Partial JSON policy override, including assessment_simulation")
+    mock.add_argument("--output", default="exports/simulated-assessments.json", help="Synthetic assessment JSON array")
+    args = parser.parse_args(argv)
+    try:
+        if args.command == "simulate":
+            collection = load_collection(args.reports)
+            assessments = simulate_assessments(collection, load_config(args.config))
+            protected = [*collection.input_files]
+            if args.config:
+                protected.append(Path(args.config))
+            if Path(args.reports).is_dir() and Path(args.output).resolve().is_relative_to(Path(args.reports).resolve()):
+                raise ValidationError("Simulation output must be outside the collection report directory")
+            export_json([asdict(a) for a in assessments], args.output, protected_paths=protected)
+            print(f"Wrote {len(assessments)} SYNTHETIC assessments to {args.output}; no AI calls were made")
+            return 0
+        if args.command == "export":
+            collection = load_collection(args.reports)
+            dataset = WebsiteDataset(collection, load_config(args.config),
+                                     assessments=load_assessments(args.assessments) if args.assessments else None)
+            payload = dataset.score(load_json(args.weights))
+            protected = [*collection.input_files, Path(args.weights)]
+            protected.extend(Path(p) for p in (args.config, args.assessments) if p)
+            # Avoid placing an output inside the report tree where it would become an input.
+            reports_path = Path(args.reports)
+            if reports_path.is_dir() and Path(args.output).resolve().is_relative_to(reports_path.resolve()):
+                raise ValidationError("Export output must be outside the collection report directory")
+            export_json(payload, args.output, protected_paths=protected)
+            print(f"Wrote {len(payload['scoreboard']['records'])} entities to {args.output} "
+                  f"({payload['score_basis']})")
+            return 0
+        framework = RiskFramework(load_assessments(args.input), load_config(args.config),
+                                  entities=load_json(args.entities) if args.entities else None)
+        result = framework.score_all(load_json(args.weights))
+        output = to_json(result) if args.format == "json" else table(result)
+        if args.output:
+            input_paths = [args.input, args.weights, args.config, args.entities]
+            if any(Path(args.output).resolve() == Path(p).resolve() for p in input_paths if p):
+                raise ValidationError("Output must not overwrite an input file")
+            Path(args.output).write_text(output, encoding="utf-8")
+        else:
+            print(output, end="")
+    except (ValidationError, OSError, UnicodeError) as exc:
+        parser.exit(2, f"error: {exc}\n")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
