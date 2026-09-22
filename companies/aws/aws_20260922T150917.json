@@ -1,0 +1,2047 @@
+{
+  "company": {
+    "name": "AWS",
+    "aliases": [
+      "Amazon Web Services",
+      "Amazon",
+      "Amazon.com, Inc."
+    ],
+    "ticker": "AMZN",
+    "domain": "amazon.com",
+    "country": "US",
+    "cik": null,
+    "related_parties": [],
+    "wikipedia": [
+      "Amazon Web Services",
+      "Criticism of Amazon"
+    ]
+  },
+  "generated_at": "2026-09-22T15:09:17+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "courtlistener",
+      "doj",
+      "wikipedia"
+    ],
+    "categories": [
+      "reputational"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "courtlistener": 365,
+      "doj": 1095,
+      "wikipedia": 730
+    }
+  },
+  "summary": [
+    {
+      "category": "reputational",
+      "signals": 44,
+      "max_severity": "high",
+      "score": 73,
+      "by_severity": {
+        "info": 19,
+        "low": 17,
+        "medium": 7,
+        "high": 1,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "reputational",
+      "title": "Amazon Agrees to $2.25 Million Settlement and Injunction to Resolve Alleged Violations of the Fair Credit Reporting Act",
+      "summary": "Enforcement resolution naming the company (settlement, penalty or plea). The Justice Department announced today that a federal court has entered a stipulated order against Amazon.com Inc., in a case investigated and referred to the Department by the Federal Trade Commission (FTC). The order resolves allegations that Amazon violated the Fair Credit Reporting Act (FCRA), and it requires Amazon to pay a $2.25 million civil penalty and follow practices that protect consume",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "Amazon Agrees to $2.25 Million Settlement and Injunction to Resolve Alleged Violations of the Fair Credit Reporting Act",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/opa/pr/amazon-agrees-225-million-settlement-and-injunction-resolve-alleged-violations-fair-credit",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-08-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.85,
+      "observed_at": "2026-08-14",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": "26-932"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: History > Significant service outages (latest year mentioned 2026)",
+      "summary": "On April 20, 2011, AWS suffered a major outage. Parts of the Elastic Block Store service became \"stuck\" and could not fulfill read/write requests. It took at least two days for the service to be fully restored. On June 29, 2012, several websites that rely on Amazon Web Services were taken offline due to a severe storm in Northern Virginia, where AWS's largest data center cluster is located. On October 22, 2012, a major outage occurred, affecting many sites including Reddit, Foursquare, and Pinte...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Amazon Web Services - section 'Significant service outages'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Amazon_Web_Services#Significant_service_outages",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Amazon Web Services (revision 1374686667)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Amazon_Web_Services&oldid=1374686667",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2026",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "History",
+          "Significant service outages"
+        ],
+        "latest_year": 2026,
+        "chars": 1850
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Security incidents > Application Load Balancer security issue (latest year mentioned 2026)",
+      "summary": "In April 2024, security researchers from Miggo security identified a configuration vulnerability in AWS Application Load Balancer (ALB) that could allow attackers to bypass access controls and compromise web applications. The issue stemmed from how some users configured ALB's authentication handoff to third-party services, potentially enabling unauthorized access to application data. On July 11, 2024, AWS confirmed the issue affecting its customers, and on July 19, 2024, AWS updated its document...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Amazon Web Services - section 'Application Load Balancer security issue'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Amazon_Web_Services#Application_Load_Balancer_security_issue",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Amazon Web Services (revision 1374686667)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Amazon_Web_Services&oldid=1374686667",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2026",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Security incidents",
+          "Application Load Balancer security issue"
+        ],
+        "latest_year": 2026,
+        "chars": 1112
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Reception > Environmental footprint (latest year mentioned 2025)",
+      "summary": "In 2014, AWS claimed its aim was to achieve 100% renewable energy usage in the future. In the United States, AWS's partnerships with renewable energy providers include Community Energy of Virginia, to support the US East region; Pattern Development, in January 2015, to construct and operate Amazon Wind Farm Fowler Ridge; Iberdrola Renewables, LLC, in July 2015, to construct and operate Amazon Wind Farm US East; EDP Renewables North America, in November 2015, to construct and operate Amazon Wind ...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Amazon Web Services - section 'Environmental footprint'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Amazon_Web_Services#Environmental_footprint",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Amazon Web Services (revision 1374686667)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Amazon_Web_Services&oldid=1374686667",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2025",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Reception",
+          "Environmental footprint"
+        ],
+        "latest_year": 2025,
+        "chars": 2108
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Security incidents > Amazon Q Developer Extension supply-chain vulnerability (2025) (latest year mentioned 2025)",
+      "summary": "In July 2025, a security researcher disclosed a supply-chain vulnerability in the Amazon Q Developer Extension (version 1.84) for Visual Studio Code. The issue involved a malicious pull request to the project's GitHub repository, which introduced a prompt instructing the AI assistant to delete local files and AWS resources. AWS acknowledged the issue in Security Bulletin AWS‑2025‑015 and released version 1.85 to remove the injected prompt. The company stated that no customer systems or data were...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Amazon Web Services - section 'Amazon Q Developer Extension supply-chain vulnerability (2025)'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Amazon_Web_Services#Amazon_Q_Developer_Extension_supply-chain_vulnerability_(2025)",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Amazon Web Services (revision 1374686667)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Amazon_Web_Services&oldid=1374686667",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2025",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Security incidents",
+          "Amazon Q Developer Extension supply-chain vulnerability (2025)"
+        ],
+        "latest_year": 2025,
+        "chars": 726
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "25 employment, discrimination and labour suits filed against AWS since 2025-09-22",
+      "summary": "Most recent: Jones v. Amazon.com Services LLC (2026-09-15, 445 Civil Rights: Americans with Disabilities - Employment); Sougnabe v. Amazon.com Services LLC (2026-09-11, 442 Civil Rights: Jobs); Lucia v. Amazon.com Services LLC (2026-09-11, 442 Civil Rights: Jobs). Filings are allegations, not findings of liability.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Jones v. Amazon.com Services LLC (N.D. Ga., 1:26-cv-05311)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74797927/jones-v-amazoncom-services-llc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-15",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Sougnabe v. Amazon.com Services LLC (M.D. Fla., 6:26-cv-02031)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74780649/sougnabe-v-amazoncom-services-llc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-11",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Lucia v. Amazon.com Services LLC (S.D. Fla., 0:26-cv-62525)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74778175/lucia-v-amazoncom-services-llc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-11",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Doe v. Amazon.com Services LLC (S.D.N.Y., 1:26-cv-07913)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74776170/doe-v-amazoncom-services-llc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-10",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Doe v. Amazon.com Services LLC (S.D.N.Y., 1:26-cv-07912)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74775885/doe-v-amazoncom-services-llc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-10",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: AWS",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22AWS%22%20OR%20%22Amazon%20Web%20Services%22%20OR%20%22Amazon%22%20OR%20%22Amazon.com%2C%20Inc.%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-09-15",
+      "tags": [
+        "litigation",
+        "employment"
+      ],
+      "data": {
+        "cases": 25,
+        "theme": "employment"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "2 product liability suits filed against AWS since 2025-09-22",
+      "summary": "Most recent: ERIE INSURANCE COMPANY v. AMAZON.COM SERVICES, LLC (2026-09-08, 385 Personal Property: Prop. Damage Prod. Liability); Cesario v. Amazon.com Services LLC (2026-08-05, 365 Personal Inj. Prod. Liability). Filings are allegations, not findings of liability.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "ERIE INSURANCE COMPANY v. AMAZON.COM SERVICES, LLC (E.D. Pa., 2:26-cv-06758)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74762258/erie-insurance-company-v-amazoncom-services-llc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-08",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Cesario v. Amazon.com Services LLC (N.D. Ill., 1:26-cv-09338)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73721618/cesario-v-amazoncom-services-llc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-08-05",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: AWS",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22AWS%22%20OR%20%22Amazon%20Web%20Services%22%20OR%20%22Amazon%22%20OR%20%22Amazon.com%2C%20Inc.%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-09-08",
+      "tags": [
+        "litigation",
+        "product_liability"
+      ],
+      "data": {
+        "cases": 2,
+        "theme": "product_liability"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "4 antitrust suits filed against AWS since 2025-09-22",
+      "summary": "Most recent: Davis v. Amazon Inc. (2026-09-07, 410 Anti-Trust); ANDERSON v. AMAZON.COM, INC. (2026-08-06, 410 Anti-Trust); ANDERSON v. AMAZON.COM, INC. (2026-08-06, 410 Anti-Trust). Filings are allegations, not findings of liability.",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Davis v. Amazon Inc. (N.D. Cal., 3:26-cv-09948)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74756478/davis-v-amazon-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-09-07",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "ANDERSON v. AMAZON.COM, INC. (D.N.J., 2:26-cv-09977)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73743157/anderson-v-amazoncom-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-08-06",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "ANDERSON v. AMAZON.COM, INC. (D.N.J., 3:26-cv-09977)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73732610/anderson-v-amazoncom-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-08-06",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "ATTORNEY GENERAL OF THE STATE OF NEW JERSEY v. AMAZON.COM, INC. (D.N.J., 2:26-cv-09814)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73715299/attorney-general-of-the-state-of-new-jersey-v-amazoncom-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-08-04",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: AWS",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22AWS%22%20OR%20%22Amazon%20Web%20Services%22%20OR%20%22Amazon%22%20OR%20%22Amazon.com%2C%20Inc.%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-09-07",
+      "tags": [
+        "litigation",
+        "antitrust"
+      ],
+      "data": {
+        "cases": 4,
+        "theme": "antitrust"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Security incidents > Log4Shell Hot Patch vulnerability (latest year mentioned 2022)",
+      "summary": "In response to the Log4Shell vulnerability, AWS released hot patch solutions to mitigate risks in Java applications across various environments, including standalone servers, Kubernetes clusters, and Elastic Container Service (ECS). These patches were designed for both AWS and non-AWS environments. However, researchers from Unit 42 at Palo Alto Networks identified critical security flaws in these patches that could be exploited for container escape and privilege escalation, potentially granting ...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Amazon Web Services - section 'Log4Shell Hot Patch vulnerability'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Amazon_Web_Services#Log4Shell_Hot_Patch_vulnerability",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Amazon Web Services (revision 1374686667)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Amazon_Web_Services&oldid=1374686667",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2022",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Security incidents",
+          "Log4Shell Hot Patch vulnerability"
+        ],
+        "latest_year": 2022,
+        "chars": 758
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Marketplace participant and owner (latest year mentioned 2022)",
+      "summary": "Amazon owns a dominant marketplace and is a retail seller in that marketplace. The company uses data from the marketplace which is unavailable to other retailers in that marketplace to determine which products to produce in-house and at what price point. Amazon markets products under AmazonBasics, Lark & Ro, and other private-label brands. U.S. presidential candidate Elizabeth Warren proposed forcing Amazon to sell AmazonBasics and Whole Foods Market, where Amazon competes against other sellers ...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Marketplace participant and owner'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Marketplace_participant_and_owner",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2022",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Marketplace participant and owner"
+        ],
+        "latest_year": 2022,
+        "chars": 2118
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Antitrust complaints (latest year mentioned 2022)",
+      "summary": "The European Commission began an investigation in June 2015 of clauses in Amazon's e-book distribution agreements, which may have breached EU antitrust law by making it harder for other e-book platforms to compete. The investigation ended in May 2017, when the commission rendered binding Amazon's commitments not to use or enforce the clauses. In July 2019 and November 2020, the European Commission began in-depth investigations of Amazon's use of marketplace seller data and possible preferential ...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Antitrust complaints'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Antitrust_complaints",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2022",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Antitrust complaints"
+        ],
+        "latest_year": 2022,
+        "chars": 2570
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Price control (latest year mentioned 2021)",
+      "summary": "After the announcement of the Apple iPad on January 27, 2010, Macmillan Publishers began a pricing dispute with Amazon about electronic publications. Macmillan asked Amazon to accept a new pricing scheme it had worked out with Apple, raising the price of e-books from $9.99 to $15. Amazon responded by pulling all Macmillan books (electronic and physical) from its website, although affiliates selling the books were still listed. On January 31, 2010, Amazon \"capitulated\" to Macmillan's pricing requ...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Price control'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Price_control",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2021",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Price control"
+        ],
+        "latest_year": 2021,
+        "chars": 2098
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Effects on small businesses (latest year mentioned 2021)",
+      "summary": "Due to its size and economies of scale, Amazon can undercut small local shopkeepers. Stacy Mitchell and Olivia Lavecchia, researchers with the Institute for Local Self-Reliance, say that this has caused many local, small-scale shopkeepers to close in a number of cities and towns in the United States. Amazon India, subject to foreign investment regulations barring e-commerce firms selling directly to customers, can only collect fees from vendors selling products. In 2021, Reuters investigation al...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Effects on small businesses'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Effects_on_small_businesses",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2021",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Effects on small businesses"
+        ],
+        "latest_year": 2021,
+        "chars": 854
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Removal of competitors' products (latest year mentioned 2019)",
+      "summary": "On October 1, 2015, Amazon announced that Apple TV and Google Chromecast products were banned from sale by all merchants effective October 29 of that year. The company said that this was to prevent \"customer confusion\", since those devices did not support Amazon Prime Video. The move was criticized as an attempt to suppress products competing with Amazon Fire TV products. In May 2017, it was reported that Apple and Amazon were nearing an agreement to offer Prime Video on Apple TV and allow the p...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Removal of competitors' products'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Removal_of_competitors'_products",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2019",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Removal of competitors' products"
+        ],
+        "latest_year": 2019,
+        "chars": 2084
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Apple partnership (latest year mentioned 2019)",
+      "summary": "In November 2018, Amazon reached an agreement with Apple Inc. to sell selected products through the company, selected Apple authorized resellers, and vendors who meet specific criteria. As a result of this partnership, only Apple authorized resellers and vendors who purchase $2.5 million in refurbished stock from Apple every 90 days (via the Amazon Renewed program) may sell Apple products on Amazon. The partnership was criticized by independent resellers, who believe that it restricts their abil...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Apple partnership'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Apple_partnership",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2019",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Apple partnership"
+        ],
+        "latest_year": 2019,
+        "chars": 663
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Canadian site (latest year mentioned 2017)",
+      "summary": "Amazon has a Canadian website in English and French. Until a March 2010 ruling, however, it was prevented from operating any headquarters, servers, fulfillment centers or call centers in Canada by that country's legal restrictions on foreign-owned booksellers. Amazon's Canadian site originates in the United States, and Amazon has an agreement with Canada Post to handle distribution in Canada and for the use of the crown corporation's Mississauga, Ontario, shipping facility. The launch of Amazon....",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Canadian site'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Canadian_site",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2017",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Canadian site"
+        ],
+        "latest_year": 2017,
+        "chars": 1888
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Products and services > Items prohibited by UK law (latest year mentioned 2015)",
+      "summary": "In December 2015, The Guardian published an exposé of Amazon sales which violated British law. Items included a pepper-spray gun (sold by amazon.co.uk), acid, stun guns and a concealed cutting weapon (sold by Amazon Marketplace vendors); all are considered prohibited weapons in the UK. The Guardian also released a video describing some of the weapons. Likewise, brass catchers, illegal in New South Wales, are sold by Amazon.com.au.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Items prohibited by UK law'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Items_prohibited_by_UK_law",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2015",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Products and services",
+          "Items prohibited by UK law"
+        ],
+        "latest_year": 2015,
+        "chars": 434
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Direct selling (latest year mentioned 2013)",
+      "summary": "In 2008, Amazon UK was criticized for attempting to prevent publishers from direct selling at a discount from their own websites. Amazon argued that it should be able to pay publishers based on the lower prices on their websites, rather than on the recommended retail price (RRP). Amazon UK was also criticized that year by the British publishing community after withdrawing from sale key titles published by Hachette Livre UK, possibly to pressure Hachette to provide discounts described as unreason...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Direct selling'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Direct_selling",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2013",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Direct selling"
+        ],
+        "latest_year": 2013,
+        "chars": 996
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > BookSurge (latest year mentioned 2008)",
+      "summary": "Sales representatives of Amazon's BookSurge division began contacting publishers of print on demand (POD) titles in March 2008 to inform them that for Amazon to continue selling their POD books, they must sign agreements with Amazon's BookSurge POD company. Publishers were told that eventually, the only POD titles Amazon would sell would be those printed by BookSurge. Some publishers felt that this ultimatum was monopolistic, and questioned the ethics of the move and its legality under anti-trus...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'BookSurge'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#BookSurge",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2008",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "BookSurge"
+        ],
+        "latest_year": 2008,
+        "chars": 506
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Products and services > Animal cruelty (latest year mentioned 2008)",
+      "summary": "Amazon had carried two cockfighting magazines and two dog-fighting videos. The Humane Society of the United States (HSUS), saying that their sale violated federal law, sued the company. An August 2007 campaign to boycott Amazon received attention in the wake of a dog-fighting case involving NFL quarterback Michael Vick. Marburger Publishing agreed to settle with the Humane Society in May 2008 by asking Amazon to stop selling its magazine, The Game Cock; The Feathered Warrior, the second magazine...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Animal cruelty'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Animal_cruelty",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2008",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Products and services",
+          "Animal cruelty"
+        ],
+        "latest_year": 2008,
+        "chars": 763
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > One-click patent (latest year mentioned 2006)",
+      "summary": "The company has been criticized for its alleged use of patents as a competitive hindrance; its \"1-Click patent\" may be the best-known example. Amazon's use of the 1-click patent against competitor Barnes & Noble's website led the Free Software Foundation to announce a boycott of Amazon in December 1999, which ended in September 2002. On February 22, 2000, the company patented an Internet-based customer referral system known as an affiliate program. Industry leaders Tim O'Reilly and Charlie Jacks...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'One-click patent'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#One-click_patent",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2006",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "One-click patent"
+        ],
+        "latest_year": 2006,
+        "chars": 1218
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Reception > Work with sanctioned companies",
+      "summary": "AWS has been noted to work with Chinese companies under varying degrees of U.S. government sanctions, such as Hikvision and Dahua Technology, which have been accused to enabling mass surveillance and human rights abuses in China and elsewhere.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Amazon Web Services - section 'Work with sanctioned companies'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Amazon_Web_Services#Work_with_sanctioned_companies",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Amazon Web Services (revision 1374686667)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Amazon_Web_Services&oldid=1374686667",
+          "retrieved_at": "2026-09-22T15:07:02+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": null,
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Reception",
+          "Work with sanctioned companies"
+        ],
+        "latest_year": null,
+        "chars": 243
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Anti-competitive practices > Stagnation of subsidiaries",
+      "summary": "Amazon's buying up of subsidiaries has reportedly led to stagnation and a lack of development or innovation in them, particularly Goodreads; an Input Magazine article called the platform \"ancient and terrible\", saying that it resembles an early-2000s digital library with no developments to accommodate the evolution of book-metadata acquisition or online reader activity. New Statesman also criticized Goodreads, calling it \"stagnated\" and a \"monopoly on the discussion of new books\": \"[W]hat should...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Stagnation of subsidiaries'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Stagnation_of_subsidiaries",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": null,
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Anti-competitive practices",
+          "Stagnation of subsidiaries"
+        ],
+        "latest_year": null,
+        "chars": 566
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Products and services > Fraudulent book listings",
+      "summary": "Jane Friedman discovered six listings of books fraudulently using her name on Amazon and Goodreads; the companies resisted removing the fraudulent titles until the author's complaints went viral on social media in a blog post, \"I Would Rather See My Books Get Pirated Than This (Or: Why Goodreads and Amazon Are Becoming Dumpster Fires).\"",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Criticism of Amazon - section 'Fraudulent book listings'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Criticism_of_Amazon#Fraudulent_book_listings",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+          "retrieved_at": "2026-09-22T15:07:03+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": null,
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Products and services",
+          "Fraudulent book listings"
+        ],
+        "latest_year": null,
+        "chars": 338
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "8 consumer protection, fraud and privacy suits filed against AWS since 2025-09-22",
+      "summary": "Most recent: Federal Trade Commission v. Amazon.com Inc (2026-08-31, 890 Other Statutory Actions); SPADAFINO v. AMAZON.COM, INC. (2026-08-07, 890 Other Statutory Actions); Haugland v. Amazon Web Services, Inc. (2026-08-04, 890 Other Statutory Actions). Filings are allegations, not findings of liability.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Federal Trade Commission v. Amazon.com Inc (W.D. Wash., 2:26-cv-03097)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/74725379/federal-trade-commission-v-amazoncom-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-08-31",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "SPADAFINO v. AMAZON.COM, INC. (D.N.J., 2:26-cv-10023)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73737547/spadafino-v-amazoncom-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-08-07",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Haugland v. Amazon Web Services, Inc. (D. Haw., 1:26-cv-00414)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73720187/haugland-v-amazon-web-services-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-08-04",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Cada v. Amazon.com Inc (W.D. Wash., 2:26-cv-02704)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73701862/cada-v-amazoncom-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-07-31",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Rogow v. Amazon.com Inc (W.D. Wash., 2:26-cv-02702)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73701232/rogow-v-amazoncom-inc/",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-07-31",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: AWS",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22AWS%22%20OR%20%22Amazon%20Web%20Services%22%20OR%20%22Amazon%22%20OR%20%22Amazon.com%2C%20Inc.%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-08-31",
+      "tags": [
+        "litigation",
+        "consumer"
+      ],
+      "data": {
+        "cases": 8,
+        "theme": "consumer"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Director / officer departure or appointment (8-K Item 5.02) - filed 2026-09-09",
+      "summary": "AMAZON COM INC filed a 8-K on 2026-09-09 disclosing: Director / officer departure or appointment (8-K Item 5.02).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "AMAZON COM INC 8-K filed 2026-09-09 (accession 0001018724-26-000036)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000036/amzn-20260908.htm",
+          "retrieved_at": "2026-09-22T14:32:46+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2026-09-09",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for AMAZON COM INC (CIK 0001018724)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0001018724.json",
+          "retrieved_at": "2026-09-22T14:32:46+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2026-09-09",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0001018724-26-000036",
+        "items": "5.02"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "188 federal cases filed against AWS since 2025-09-22",
+      "summary": "CourtListener lists 872 federal dockets since 2025-09-22 whose caption names AWS; 188 name it as defendant (first 200 of 872 dockets reviewed). By nature of suit: unclassified: 141; 442 Civil Rights: Jobs: 11; 445 Civil Rights: Americans with Disabilities - Employment: 9; 890 Other Statutory Actions: 7; 410 Anti-Trust: 4; 830 Patent: 3. 4 are patent, trademark or copyright disputes.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "CourtListener RECAP docket search: AWS",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22AWS%22%20OR%20%22Amazon%20Web%20Services%22%20OR%20%22Amazon%22%20OR%20%22Amazon.com%2C%20Inc.%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:06:37+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.8,
+      "observed_at": null,
+      "tags": [
+        "litigation",
+        "court-records"
+      ],
+      "data": {
+        "dockets_total": 872,
+        "reviewed": 200,
+        "as_defendant": 188,
+        "by_nature_of_suit": {
+          "unclassified": 141,
+          "840 Trademark": 1,
+          "445 Civil Rights: Americans with Disabilities - Employment": 9,
+          "830 Patent": 3,
+          "442 Civil Rights: Jobs": 11,
+          "385 Personal Property: Prop. Damage Prod. Liability": 1,
+          "440 Civil Rights: Other": 1,
+          "410 Anti-Trust": 4,
+          "Labor: E.R.I.S.A.": 1,
+          "890 Other Statutory Actions": 7,
+          "360 P.I.: Other": 2,
+          "4442 Civil Rights Employment": 1,
+          "365 Personal Inj. Prod. Liability": 1,
+          "Civil Rights: Jobs": 2,
+          "370 Other Fraud": 1,
+          "Prop. Damage Prod. Liability": 1,
+          "190 Contract: Other": 1
+        }
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Amazon Fraud Defendant Sentenced to More than 16 Years in Federal Prison",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case). Brittany Hudson was sentenced to more than 16 years in federal prison today for orchestrating a scheme that netted nearly $10 million from Amazon, laundering the fraudulent proceeds, defrauding a franchising company while out on bond, and forging a federal judge’s signature on fake court documents.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Amazon Fraud Defendant Sentenced to More than 16 Years in Federal Prison",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ndga/pr/amazon-fraud-defendant-sentenced-more-16-years-federal-prison",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-08-26",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2026-08-26",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Jury convicts owner of Amazon delivery business for fraud schemes and forging federal judge’s signature",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case). A federal jury has convicted Brittany Hudson&nbsp;of all 30 counts in an indictment that charged her with stealing nearly $10 million from Amazon based on fraud, laundering the fraudulent proceeds from that scheme, lying to a franchising company while on pretrial release, and forging the signature of former Chief U.S. District Judge Timothy C. Batten, Sr. on fake court documents.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Jury convicts owner of Amazon delivery business for fraud schemes and forging federal judge’s signature",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ndga/pr/jury-convicts-owner-amazon-delivery-business-fraud-schemes-and-forging-federal-judges",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-03-17",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2026-03-17",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Bridgeport Man Sentenced to More Than 8 Years in Prison for Gunpoint Robberies of Retail Stores, Amazon Delivery Truck",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case). MICKYEEM PROFIT, 22, of Bridgeport, was sentenced today by U.S. District Judge Stefan R. Underhill in Bridgeport to 102 months of imprisonment and three years of supervised release for his participation in the violent armed robberies of multiple retail stores and an Amazon delivery truck in December 2022.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Bridgeport Man Sentenced to More Than 8 Years in Prison for Gunpoint Robberies of Retail Stores, Amazon Delivery Truck",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/bridgeport-man-sentenced-more-8-years-prison-gunpoint-robberies-retail-stores-amazon",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-03-12",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2026-03-12",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Trumbull Man Admits Defrauding Amazon of More Than $3.5 Million",
+      "summary": "Company appears to be the victim, not the subject. AMEER NASIR, 25, of Trumbull, pleaded guilty today before U.S. District Judge Kari A. Dooley in Bridgeport to an offense related to his defrauding Amazon of more than $3.5 million.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Trumbull Man Admits Defrauding Amazon of More Than $3.5 Million",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/trumbull-man-admits-defrauding-amazon-more-35-million",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-03-06",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2026-03-06",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Ex-Amazon Employee and Associates Sentenced in Multi-Million Dollar Fraud Scheme",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case). PHOENIX, Ariz. – Three Phoenix area men were recently sentenced for their roles in a sophisticated fraud scheme against Amazon. Mughith Faisal, 29, of Glendale, Arizona, was sentenced by U.S. District Judge John Tuchi on Feb. 5, 2026, to 18 months in prison. His brother, Basheer Faisal, 28, of Glendale, Arizona, was sentenced by U.S. District Judge Diane Humetewa on Feb. 17, 2026, to 18 months in",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Ex-Amazon Employee and Associates Sentenced in Multi-Million Dollar Fraud Scheme",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-az/pr/ex-amazon-employee-and-associates-sentenced-multi-million-dollar-fraud-scheme",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-03-04",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2026-03-04",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Hartford Man Who Defrauded Amazon Sentenced to Prison",
+      "summary": "Company appears to be the victim, not the subject. TERRELL KIMBLE, 45, of Hartford, was sentenced today by U.S. District Judge Omar A. Williams in Hartford to 18 months of imprisonment and three years of supervised release for defrauding Amazon.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Hartford Man Who Defrauded Amazon Sentenced to Prison",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/hartford-man-who-defrauded-amazon-sentenced-prison",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-01-06",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2026-01-06",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Hartford Man Admits Defrauding Amazon",
+      "summary": "Company appears to be the victim, not the subject. TERRELL KIMBLE, 45, of Hartford, pleaded guilty today before U.S. District Judge Omar A. Williams in Hartford to an offense stemming from a scheme to defraud Amazon.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Hartford Man Admits Defrauding Amazon",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/hartford-man-admits-defrauding-amazon",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2025-06-30",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2025-06-30",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "India-based Amazon scam leads to almost a $1 million dollar loss for elderly victim in Missoula",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "India-based Amazon scam leads to almost a $1 million dollar loss for elderly victim in Missoula",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-mt/pr/india-based-amazon-scam-leads-almost-1-million-dollar-loss-elderly-victim-missoula",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2025-05-15",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2025-05-15",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": "25-99"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Trumbull Man Charged with Defrauding Amazon of More Than $3 Million",
+      "summary": "Company appears to be the victim, not the subject. A federal grand jury in New Haven has returned a 13-count indictment charging AMEER NASIR, 24, of Trumbull, with offenses stemming from a fraud scheme against Amazon.com.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Trumbull Man Charged with Defrauding Amazon of More Than $3 Million",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/trumbull-man-charged-defrauding-amazon-more-3-million",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2025-05-09",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2025-05-09",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Warehouse Supervisor Sentenced to 15 Months in Federal Prison for Stealing $2 Million Worth of Fitbits from Amazon and Selling Them on eBay",
+      "summary": "Company appears to be the victim, not the subject.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Warehouse Supervisor Sentenced to 15 Months in Federal Prison for Stealing $2 Million Worth of Fitbits from Amazon and Selling Them on eBay",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-sdin/pr/warehouse-supervisor-sentenced-15-months-federal-prison-stealing-2-million-worth",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2025-01-17",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2025-01-17",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Indictment Charges Hartford Man with Defrauding Amazon",
+      "summary": "Company appears to be the victim, not the subject. A federal grand jury in New Haven has returned a four-count indictment charging TERRELL KIMBLE, 44, of Hartford, with offenses stemming from a scheme to defraud Amazon.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Indictment Charges Hartford Man with Defrauding Amazon",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/indictment-charges-hartford-man-defrauding-amazon",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2024-08-27",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2024-08-27",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Four Bridgeport Men Charged with Gunpoint Robberies of Retail Stores, Amazon Delivery Truck",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case). A federal grand jury in Hartford has returned an indictment charging ELIJAH RAFFINGTON, 21; RAJONNE BLAKE, also known as “Ray Ray,” 25; SHASSON DANIELS, 20; and MICKYEEM PROFIT, 21, all of Bridgeport, with robbery and firearm offenses stemming from the gunpoint robberies of multiple retail stores and an Amazon delivery truck.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Four Bridgeport Men Charged with Gunpoint Robberies of Retail Stores, Amazon Delivery Truck",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/four-bridgeport-men-charged-gunpoint-robberies-retail-stores-amazon-delivery-truck",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2024-08-09",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2024-08-09",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Two indicted for buying stolen goods and selling them online via Amazon or eBay for more than $3 million",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case). Seattle – Two western Washington men, related by marriage, were indicted by a federal grand jury this week for 11 criminal counts related to their conspiracy to traffic in stolen goods, announced U.S. Attorney Tessa M. Gorman.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Two indicted for buying stolen goods and selling them online via Amazon or eBay for more than $3 million",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-wdwa/pr/two-indicted-buying-stolen-goods-and-selling-them-online-amazon-or-ebay-more-3-million",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2024-07-11",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2024-07-11",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Utah Woman Sentenced to 18 Months’ Imprisonment for Stealing an Amazon Truck and Packages",
+      "summary": "Company appears to be the victim, not the subject. Salt Lake City, Utah – Jaclyn Allred, 38, of Salt Lake City, was sentenced Monday to 18 months’ imprisonment, three years’ supervised release, and ordered by the court to pay $5,735.19 in restitution. The sentence comes after Allred admitted to stealing an Amazon delivery truck loaded with parcels in 2021.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Utah Woman Sentenced to 18 Months’ Imprisonment for Stealing an Amazon Truck and Packages",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ut/pr/woman-sentenced-18-months-imprisonment-stealing-amazon-truck-and-packages",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2024-06-26",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2024-06-26",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": "24-74"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "La Valle Resident Sentenced to 5 Years of Probation for Amazon Fraudulent Return Scheme",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "La Valle Resident Sentenced to 5 Years of Probation for Amazon Fraudulent Return Scheme",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-wdwi/pr/la-valle-resident-sentenced-5-years-probation-amazon-fraudulent-return-scheme",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2023-11-07",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2023-11-07",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Third Defendant in Amazon Fraud Scheme Sentenced to Prison",
+      "summary": "Company named, but likely as victim or context (e.g. an individual's case). KENOY STEWART, 27, of Bridgeport, was sentenced today by U.S. District Judge Alvin W. Thompson in Hartford to nine months of imprisonment, followed by three years of supervised release, for defrauding Amazon.com, Inc. (“Amazon”).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Third Defendant in Amazon Fraud Scheme Sentenced to Prison",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/third-defendant-amazon-fraud-scheme-sentenced-prison",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2023-09-28",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2023-09-28",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Bridgeport Man Sentenced to Prison for Defrauding Amazon",
+      "summary": "Company appears to be the victim, not the subject. RAJHNI YANKANA, 28, of Bridgeport, was sentenced today by U.S. District Judge Alvin W. Thompson in Hartford to five months of imprisonment, followed five months of home detention and three years of supervised release, for defrauding Amazon.com, Inc. (“Amazon”).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Bridgeport Man Sentenced to Prison for Defrauding Amazon",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/usao-ct/pr/bridgeport-man-sentenced-prison-defrauding-amazon",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2023-09-27",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for AWS",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:07:01+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.4,
+      "observed_at": "2023-09-27",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": ""
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for AMAZON COM INC (CIK 0001018724)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001018724.json",
+        "retrieved_at": "2026-09-22T14:32:46+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:48+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:49+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:49+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "3 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (AMAZON COM INC)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001018724&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"cybersecurity incident\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for AMAZON COM INC (CIK 0001018724)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json",
+        "retrieved_at": "2026-09-22T14:32:50+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2025-12-31",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CourtListener RECAP docket search: AWS",
+        "publisher": "Free Law Project (CourtListener)",
+        "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22AWS%22%20OR%20%22Amazon%20Web%20Services%22%20OR%20%22Amazon%22%20OR%20%22Amazon.com%2C%20Inc.%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+        "retrieved_at": "2026-09-22T15:06:37+00:00",
+        "accessed_via": "CourtListener REST API v4",
+        "published_at": null,
+        "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+      },
+      "collector": "courtlistener",
+      "status": "ok",
+      "detail": "872 dockets since 2025-09-22, 188 as defendant (first 200 of 872 dockets reviewed)",
+      "records_scanned": 200
+    },
+    {
+      "source": {
+        "name": "DOJ press releases API, headline search for AWS",
+        "publisher": "U.S. Department of Justice, Office of Public Affairs",
+        "url": "https://www.justice.gov/api/v1/press_releases.json?title=Amazon.com%2C%20Inc.&sort=date&direction=DESC&pagesize=50",
+        "retrieved_at": "2026-09-22T15:07:01+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "doj",
+      "status": "ok",
+      "detail": "68 releases since 2023-09-23, 18 name the company in the headline, 1 enforcement-related",
+      "records_scanned": 68
+    },
+    {
+      "source": {
+        "name": "Wikipedia: Amazon Web Services (revision 1374686667)",
+        "publisher": "Wikipedia (Wikimedia Foundation)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Amazon_Web_Services&oldid=1374686667",
+        "retrieved_at": "2026-09-22T15:07:02+00:00",
+        "accessed_via": "MediaWiki API",
+        "published_at": null,
+        "license": "CC BY-SA 4.0"
+      },
+      "collector": "wikipedia",
+      "status": "ok",
+      "detail": "6 controversy/litigation sections in 'Amazon Web Services'",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "Wikipedia: Criticism of Amazon (revision 1375068488)",
+        "publisher": "Wikipedia (Wikimedia Foundation)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Criticism_of_Amazon&oldid=1375068488",
+        "retrieved_at": "2026-09-22T15:07:03+00:00",
+        "accessed_via": "MediaWiki API",
+        "published_at": null,
+        "license": "CC BY-SA 4.0"
+      },
+      "collector": "wikipedia",
+      "status": "ok",
+      "detail": "79 controversy/litigation sections in 'Criticism of Amazon'",
+      "records_scanned": null
+    }
+  ],
+  "errors": []
+}

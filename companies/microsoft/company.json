@@ -6,5 +6,9 @@
   ],
   "ticker": "MSFT",
   "domain": "microsoft.com",
-  "country": "US"
+  "country": "US",
+  "wikipedia": [
+    "Microsoft",
+    "Criticism of Microsoft"
+  ]
 }

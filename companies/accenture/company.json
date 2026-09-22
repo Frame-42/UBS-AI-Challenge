@@ -5,5 +5,8 @@
   ],
   "ticker": "ACN",
   "domain": "accenture.com",
-  "country": "IE"
+  "country": "IE",
+  "wikipedia": [
+    "Accenture"
+  ]
 }

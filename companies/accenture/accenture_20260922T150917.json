@@ -1,0 +1,815 @@
+{
+  "company": {
+    "name": "Accenture",
+    "aliases": [
+      "Accenture plc"
+    ],
+    "ticker": "ACN",
+    "domain": "accenture.com",
+    "country": "IE",
+    "cik": null,
+    "related_parties": [],
+    "wikipedia": [
+      "Accenture"
+    ]
+  },
+  "generated_at": "2026-09-22T15:09:17+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "courtlistener",
+      "doj",
+      "wikipedia"
+    ],
+    "categories": [
+      "reputational"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "courtlistener": 365,
+      "doj": 1095,
+      "wikipedia": 730
+    }
+  },
+  "summary": [
+    {
+      "category": "reputational",
+      "signals": 14,
+      "max_severity": "high",
+      "score": 37,
+      "by_severity": {
+        "info": 2,
+        "low": 9,
+        "medium": 2,
+        "high": 1,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [
+    {
+      "category": "reputational",
+      "title": "Accenture Agrees to Pay $25M to Resolve Alleged Employment Discrimination Violations",
+      "summary": "Enforcement resolution naming the company (settlement, penalty or plea). Accenture Federal Services (AFS), Accenture plc, and Accenture LLP (Accenture) have agreed to pay the United States $25 million to resolve alleged violations of the False Claims Act for failing to comply with anti-discrimination requirements in federal contracts and discriminating against employees and applicants for employment because of race or sex.",
+      "severity": "high",
+      "sources": [
+        {
+          "name": "Accenture Agrees to Pay $25M to Resolve Alleged Employment Discrimination Violations",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/opa/pr/accenture-agrees-pay-25m-resolve-alleged-employment-discrimination-violations",
+          "retrieved_at": "2026-09-22T15:06:33+00:00",
+          "accessed_via": "DOJ press releases API",
+          "published_at": "2026-09-14",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "DOJ press releases API, headline search for Accenture",
+          "publisher": "U.S. Department of Justice, Office of Public Affairs",
+          "url": "https://www.justice.gov/api/v1/press_releases.json?title=Accenture%20plc&sort=date&direction=DESC&pagesize=50",
+          "retrieved_at": "2026-09-22T15:06:33+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "doj",
+      "confidence": 0.85,
+      "observed_at": "2026-09-14",
+      "tags": [
+        "enforcement",
+        "government"
+      ],
+      "data": {
+        "number": "26-1054"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > Working conditions (latest year mentioned 2025)",
+      "summary": "In February 2019, contractors from Accenture's Austin, Texas, location who performed content moderation tasks for Facebook wrote an open letter to Facebook describing poor working conditions and a \"Big Brother environment\" that included restricted work breaks and strict non-disclosure agreements. A counselor in the Austin office stated that the content moderators could develop post-traumatic stress disorder as a result of the work, which included evaluating videos and images containing graphic v...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'Working conditions'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#Working_conditions",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2025",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "Working conditions"
+        ],
+        "latest_year": 2025,
+        "chars": 1380
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > Employment practices (latest year mentioned 2025)",
+      "summary": "In March 2023, Accenture announced plans to eliminate 19,000 jobs of the 738,000 employees over 18 months, citing reduced revenue forecasts. In February 2025, Accenture made significant changes to its diversity, equity, and inclusion policies, including the discontinuation of global employee representation goals and specific demographic-focused career development programs. The company also paused participation in external diversity benchmarking surveys and reevaluated their external partnerships...",
+      "severity": "medium",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'Employment practices'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#Employment_practices",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2025",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "Employment practices"
+        ],
+        "latest_year": 2025,
+        "chars": 664
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > Rotterdam welfare risk score system (latest year mentioned 2023)",
+      "summary": "In 2017, Accenture developed for Rotterdam a risk score system for the 30,000 inhabitant benefiting from welfare. In 2023, Wired and Lighthouse Reports reported that the algorithm was discriminating based on ethnicity and gender, and found \"fundamental flaws that made the system both inaccurate and unfair\", concluding that \"it performs little better than random selection\", while ingesting 315 data points like the length of the last romantic relationship, gender and age.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'Rotterdam welfare risk score system'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#Rotterdam_welfare_risk_score_system",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2023",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "Rotterdam welfare risk score system"
+        ],
+        "latest_year": 2023,
+        "chars": 474
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > Data breach (latest year mentioned 2021)",
+      "summary": "In August 2021, Accenture confirmed a data breach resulting from a ransomware attack, which reportedly led to the theft of approximately six terabytes of data.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'Data breach'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#Data_breach",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2021",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "Data breach"
+        ],
+        "latest_year": 2021,
+        "chars": 159
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > UK NHS contracts (latest year mentioned 2020)",
+      "summary": "Accenture engaged in an IT overhaul project for the British National Health Service (NHS) in 2003, making headlines when it withdrew from the contract in 2006 over disputes related to delays and cost overruns. The government of the United Kingdom ultimately abandoned the project five years later for the same reasons. In 2018-2019, NHS Digital awarded multiple contracts for a total a £33 millions to Accenture, 15% of its total operating budget of £218 millions, as well as 20% in 2019-2020, despit...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'UK NHS contracts'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#UK_NHS_contracts",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2020",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "UK NHS contracts"
+        ],
+        "latest_year": 2020,
+        "chars": 740
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > US immigration (latest year mentioned 2019)",
+      "summary": "In June 2018, Accenture was asked to recruit 7,500 U.S. Customs and Border Protection officers. Under the $297 million contract, Accenture had been charging the US Government nearly $40,000 per hire, which was more than the annual salary of the average officer. According to a report published by the DHS Office of Inspector General in December 2018, Accenture had been paid $13.6M through the first ten months of the contract. They had hired two agents against a contract goal of 7,500 hires over fi...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'US immigration'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#US_immigration",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2019",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "US immigration"
+        ],
+        "latest_year": 2019,
+        "chars": 749
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > Tax practices (latest year mentioned 2019)",
+      "summary": "In the UK, in 2009, 2010 and 2011, Accenture UK, a key provider of IT services for Britain's HMRC, was reported to have respectively paid 2%, 4.3% and 3.5% in corporation taxes. In February 2019, Accenture paid $200 million to Swiss authorities over tax claims related to transfer pricing arrangements.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'Tax practices'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#Tax_practices",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2019",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "Tax practices"
+        ],
+        "latest_year": 2019,
+        "chars": 303
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > False Claims Act Allegations (latest year mentioned 2011)",
+      "summary": "In September 2011, Accenture agreed to pay the United States $63.675 millions to resolve allegations brought to light by two whistleblowers that it \"received kickbacks for its recommendations of hardware and software to the government, fraudulently inflated prices and rigged bids in connection with federal information technology contracts\".",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'False Claims Act Allegations'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#False_Claims_Act_Allegations",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2011",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "False Claims Act Allegations"
+        ],
+        "latest_year": 2011,
+        "chars": 342
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Wikipedia: Controversies > Incorporation in a tax haven (latest year mentioned 2009)",
+      "summary": "In October 2002, the Congressional General Accounting Office (GAO) identified Accenture as one of four publicly traded federal contractors that were incorporated in a tax haven. The other three, unlike Accenture, were incorporated in the United States before they re-incorporated in a tax haven, thereby lowering their US taxes. Critics such as former CNN journalist Lou Dobbs, reported Accenture's decision to incorporate in Bermuda was a US tax avoidance ploy, because they viewed Accenture as havi...",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Wikipedia: Accenture - section 'Incorporation in a tax haven'",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/wiki/Accenture#Incorporation_in_a_tax_haven",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "name": "Wikipedia: Accenture (revision 1376175254)",
+          "publisher": "Wikipedia (Wikimedia Foundation)",
+          "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+          "retrieved_at": "2026-09-22T15:06:34+00:00",
+          "accessed_via": "MediaWiki API",
+          "published_at": null,
+          "license": "CC BY-SA 4.0"
+        }
+      ],
+      "collector": "wikipedia",
+      "confidence": 0.8,
+      "observed_at": "2009",
+      "tags": [
+        "encyclopedia",
+        "controversy"
+      ],
+      "data": {
+        "section": [
+          "Controversies",
+          "Incorporation in a tax haven"
+        ],
+        "latest_year": 2009,
+        "chars": 896
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "9 employment, discrimination and labour suits filed against Accenture since 2025-09-22",
+      "summary": "Most recent: Long v. Accenture LLP (2026-07-21, 710 Labor: Fair Standards); Yeomans v. Accenture Federal Services LLC (2026-06-29, 442 Civil Rights: Jobs); Nelzy v. Accenture, LLP (2026-05-13, 442 Civil Rights: Jobs). Filings are allegations, not findings of liability.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Long v. Accenture LLP (N.D. Ga., 1:26-cv-04083)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73645926/long-v-accenture-llp/",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-07-21",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Yeomans v. Accenture Federal Services LLC (D. Maryland, 8:26-cv-02599)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73548109/yeomans-v-accenture-federal-services-llc/",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-06-29",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Nelzy v. Accenture, LLP (S.D.N.Y., 1:26-cv-03983)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73338338/nelzy-v-accenture-llp/",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-05-13",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "OBICHETA v. ACCENTURE, LLP (D.N.J., 2:26-cv-02191)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/72375478/obicheta-v-accenture-llp/",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-03-03",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "Ballentine v. Accenture LLP (M.D. Fla., 6:26-cv-00286)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/72249362/ballentine-v-accenture-llp/",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-02-09",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: Accenture",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Accenture%22%20OR%20%22Accenture%20plc%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-07-21",
+      "tags": [
+        "litigation",
+        "employment"
+      ],
+      "data": {
+        "cases": 9,
+        "theme": "employment"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "1 consumer protection, fraud and privacy suits filed against Accenture since 2025-09-22",
+      "summary": "Most recent: Erdos-Major v. Accenture LLP, Neuraflash (2026-03-27, 890 Other Statutory Actions). Filings are allegations, not findings of liability.",
+      "severity": "low",
+      "sources": [
+        {
+          "name": "Erdos-Major v. Accenture LLP, Neuraflash (S.D. Cal., 3:26-cv-01940)",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/docket/73102526/erdos-major-v-accenture-llp-neuraflash/",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": "2026-03-27",
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        },
+        {
+          "name": "CourtListener RECAP docket search: Accenture",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Accenture%22%20OR%20%22Accenture%20plc%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.75,
+      "observed_at": "2026-03-27",
+      "tags": [
+        "litigation",
+        "consumer"
+      ],
+      "data": {
+        "cases": 1,
+        "theme": "consumer"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "Director / officer departure or appointment (8-K Item 5.02) - filed 2026-01-28",
+      "summary": "Accenture plc filed a 8-K on 2026-01-28 disclosing: Director / officer departure or appointment (8-K Item 5.02).",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "Accenture plc 8-K filed 2026-01-28 (accession 0001467373-26-000005)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://www.sec.gov/Archives/edgar/data/1467373/000146737326000005/acn-20260128.htm",
+          "retrieved_at": "2026-09-22T14:32:34+00:00",
+          "accessed_via": "EDGAR submissions API",
+          "published_at": "2026-01-28",
+          "license": "U.S. Government work - public domain"
+        },
+        {
+          "name": "EDGAR submissions index for Accenture plc (CIK 0001467373)",
+          "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+          "url": "https://data.sec.gov/submissions/CIK0001467373.json",
+          "retrieved_at": "2026-09-22T14:32:34+00:00",
+          "accessed_via": null,
+          "published_at": null,
+          "license": "U.S. Government work - public domain"
+        }
+      ],
+      "collector": "sec_edgar",
+      "confidence": 0.95,
+      "observed_at": "2026-01-28",
+      "tags": [
+        "sec-filing",
+        "8-K"
+      ],
+      "data": {
+        "form": "8-K",
+        "accession": "0001467373-26-000005",
+        "items": "5.02,5.07,9.01"
+      }
+    },
+    {
+      "category": "reputational",
+      "title": "20 federal cases filed against Accenture since 2025-09-22",
+      "summary": "CourtListener lists 20 federal dockets since 2025-09-22 whose caption names Accenture; 20 name it as defendant. By nature of suit: unclassified: 5; 442 Civil Rights: Jobs: 4; 830 Patent: 2; 710 Labor: Fair Standards: 1; 890 Other Statutory Actions: 1; Civil Rights: Other: 1. 2 are patent, trademark or copyright disputes.",
+      "severity": "info",
+      "sources": [
+        {
+          "name": "CourtListener RECAP docket search: Accenture",
+          "publisher": "Free Law Project (CourtListener)",
+          "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Accenture%22%20OR%20%22Accenture%20plc%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+          "retrieved_at": "2026-09-22T15:09:17+00:00",
+          "accessed_via": "CourtListener REST API v4",
+          "published_at": null,
+          "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+        }
+      ],
+      "collector": "courtlistener",
+      "confidence": 0.8,
+      "observed_at": null,
+      "tags": [
+        "litigation",
+        "court-records"
+      ],
+      "data": {
+        "dockets_total": 20,
+        "reviewed": 20,
+        "as_defendant": 20,
+        "by_nature_of_suit": {
+          "unclassified": 5,
+          "710 Labor: Fair Standards": 1,
+          "442 Civil Rights: Jobs": 4,
+          "890 Other Statutory Actions": 1,
+          "Civil Rights: Other": 1,
+          "830 Patent": 2,
+          "320 Assault Libel & Slander": 1,
+          "440 Civil Rights: Other": 1,
+          "510 Prisoner petitions - vacate sentence": 1,
+          "190 Contract: Other": 1,
+          "Labor: E.R.I.S.A.": 1,
+          "442 Civil Rights: Employment": 1
+        }
+      }
+    }
+  ],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR submissions index for Accenture plc (CIK 0001467373)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/submissions/CIK0001467373.json",
+        "retrieved_at": "2026-09-22T14:32:34+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "1 risk-relevant filings since 2025-09-22",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"Wells notice\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22Wells%20notice%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:36+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22Wells%20notice%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"Wells notice\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"material weakness\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22material%20weakness%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:39+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22material%20weakness%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "3 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"deferred prosecution agreement\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22deferred%20prosecution%20agreement%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:41+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22deferred%20prosecution%20agreement%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"deferred prosecution agreement\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"substantial doubt\" \"going concern\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:43+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22substantial%20doubt%22%20%22going%20concern%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "no filings match \"substantial doubt\" \"going concern\"",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"ransomware\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22ransomware%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:44+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22ransomware%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "EDGAR full-text search: \"cybersecurity incident\" (Accenture plc)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/#/q=%22cybersecurity%20incident%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "retrieved_at": "2026-09-22T14:32:44+00:00",
+        "accessed_via": "https://efts.sec.gov/LATEST/search-index?q=%22cybersecurity%20incident%22&ciks=0001467373&dateRange=custom&startdt=2025-09-22&enddt=2026-09-22",
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "2 documents",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "SEC XBRL company facts for Accenture plc (CIK 0001467373)",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001467373.json",
+        "retrieved_at": "2026-09-22T14:32:45+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "ok",
+      "detail": "annual XBRL data through 2025-08-31",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CourtListener RECAP docket search: Accenture",
+        "publisher": "Free Law Project (CourtListener)",
+        "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Accenture%22%20OR%20%22Accenture%20plc%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+        "retrieved_at": "2026-09-22T15:09:17+00:00",
+        "accessed_via": "CourtListener REST API v4",
+        "published_at": null,
+        "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+      },
+      "collector": "courtlistener",
+      "status": "ok",
+      "detail": "20 dockets since 2025-09-22, 20 as defendant",
+      "records_scanned": 20
+    },
+    {
+      "source": {
+        "name": "DOJ press releases API, headline search for Accenture",
+        "publisher": "U.S. Department of Justice, Office of Public Affairs",
+        "url": "https://www.justice.gov/api/v1/press_releases.json?title=Accenture%20plc&sort=date&direction=DESC&pagesize=50",
+        "retrieved_at": "2026-09-22T15:06:33+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "doj",
+      "status": "ok",
+      "detail": "1 releases since 2023-09-23, 1 name the company in the headline, 1 enforcement-related",
+      "records_scanned": 1
+    },
+    {
+      "source": {
+        "name": "Wikipedia: Accenture (revision 1376175254)",
+        "publisher": "Wikipedia (Wikimedia Foundation)",
+        "url": "https://en.wikipedia.org/w/index.php?title=Accenture&oldid=1376175254",
+        "retrieved_at": "2026-09-22T15:06:34+00:00",
+        "accessed_via": "MediaWiki API",
+        "published_at": null,
+        "license": "CC BY-SA 4.0"
+      },
+      "collector": "wikipedia",
+      "status": "ok",
+      "detail": "9 controversy/litigation sections in 'Accenture'",
+      "records_scanned": null
+    }
+  ],
+  "errors": []
+}

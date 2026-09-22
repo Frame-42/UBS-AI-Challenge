@@ -1,0 +1,114 @@
+{
+  "company": {
+    "name": "Chain IQ",
+    "aliases": [
+      "Chain IQ Group AG",
+      "Chain IQ Group"
+    ],
+    "ticker": null,
+    "domain": "chainiq.com",
+    "country": "CH",
+    "cik": null,
+    "related_parties": [],
+    "wikipedia": [
+      "Chain IQ"
+    ]
+  },
+  "generated_at": "2026-09-22T15:09:17+00:00",
+  "parameters": {
+    "collectors": [
+      "sec_edgar",
+      "courtlistener",
+      "doj",
+      "wikipedia"
+    ],
+    "categories": [
+      "reputational"
+    ],
+    "lookback_days": {
+      "sec_edgar": 365,
+      "courtlistener": 365,
+      "doj": 1095,
+      "wikipedia": 730
+    }
+  },
+  "summary": [
+    {
+      "category": "reputational",
+      "signals": 0,
+      "max_severity": "none",
+      "score": 0,
+      "by_severity": {
+        "info": 0,
+        "low": 0,
+        "medium": 0,
+        "high": 0,
+        "critical": 0
+      }
+    }
+  ],
+  "signals": [],
+  "sources_consulted": [
+    {
+      "source": {
+        "name": "EDGAR company search",
+        "publisher": "U.S. Securities and Exchange Commission (EDGAR)",
+        "url": "https://www.sec.gov/edgar/search/",
+        "retrieved_at": "2026-09-22T15:09:17+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "sec_edgar",
+      "status": "no_match",
+      "detail": "Chain IQ does not appear to be an SEC registrant",
+      "records_scanned": null
+    },
+    {
+      "source": {
+        "name": "CourtListener RECAP docket search: Chain IQ",
+        "publisher": "Free Law Project (CourtListener)",
+        "url": "https://www.courtlistener.com/?type=r&q=caseName%3A%28%22Chain%20IQ%22%20OR%20%22Chain%20IQ%20Group%20AG%22%20OR%20%22Chain%20IQ%20Group%22%29&filed_after=2025-09-22&order_by=dateFiled%20desc",
+        "retrieved_at": "2026-09-22T15:07:05+00:00",
+        "accessed_via": "CourtListener REST API v4",
+        "published_at": null,
+        "license": "Court records are public domain; CourtListener data free of known copyright restrictions"
+      },
+      "collector": "courtlistener",
+      "status": "no_match",
+      "detail": "0 dockets since 2025-09-22, 0 as defendant",
+      "records_scanned": 0
+    },
+    {
+      "source": {
+        "name": "DOJ press releases API, headline search for Chain IQ",
+        "publisher": "U.S. Department of Justice, Office of Public Affairs",
+        "url": "https://www.justice.gov/api/v1/press_releases.json?title=Chain%20IQ%20Group&sort=date&direction=DESC&pagesize=50",
+        "retrieved_at": "2026-09-22T15:07:10+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "U.S. Government work - public domain"
+      },
+      "collector": "doj",
+      "status": "no_match",
+      "detail": "0 releases since 2023-09-23, 0 name the company in the headline, 0 enforcement-related",
+      "records_scanned": 0
+    },
+    {
+      "source": {
+        "name": "Wikipedia article: Chain IQ",
+        "publisher": "Wikipedia (Wikimedia Foundation)",
+        "url": "https://en.wikipedia.org/wiki/Chain_IQ",
+        "retrieved_at": "2026-09-22T15:07:11+00:00",
+        "accessed_via": null,
+        "published_at": null,
+        "license": "CC BY-SA 4.0"
+      },
+      "collector": "wikipedia",
+      "status": "no_match",
+      "detail": "no article (or a disambiguation page)",
+      "records_scanned": null
+    }
+  ],
+  "errors": []
+}

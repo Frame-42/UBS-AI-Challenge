@@ -2,6 +2,8 @@
 import unittest
 
 from risk_collector.collectors.gdelt import build_query
+from risk_collector.collectors.reputation import (classify_doj, is_defendant, latest_year,
+                                                  split_sections, suit_theme)
 from risk_collector.collectors.sanctions import _ofac_csv, _uk_csv
 from risk_collector.matching import NameIndex, normalize, similarity
 from risk_collector.models import Company, RiskCategory, RiskSignal, Severity, Source
@@ -68,6 +70,32 @@ class GdeltTests(unittest.TestCase):
     def test_query(self):
         q = build_query(["UBS", "UBS Group AG"], ["fraud", '"money laundering"'])
         self.assertEqual(q, '(UBS OR "UBS Group AG") (fraud OR "money laundering") sourcelang:english')
+
+
+class ReputationTests(unittest.TestCase):
+    def test_defendant_side(self):
+        self.assertTrue(is_defendant("Akiyoshi v. HireRight, LLC", ["HireRight"]))
+        self.assertFalse(is_defendant("Microsoft Corp. v. Doe", ["Microsoft"]))
+
+    def test_suit_theme(self):
+        self.assertEqual(suit_theme("850 Securities/Commodities"), "securities")
+        self.assertEqual(suit_theme("3480 Consumer Credit"), "consumer")
+        self.assertEqual(suit_theme("Consumer Credit"), "consumer")
+        self.assertIsNone(suit_theme("830 Patent"))
+
+    def test_classify_doj(self):
+        names = ["Microsoft"]
+        self.assertEqual(classify_doj("Microsoft Agrees to Pay $20 Million Civil Penalty", names)[0], Severity.HIGH)
+        self.assertEqual(classify_doj("Software Distributor Sentenced for Illicit Microsoft Keys", names)[0],
+                         Severity.INFO)
+        self.assertEqual(classify_doj("Indictment Charges Man with Defrauding Amazon", ["Amazon"])[0], Severity.INFO)
+        self.assertIsNone(classify_doj("San Francisco Man Sentenced", ["Cisco"]))
+
+    def test_split_sections(self):
+        text = "Intro\n== History ==\nFounded.\n== Controversies ==\nx\n=== Antitrust ===\nFined in 2004."
+        secs = split_sections(text)
+        self.assertEqual([p for p, _ in secs], [["History"], ["Controversies"], ["Controversies", "Antitrust"]])
+        self.assertEqual(latest_year(secs[-1][1]), 2004)
 
 
 if __name__ == "__main__":

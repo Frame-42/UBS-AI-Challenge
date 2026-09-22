@@ -119,6 +119,7 @@ class Company:
     country: Optional[str] = None
     cik: Optional[str] = None  # SEC Central Index Key, resolved automatically if omitted
     related_parties: List[str] = field(default_factory=list)  # executives, subsidiaries, owners
+    wikipedia: List[str] = field(default_factory=list)  # English Wikipedia article titles; default: name
 
     @property
     def all_names(self) -> List[str]:

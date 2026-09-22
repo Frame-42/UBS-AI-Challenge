@@ -6,5 +6,8 @@
   ],
   "ticker": "IBM",
   "domain": "ibm.com",
-  "country": "US"
+  "country": "US",
+  "wikipedia": [
+    "IBM"
+  ]
 }

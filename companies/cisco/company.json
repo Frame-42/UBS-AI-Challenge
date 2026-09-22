@@ -6,5 +6,8 @@
   ],
   "ticker": "CSCO",
   "domain": "cisco.com",
-  "country": "US"
+  "country": "US",
+  "wikipedia": [
+    "Cisco"
+  ]
 }

@@ -6,5 +6,8 @@
   ],
   "ticker": "CRM",
   "domain": "salesforce.com",
-  "country": "US"
+  "country": "US",
+  "wikipedia": [
+    "Salesforce"
+  ]
 }
