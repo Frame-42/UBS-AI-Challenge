@@ -108,7 +108,8 @@ class RiskFramework:
         """Recompute overall distributions and rankings using cached category results."""
         categories, normalized = self._categories_and_weights(weights)
         return Scoreboard(
-            schema_version="1.0", assessment_count=len(self._assessments),
+            schema_version="1.1", assessment_count=len(self._assessments),
+            contains_synthetic_assessments=any(a.metadata.get("synthetic") is True for a in self._assessments),
             input_digest=self.input_digest, config=self.config.to_dict(), weights=dict(weights),
             normalized_weights=normalized,
             records=rank_entities(self._score(entity, categories, weights, simulate=simulate) for entity in self._scores),

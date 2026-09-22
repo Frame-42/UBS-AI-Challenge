@@ -4,7 +4,35 @@ Turn repeated AI risk assessments into transparent category scores, disagreement
 
 This repository contains the public-source collector (`risk_collector`), the scoring layer (`risk_framework`), and an offline JSON export joining their outputs. The scoring layer does not call LLMs or retrieve evidence. There is no frontend, database, or UBS internal integration. A risk score is an analytical prioritization signal, not proof that a vendor is unsafe.
 
-## Export the collected company data
+## Simulate 100 assessments and calculate overall risk
+
+For the current demo, generate 100 explicitly synthetic assessments per available company/category, then run the Monte Carlo scorer:
+
+```bash
+python3 -m risk_framework simulate \
+  --reports companies \
+  --config examples/collection_config.json \
+  --output exports/simulated-assessments.json
+
+python3 -m risk_framework export \
+  --reports companies \
+  --weights examples/collection_weights.json \
+  --config examples/collection_config.json \
+  --assessments exports/simulated-assessments.json \
+  --output exports/risk-data.json
+```
+
+This currently creates **1,600 synthetic assessments**: 100 each for cybersecurity and fraud across eight companies with findings. Scores use seeded normal noise around the collected heuristic, with a per-category standard deviation chosen between 4 and 12 points, clipped to [0, 100]. These are demo values, not AI judgments or factual company-risk estimates. Each raw assessment carries `metadata.synthetic: true`, its center, spread, seed/settings, and collection digest.
+
+**Financial assessments are pending and excluded from this simulation**, even though saved reports contain financial heuristic summaries. No findings are invented for other missing categories or the two unscored companies. With the example weights, scored entities therefore have 50% coverage; financial, reputational, and sanctions remain missing. Real financial assessments can be supplied later through the canonical assessment input without code changes.
+
+The scorer performs **5,000 weighted Monte Carlo draws per eligible entity**. `overall.score` is their median by default, and rankings/risk levels use that value. The output also includes p10–p90, spread, standard deviation, and stability. `overall.weighted_category_score` retains the weighted combination of category headlines for comparison; `overall.contributions` sums to that reference, not necessarily the Monte Carlo median.
+
+The website payload is labeled `score_basis: "simulated_ai_assessments"` and `distribution_semantics: "synthetic_assessment_spread"`. The inner scoreboard also marks `contains_synthetic_assessments: true`. Its ranges describe injected demo variation, not observed AI disagreement or confidence in true risk. Synthetic and real assessments cannot be mixed in one website dataset.
+
+Adjust `assessment_simulation` in [risk_framework/defaults.json](risk_framework/defaults.json), or override its `runs`, `seed`, `spread_std_min`, `spread_std_max`, and `excluded_categories` through `--config`. `overall_simulation.headline_method` supports `monte_carlo_median` (default), `monte_carlo_mean`, and `weighted_categories`. Synthetic generation and overall Monte Carlo resampling use separate seeds.
+
+## Export the collected company data without simulated assessments
 
 The checked-in `companies/` directory contains reports for ten companies. Produce one JSON file that a future website can load:
 
@@ -13,7 +41,7 @@ python3 -m risk_framework export \
   --reports companies \
   --weights examples/collection_weights.json \
   --config examples/collection_config.json \
-  --output exports/risk-data.json
+  --output exports/collector-triage.json
 ```
 
 This command is offline and uses the latest report per company. The output joins ranked category/overall scores to the original sourced findings, source checks, report timestamps, and collection errors. It is written atomically, so a consumer never reads a partially written snapshot. `exports/` is ignored by Git; regenerate the file after input changes.
@@ -141,13 +169,13 @@ Supply a JSON object such as:
 
 All finite, nonnegative relative weights are normalized. Percentages and fractions work identically when scaled consistently. At least one weight must be positive; omitted categories have zero weight. Weights express business/user preferences explicitly, and changes can intentionally change rankings.
 
-The overall headline is the weighted sum of eligible category scores. By default, a category needs at least 10 runs; below 100 runs it is flagged as below the preferred count. Below 10 runs, its descriptive statistics remain visible, but its headline, risk level, and stability are null.
+The default overall headline is the median of weighted Monte Carlo draws from eligible category distributions. The weighted sum of category headlines is also returned as `overall.weighted_category_score`. By default, a category needs at least 10 runs; below 100 runs it is flagged as below the preferred count. Below 10 runs, its descriptive statistics remain visible, but its headline, risk level, and stability are null.
 
 **Missing data is not low risk.** By default, weights are renormalized over eligible categories, with weighted coverage and excluded categories exposed. If cyber and financial cover 70% of requested weight, the score uses those categories with weights summing to one and reports `coverage: 0.7`, `incomplete: true`. Coverage measures availability under the requested weights, not evidence quality. Missing zero-weight categories remain visible but do not lower weighted coverage.
 
 Set `missing_categories` to `"withhold"` to withhold the overall score whenever positive-weight coverage is incomplete. With no eligible positive-weight categories, the overall score and rank are null, never zero. Supply an optional `--entities` JSON object mapping IDs to names to include entities that have no assessments at all.
 
-The overall distribution uses 5,000 seeded simulations by default: independently sample one observed score per eligible category with replacement, then combine using effective weights. It exposes the overall distribution's mean, median, p10, p90, standard deviation, and stability, alongside the weighted headline. Cross-category dependence is not modeled; see the [methodology](docs/FRAMEWORK.md).
+The overall distribution uses 5,000 seeded simulations by default: independently sample one observed score per eligible category with replacement, then combine using effective weights. It exposes the overall distribution's mean, median, p10, p90, standard deviation, and stability; its median is the default headline. Cross-category dependence is not modeled; see the [methodology](docs/FRAMEWORK.md).
 
 ## Frontend / teammate integration
 
@@ -173,8 +201,9 @@ Keep the framework instance when only weights change; category summaries and raw
 Consume the versioned envelope described by [schemas/scoreboard.schema.json](schemas/scoreboard.schema.json):
 
 ```text
-schema_version: "1.0"
+schema_version: "1.1"
 assessment_count: integer
+contains_synthetic_assessments: boolean
 input_digest: SHA-256 identifier of assessment content and optional roster
 config: resolved policy
 weights: supplied weights
@@ -183,7 +212,7 @@ records: [
   {
     entity_id, entity_name, entity_type, rank,
     overall: {
-      score, risk_level, p10, p90, mean, median, std, spread, stability,
+      score, score_method, weighted_category_score, risk_level, p10, p90, mean, median, std, spread, stability,
       n, minimum, maximum, p25, p75, iqr, mad,
       coverage, incomplete, status, effective_weights, contributions,
       missing_categories, insufficient_categories, below_preferred_categories
@@ -199,6 +228,6 @@ records: [
 ]
 ```
 
-Rank 1 is highest risk. Exact ties share competition rank (1, 1, 3); tied rows are ordered by entity ID. Unscorable rows come last with null ranks. Partial-coverage rows are still ranked by their available-data score, so display coverage beside the ranking. Category results remain available even if overall scoring is withheld. Do not substitute the simulated `overall.median` for the configured headline `overall.score`.
+Rank 1 is highest risk. Exact ties share competition rank (1, 1, 3); tied rows are ordered by entity ID. Unscorable rows come last with null ranks. Partial-coverage rows are still ranked by their available-data score, so display coverage beside the ranking. Category results remain available even if overall scoring is withheld. `overall.score_method` states the selected headline rule. Always display `overall.score`; the default `monte_carlo_median` equals `overall.median`. Collector-only triage uses `weighted_categories`.
 
 Numbers are serialized without display rounding so the calculations remain inspectable. Round only for presentation; show ranges, counts, coverage, and status alongside scores.

@@ -77,7 +77,7 @@ class IntegrationTests(unittest.TestCase):
             result = subprocess.run([*args, '--output', str(path)], cwd=ROOT, capture_output=True, text=True)
             self.assertEqual(result.returncode, 0, result.stderr)
             self.assertEqual(result.stdout, '')
-            self.assertEqual(load_json(path)['schema_version'], '1.0')
+            self.assertEqual(load_json(path)['schema_version'], '1.1')
             before = (ROOT/'examples/sample_weights.json').read_bytes()
             result = subprocess.run([*args, '--output', str(ROOT/'examples/sample_weights.json')],
                                     cwd=ROOT, capture_output=True, text=True)

@@ -39,7 +39,9 @@ class OverallTests(unittest.TestCase):
         self.assertEqual(first.records[0].overall, third.overall)
         changed = RiskFramework(data, config(overall_simulation={'seed': 99})).score_entity('alpha', weights)
         self.assertNotEqual(third.overall.p10, changed.overall.p10)
-        self.assertEqual(third.overall.score, changed.overall.score)
+        self.assertEqual(third.overall.weighted_category_score, changed.overall.weighted_category_score)
+        self.assertEqual(third.overall.score, third.overall.median)
+        self.assertEqual(changed.overall.score, changed.overall.median)
         self.assertGreater(third.overall.spread, 0)
 
     def test_resampling_does_not_pair_run_ids(self):
@@ -53,7 +55,7 @@ class OverallTests(unittest.TestCase):
         result = RiskFramework(rows('alpha', 'new/category', [72]*10), cfg).score_all({'new/category': 1})
         self.assertEqual(result.records[0].overall.score, 72)
         self.assertIn('new/category', result.records[0].categories)
-        self.assertIn('"schema_version": "1.0"', to_json(result))
+        self.assertIn('"schema_version": "1.1"', to_json(result))
 
     def test_large_finite_weights_do_not_overflow(self):
         result = normalize_weights({'a': 1e308, 'b': 1e308}, ['a', 'b'])

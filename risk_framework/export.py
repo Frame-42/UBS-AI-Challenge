@@ -25,11 +25,16 @@ class WebsiteDataset:
         if self._triage:
             # One upstream heuristic summary is sufficient only for provisional triage.
             # Ensemble mode always keeps the normal assessment eligibility policy.
-            cfg = replace(cfg, minimum_runs=replace(cfg.minimum_runs, minimum_required=1))
+            cfg = replace(cfg, minimum_runs=replace(cfg.minimum_runs, minimum_required=1),
+                          overall_simulation=replace(cfg.overall_simulation, headline_method="weighted_categories"))
             if cfg.category_aggregation.method != "median":
                 raise ValidationError("Collector triage uses the supplied summary unchanged; aggregation must be median")
         self._framework = RiskFramework(collection.assessments if self._triage else assessments,
                                         cfg, entities=collection.entities)
+        flags = {a.metadata.get("synthetic") is True for a in self._framework.assessments}
+        if len(flags) > 1:
+            raise ValidationError("Do not mix synthetic assessments and real assessments in one website dataset")
+        self._synthetic = flags == {True}
         if not self._triage:
             unknown = {a.entity_id for a in self._framework.assessments} - set(collection.entities)
             if unknown:
@@ -45,16 +50,16 @@ class WebsiteDataset:
                     for key in ("p10", "p25", "p75", "p90", "spread", "std", "iqr", "mad", "stability"):
                         category[key] = None
         return {
-            "schema_version": "1.0",
-            "score_basis": "collector_heuristic" if self._triage else "ai_assessments",
-            "distribution_semantics": "not_available" if self._triage else "ai_assessment_disagreement",
+            "schema_version": "1.1",
+            "score_basis": "collector_heuristic" if self._triage else "simulated_ai_assessments" if self._synthetic else "ai_assessments",
+            "distribution_semantics": "not_available" if self._triage else "synthetic_assessment_spread" if self._synthetic else "ai_assessment_disagreement",
             "collection_digest": self._collection.digest,
             "scoreboard": board,
             "evidence": deepcopy(self._collection.evidence),
         }
 
 
-def export_json(payload: dict, output: str | Path, *, protected_paths: Iterable[Path] = ()) -> None:
+def export_json(payload: dict | list, output: str | Path, *, protected_paths: Iterable[Path] = ()) -> None:
     """Atomically replace the website snapshot so readers never see a partial JSON file."""
     import os
     import tempfile

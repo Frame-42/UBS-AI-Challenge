@@ -37,10 +37,36 @@ class Aggregation:
 class Simulation:
     runs: int
     seed: int
+    headline_method: str
 
     def __post_init__(self) -> None:
         integer(self.runs, "simulation.runs", 1)
         integer(self.seed, "simulation.seed")
+        if self.headline_method not in ("monte_carlo_median", "monte_carlo_mean", "weighted_categories"):
+            raise ValidationError("Unknown overall headline_method")
+
+
+@dataclass(frozen=True)
+class AssessmentSimulation:
+    runs: int
+    seed: int
+    spread_std_min: float
+    spread_std_max: float
+    excluded_categories: tuple[str, ...]
+
+    def __post_init__(self) -> None:
+        integer(self.runs, "assessment_simulation.runs", 1)
+        integer(self.seed, "assessment_simulation.seed")
+        low = number(self.spread_std_min, "spread_std_min", 0, 100)
+        number(self.spread_std_max, "spread_std_max", low, 100)
+        if low == 0:
+            raise ValidationError("spread_std_min must be positive")
+        if not isinstance(self.excluded_categories, tuple):
+            raise ValidationError("excluded_categories must be a tuple")
+        for category in self.excluded_categories:
+            identifier(category, "excluded category")
+        if len(set(self.excluded_categories)) != len(self.excluded_categories):
+            raise ValidationError("Duplicate excluded categories")
 
 
 @dataclass(frozen=True)
@@ -79,6 +105,7 @@ class Config:
     risk_scale: RiskScale
     category_aggregation: Aggregation
     overall_simulation: Simulation
+    assessment_simulation: AssessmentSimulation
     stability: Stability
     risk_levels: tuple[RiskLevel, ...]
     minimum_runs: MinimumRuns
@@ -106,6 +133,7 @@ class Config:
 
     def to_dict(self) -> dict[str, Any]:
         result = asdict(self)
+        result["assessment_simulation"]["excluded_categories"] = list(self.assessment_simulation.excluded_categories)
         result["categories"] = list(self.categories) if self.categories is not None else None
         result["risk_levels"] = [asdict(level) for level in self.risk_levels]
         return result
@@ -149,11 +177,16 @@ def load_config(path: str | Path | None = None, *, overrides: dict | None = None
     for level in data["risk_levels"]:
         object_fields(level, {"label", "upper"}, {"label", "upper"}, "risk level")
         levels.append(RiskLevel(**level))
+    mock = dict(data["assessment_simulation"])
+    if not isinstance(mock["excluded_categories"], list):
+        raise ValidationError("assessment_simulation.excluded_categories must be an array")
+    mock["excluded_categories"] = tuple(mock["excluded_categories"])
     return Config(
         categories=tuple(categories) if categories is not None else None,
         risk_scale=RiskScale(**data["risk_scale"]),
         category_aggregation=Aggregation(**data["category_aggregation"]),
         overall_simulation=Simulation(**data["overall_simulation"]),
+        assessment_simulation=AssessmentSimulation(**mock),
         stability=Stability(**data["stability"]),
         risk_levels=tuple(levels),
         minimum_runs=MinimumRuns(**data["minimum_runs"]),

@@ -1,22 +1,24 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Website risk data snapshot v1.0",
+  "title": "Website risk data snapshot v1.1",
   "type": "object",
   "additionalProperties": false,
   "properties": {
     "schema_version": {
-      "const": "1.0"
+      "const": "1.1"
     },
     "score_basis": {
       "enum": [
         "collector_heuristic",
-        "ai_assessments"
+        "ai_assessments",
+        "simulated_ai_assessments"
       ]
     },
     "distribution_semantics": {
       "enum": [
         "not_available",
-        "ai_assessment_disagreement"
+        "ai_assessment_disagreement",
+        "synthetic_assessment_spread"
       ]
     },
     "collection_digest": {
@@ -143,11 +145,36 @@
             "const": "not_available"
           }
         }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "score_basis": {
+            "const": "ai_assessments"
+          }
+        }
       },
-      "else": {
+      "then": {
         "properties": {
           "distribution_semantics": {
             "const": "ai_assessment_disagreement"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "score_basis": {
+            "const": "simulated_ai_assessments"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "distribution_semantics": {
+            "const": "synthetic_assessment_spread"
           }
         }
       }

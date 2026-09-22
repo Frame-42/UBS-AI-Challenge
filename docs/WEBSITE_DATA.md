@@ -9,7 +9,7 @@ python3 -m risk_framework export \
   --reports companies \
   --weights examples/collection_weights.json \
   --config examples/collection_config.json \
-  --output exports/risk-data.json
+  --output exports/collector-triage.json
 ```
 
 Use Python 3.11+. No dependencies or network access are needed for this command. The destination's parent directories are created, and the JSON is replaced atomically after successful calculation. Failed validation leaves an existing snapshot unchanged. The CLI refuses outputs inside the input report directory or over any supplied input file. Export directories are ignored by Git.
@@ -26,14 +26,14 @@ The machine-readable contract is [website.schema.json](../schemas/website.schema
 
 | Field | Meaning |
 | --- | --- |
-| `schema_version` | Website envelope version, `"1.0"` |
-| `score_basis` | `"collector_heuristic"` or `"ai_assessments"` |
-| `distribution_semantics` | `"not_available"` or `"ai_assessment_disagreement"` |
+| `schema_version` | Website envelope version, `"1.1"` |
+| `score_basis` | `"collector_heuristic"`, `"ai_assessments"`, or `"simulated_ai_assessments"` |
+| `distribution_semantics` | `"not_available"`, `"ai_assessment_disagreement"`, or `"synthetic_assessment_spread"` |
 | `collection_digest` | SHA-256 identifier of exported collection evidence, including report filenames/counts |
 | `scoreboard` | Existing versioned scoreboard: resolved config, original/effective weights, ranked entity records |
 | `evidence` | Entity-ID-keyed company context, collection diagnostics, and source reports |
 
-`scoreboard.records` holds `entity_id`, `entity_name`, nullable `entity_type`, `rank`, `overall`, and dynamic `categories`. `overall.score` is the headline. Display its coverage, incomplete flag, status, and category breakdown alongside it. Rank 1 is highest numerical risk; equal values share a rank; unscored entities have null ranks and appear last. The [framework methodology](FRAMEWORK.md) defines the full scoreboard fields and weight formulas.
+`scoreboard.records` holds `entity_id`, `entity_name`, nullable `entity_type`, `rank`, `overall`, and dynamic `categories`. `overall.score` is the headline; `score_method` identifies its calculation. By default it is the median of 5,000 Monte Carlo draws. `weighted_category_score` is a separate reference whose category contributions are exposed. `scoreboard.contains_synthetic_assessments` flags demo inputs even when consuming the inner scoreboard alone. Display its coverage, incomplete flag, status, and category breakdown alongside it. Rank 1 is highest numerical risk; equal values share a rank; unscored entities have null ranks and appear last. The [framework methodology](FRAMEWORK.md) defines the full scoreboard fields and weight formulas.
 
 Join an entity row with `payload.evidence[row.entity_id]`. Each evidence entry contains:
 
@@ -53,7 +53,7 @@ Every signal retains its source objects (name, publisher, URL, retrieval/publica
 
 ## Current collection mode
 
-Without `--assessments`, the envelope uses `collector_heuristic` and `not_available`. The collector currently computes one confidence-weighted severity sum per category, capped at 100. Individual findings are evidence items, not repeated agent runs, and report history is not an ensemble.
+When exporting without `--assessments`, the envelope uses `collector_heuristic` and `not_available`. The collector currently computes one confidence-weighted severity sum per category, capped at 100. Individual findings are evidence items, not repeated agent runs, and report history is not an ensemble.
 
 The adapter imports one category summary only if it has at least one sourced finding. It checks that the summary's signal count matches the actual signal records. No-findings zeros stay visible in the original report but become missing scores. A genuine upstream zero with informational findings remains zero. This prevents an empty or failed collection from looking like a safe vendor while preserving actual triage values.
 
@@ -81,7 +81,17 @@ updated = dataset.score({**weights, "financial": 50})
 
 This uses `ai_assessments` and `ai_assessment_disagreement`. Repeated assessments replace all heuristic scores; they are never blended. The normal minimum_required=10/preferred=100 policy applies unless explicitly configured otherwise. Empty assessments leave companies unscored. IDs must match the collected entity roster, and category names must match the selected config; no implicit category aliases exist. Keep the evidence batch IDs in assessment metadata and retain the raw assessments for audit. The caller ensures they correspond to the selected report snapshots.
 
-Only this mode supplies AI-disagreement ranges. These are not statistical confidence intervals or probabilities of true vendor risk. Even in this mode, check per-row eligibility and null values: some companies may lack enough assessments.
+Only real assessment mode supplies observed AI-disagreement ranges; simulated assessment mode supplies explicitly synthetic spread. These are not statistical confidence intervals or probabilities of true vendor risk. Even in this mode, check per-row eligibility and null values: some companies may lack enough assessments.
+
+## Simulate the pending AI valuations
+
+The README's two-step `simulate` → `export --assessments` workflow writes `exports/simulated-assessments.json` and then `exports/risk-data.json`. Each available non-financial entity/category gets 100 seeded noisy assessments. Financial is excluded until real assessments arrive; absent reputational/sanctions findings are not invented. The current example has eight scored entities at 50% weighted coverage and two unscored entities.
+
+Synthetic files carry `metadata.synthetic: true`. `WebsiteDataset` detects that marker and returns `score_basis: "simulated_ai_assessments"` with `distribution_semantics: "synthetic_assessment_spread"`. Never label this as measured AI confidence or real vendor risk. Display the demo label with all scores. Mixing synthetic and real input rows is rejected. Replace the complete input file with real agent assessments when available; real financial scores are accepted without changing code.
+
+The default overall headline is the median of the weighted Monte Carlo distribution, used for ranking and risk levels. `overall.n` is 5,000 for scored entities, while each available category's n is 100. p10/p90 and stability describe the injected synthetic variation in this mode. `overall.weighted_category_score` preserves the weighted category headline reference; `contributions` sums to that reference, not necessarily `overall.score`.
+
+Defaults and override keys are documented in [FRAMEWORK.md](FRAMEWORK.md#10-synthetic-assessment-demonstration). The raw generated JSON retains each category's center and selected standard deviation for audit. Keep it if reproducibility matters; importing it does not regenerate the values.
 
 ## Recompute and publish
 

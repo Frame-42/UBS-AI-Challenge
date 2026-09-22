@@ -106,16 +106,16 @@ With default `missing_categories: "renormalize"`:
 
 ```text
 w*ₑ,c = w_c / coverageₑ      for c ∈ Aₑ
-Rₑ = Σ[c ∈ Aₑ] w*ₑ,c × rₑ,c
+Wₑ = Σ[c ∈ Aₑ] w*ₑ,c × rₑ,c
 ```
 
-For complete data this is simply `Rₑ = Σ w_c × rₑ,c`. This weighted category headline is `overall.score`. The category median default is robust, while weights remain an explicit business/user preference.
+For complete data this is simply `Wₑ = Σ w_c × rₑ,c`. This weighted category reference is `overall.weighted_category_score`. The category median default is robust, while weights remain an explicit business/user preference. The default overall headline is the Monte Carlo median described below; `weighted_categories` remains an explicit alternative.
 
-Example: weights cyber 0.4, financial 0.3, regulatory 0.3; scores cyber 80, financial 20, regulatory missing. Coverage is 0.7, effective weights are 4/7 and 3/7, and the headline is about 54.3. It is not 38, which would incorrectly treat missing regulatory risk as zero.
+Example: weights cyber 0.4, financial 0.3, regulatory 0.3; scores cyber 80, financial 20, regulatory missing. Coverage is 0.7, effective weights are 4/7 and 3/7, and the weighted category reference is about 54.3. If both category distributions are constant at those values, the Monte Carlo headline is also 54.3. It is not 38, which would incorrectly treat missing regulatory risk as zero.
 
 `incomplete` is true if any positive-weight category is missing or insufficient. It does not mean merely below the preferred run count. Missing zero-weight categories remain in `categories`, but do not affect coverage or incomplete. `overall.below_preferred_categories` lists positive-weight categories below the preferred count, including missing ones. Coverage is availability under the chosen weights, not a measure of all relevant vendor evidence.
 
-`effective_weights` lists the contributing categories and `contributions[c]` is effective weight × category headline. Their sum reproduces the overall headline up to floating-point arithmetic. With no contributing categories, all overall descriptive statistics and the headline are null, n=0, coverage=0, and status=`unscorable`. With `missing_categories: "withhold"`, incomplete but partly available entities have null overall values and status=`incomplete_withheld`; coverage and category results remain visible. In both cases effective weights and contributions are empty.
+`effective_weights` lists the contributing categories and `contributions[c]` is effective weight × category headline. Their sum reproduces `overall.weighted_category_score` up to floating-point arithmetic; it need not equal the Monte Carlo headline. With no contributing categories, all overall descriptive statistics and the headline are null, n=0, coverage=0, and status=`unscorable`. With `missing_categories: "withhold"`, incomplete but partly available entities have null overall values and status=`incomplete_withheld`; coverage and category results remain visible. In both cases effective weights and contributions are empty.
 
 Partial-coverage scores are available-data scores. Two entities with different excluded categories are not necessarily directly comparable. The default ranking still orders them numerically and exposes their coverage; use withhold policy when complete positive-weight coverage is required for ranking. There is no hidden missing-data penalty or risk imputation.
 
@@ -132,9 +132,17 @@ x*ₑ,c,b ← empirical distribution of supplied category scores
 Sₑ,b = Σ[c ∈ Aₑ] w*ₑ,c × x*ₑ,c,b
 ```
 
-Compute mean, median, population std, p10, p90, spread, and the other descriptive statistics from Sₑ,1,…,Sₑ,B. Apply the same stability thresholds to its spread. `overall.n` is the number of simulated scores, not the number of AI runs. The entity's overall risk level uses `overall.score`, not the simulated mean or median.
+Compute mean, median, population std, p10, p90, spread, and the other descriptive statistics from Sₑ,1,…,Sₑ,B. Apply the same stability thresholds to its spread. `overall.n` is the number of simulated scores, not the number of AI runs. The entity's overall risk level and rank use the selected `overall.score`:
 
-This procedure samples individual assessments, not bootstrap estimates of a median or uncertainty in a mean. More input runs do not shrink the range by a 1/√n rule. More simulations improve the numerical approximation to the combined supplied distributions; they add no new evidence. The headline weighted combination of category medians need not equal the median of simulated combinations and, particularly with percentile/risk-adjusted policies, need not fall inside the simulated p10–p90 range. The outputs answer different descriptive questions.
+```text
+monte_carlo_median (default): Rₑ = median(Sₑ,1,…,Sₑ,B)
+monte_carlo_mean:             Rₑ = mean(Sₑ,1,…,Sₑ,B)
+weighted_categories:         Rₑ = Wₑ
+```
+
+`overall.score_method` records the chosen method. A Monte Carlo headline requires simulation; disabling draws without selecting `weighted_categories` is rejected. Category aggregation policy affects category headlines and Wₑ; Monte Carlo draws always sample raw category distributions.
+
+This procedure samples individual assessments, not bootstrap estimates of a median or uncertainty in a mean. More input runs do not shrink the range by a 1/√n rule. More simulations improve the numerical approximation to the combined supplied distributions; they add no new evidence. The weighted combination of category medians need not equal the median of simulated combinations. For example, if each of two equally weighted categories has 60 zero assessments and 40 assessments at 100, both category medians are zero, but the median of the independently combined distribution is 50. The default headline follows this combined distribution. A weighted reference using percentile/risk-adjusted category policies need not lie in the overall p10–p90 range. The outputs answer different descriptive questions.
 
 Sampling category marginals independently is an explicit modeling assumption. There is no information in this contract identifying correlated or paired scenarios; equal run IDs are not assumed to imply paired draws. Cross-category dependence could materially change the overall spread, so the simulated range can understate or overstate joint disagreement. It is not a probabilistic forecast of the vendor's true risk or a probability of a future loss.
 
@@ -148,8 +156,9 @@ The top-level envelope contains:
 
 | Field | Meaning |
 | --- | --- |
-| `schema_version` | Contract version, currently `"1.0"` |
+| `schema_version` | Contract version, currently `"1.1"` |
 | `assessment_count` | Number of validated supplied assessments |
+| `contains_synthetic_assessments` | True if any raw assessment is marked synthetic |
 | `input_digest` | Content identifier for assessments and optional entity roster |
 | `config` | Fully resolved policy, including seed and simulation count |
 | `weights` | Original supplied category weights |
@@ -158,7 +167,7 @@ The top-level envelope contains:
 
 Each entity contains `entity_id`, display `entity_name`, nullable `entity_type`, `overall`, `categories`, and nullable `rank`. Category keys are dynamic. Each category and overall object exposes `n`, `mean`, `median`, `std`, `minimum`, `maximum`, `p10`, `p25`, `p75`, `p90`, `iqr`, `mad`, and `spread`. Category n counts raw assessments; overall n counts simulations.
 
-Both expose nullable `score`, `risk_level`, and `stability`. Categories add `status`, `sufficient`, and `below_preferred_runs`. Overall adds `coverage`, `incomplete`, `status`, `effective_weights`, `contributions`, and the arrays `missing_categories`, `insufficient_categories`, and `below_preferred_categories`. Exclusion arrays concern positive-weight categories only. Overall status is `available`, `incomplete_withheld`, or `unscorable`.
+Both expose nullable `score`, `risk_level`, and `stability`. Categories add `status`, `sufficient`, and `below_preferred_runs`. Overall adds `score_method`, `weighted_category_score`, `coverage`, `incomplete`, `status`, `effective_weights`, `contributions`, and the arrays `missing_categories`, `insufficient_categories`, and `below_preferred_categories`. Exclusion arrays concern positive-weight categories only. Overall status is `available`, `incomplete_withheld`, or `unscorable`.
 
 `rank_entities(results)` and `score_all(weights)` rank descending by full-precision overall score. Rank 1 is highest risk. Exactly equal scores share competition rank: 1, 1, 3. Entity ID orders tied rows deterministically. No tolerance or display rounding defines a tie. Unavailable scores appear last in entity-ID order and have null rank. `score_entity()` alone has null rank because it makes no cross-entity comparison.
 
@@ -172,7 +181,7 @@ There is no claim of rank certainty. Overlapping ranges are not converted into p
 {
   "categories": ["cyber", "financial", "regulatory"],
   "category_aggregation": {"method": "median"},
-  "overall_simulation": {"runs": 5000, "seed": 42},
+  "overall_simulation": {"runs": 5000, "seed": 42, "headline_method": "monte_carlo_median"},
   "minimum_runs": {"minimum_required": 10, "preferred": 100},
   "missing_categories": "renormalize"
 }
@@ -192,8 +201,24 @@ A collected report is a dated evidence snapshot. Its category score is a capped,
 
 Default collection export selects the most recent report by timezone-aware `generated_at` for each entity. Older snapshots are counted and excluded from scoring; they are not repeated assessments. Equal latest timestamps are ambiguous and rejected. No findings means no imported category assessment; an upstream zero placeholder is not treated as low risk. A zero supported by informational findings remains the producer's actual triage score. A manifest without a report still appears as an unscored entity.
 
-In `collector_heuristic` mode, `WebsiteDataset` explicitly sets minimum_required to 1 for the single upstream summary and requires median aggregation, which leaves the summary unchanged. The resolved policy is returned. The preferred-run flag remains descriptive of the one supplied value, but this mode is not eligible for an AI-disagreement interpretation. Category n is 1 where a summary is eligible, 0 otherwise. Category p10/p25/p75/p90, std, IQR, MAD, spread, and stability are null. Mean/median/min/max simply reflect the single supplied summary. Overall n=0 and all simulated descriptive statistics/stability are null. Overall score, risk level, coverage, contributions, and rank still use the established weighted scoring rules. `score_all(..., simulate=False)` supports this point-only calculation without generating draws. The core `score` command's defaults are unchanged.
+In `collector_heuristic` mode, `WebsiteDataset` explicitly sets minimum_required to 1 for the single upstream summary and requires median aggregation, which leaves the summary unchanged. The resolved policy is returned. The preferred-run flag remains descriptive of the one supplied value, but this mode is not eligible for an AI-disagreement interpretation. Category n is 1 where a summary is eligible, 0 otherwise. Category p10/p25/p75/p90, std, IQR, MAD, spread, and stability are null. Mean/median/min/max simply reflect the single supplied summary. Overall n=0 and all simulated descriptive statistics/stability are null. Overall score, risk level, coverage, contributions, and rank still use the established weighted scoring rules. `WebsiteDataset` explicitly selects `weighted_categories` and calls `score_all(..., simulate=False)` for this point-only calculation. The core `score` command uses Monte Carlo headlines by default.
 
 Passing repeated canonical `assessments` to `WebsiteDataset`, or `--assessments` to the export CLI, selects `ai_assessments` mode. It uses normal minimum-run and aggregation policies, includes real disagreement distributions, and does not import any heuristic summaries. Every assessment entity ID must match a collected entity/manifest. Category labels are literal; `cyber` is not silently renamed to `cybersecurity`. The producer must ensure that assessments correspond to the intended evidence batch. The framework does not infer that association from collection timestamps.
 
 The payload keeps the original report and sources so the website can expose provenance and errors, rather than hiding collection gaps behind a score. Requested-weight coverage is distinct from source checks and from overall evidence completeness. Source checks are preserved as supplied; the adapter does not infer credibility or automatically convert a source's `no_match` into a category risk score. Partial-source findings can still yield provisional triage scores, so collection errors and notes must remain visible.
+
+## 10. Synthetic assessment demonstration
+
+`simulate_assessments(collection, config)` and the `simulate` CLI create demo inputs, not LLM outputs. For each eligible collector summary outside `assessment_simulation.excluded_categories`, a stable entity/category-specific random stream draws one standard deviation σ uniformly from [spread_std_min, spread_std_max], then generates the configured number of assessments:
+
+```text
+xᵢ = clip(Normal(collector_score, σ²), risk_scale.min, risk_scale.max)
+```
+
+Defaults are 100 runs, seed 20260922, and σ between 4 and 12 risk points. Clipping creates mass at the boundaries and can shift the ensemble mean/median away from the original center, especially near zero or 100. No statistical calibration is claimed. Settings, realized σ, center, collection digest, and `synthetic: true` are stored in each assessment's metadata. The timestamp refers to the source report time, not an actual AI execution.
+
+Financial is explicitly excluded by the demo policy while its assessments are pending. Missing findings are never filled with random scores. These exclusions apply only to synthetic generation: real future financial assessments remain valid canonical inputs. The current collection therefore produces 1,600 demo assessments (eight entities × two categories × 100); two entities remain unscored. Category weights remain unchanged, yielding 50% coverage with the example weights.
+
+Synthetic generation is separate from Monte Carlo aggregation: first generate 100 category inputs, then resample the generated distributions for 5,000 weighted overall scenarios. `overall.score` is the median of those scenarios by default. Synthetic spread and stability reflect the chosen random-noise policy, not observed model agreement. The website reports `simulated_ai_assessments` / `synthetic_assessment_spread`; a dataset mixing synthetic and non-synthetic inputs is rejected. The core scoreboard also exposes `contains_synthetic_assessments` and the table CLI labels synthetic output.
+
+To reproduce a demo, retain the generated assessment JSON, resolved configuration, weights, and collection snapshot. Reweighting a `WebsiteDataset` reuses those assessments and does not regenerate noise. Regenerate inputs only when intentionally changing generation settings or collection data. Imported synthetic files retain their own settings in raw metadata; the export config's assessment_simulation section specifies generator policy and does not rewrite or regenerate imported scores.

@@ -85,6 +85,8 @@ class CategoryResult(Distribution):
 @dataclass(frozen=True)
 class OverallResult(Distribution):
     score: float | None
+    score_method: str
+    weighted_category_score: float | None
     risk_level: str | None
     stability: str | None
     coverage: float
@@ -111,6 +113,7 @@ class EntityResult:
 class Scoreboard:
     schema_version: str
     assessment_count: int
+    contains_synthetic_assessments: bool
     input_digest: str
     config: dict[str, Any]
     weights: dict[str, float]

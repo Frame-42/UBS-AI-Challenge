@@ -88,6 +88,9 @@ def score_overall(entity_id: str, scores: Mapping[str, Sequence[float]],
                   categories: Mapping[str, CategoryResult], weights: Mapping[str, float],
                   config: Config, *, simulate: bool = True) -> OverallResult:
     """Sample category marginals independently; this does not estimate true-risk probabilities."""
+    method = config.overall_simulation.headline_method
+    if not simulate and method != "weighted_categories":
+        raise ValidationError("Monte Carlo headline requires simulation; use weighted_categories for point-only scoring")
     normalized = normalize_weights(weights, categories)
     positive = [key for key in sorted(categories) if normalized[key] > 0]
     available = [key for key in positive if categories[key].sufficient]
@@ -121,8 +124,15 @@ def score_overall(entity_id: str, scores: Mapping[str, Sequence[float]],
                          math.fsum(effective[key] * draws[key][i] for key in available)))
                          for i in range(config.overall_simulation.runs)]
     stats = describe(simulated)
+    weighted_category_score = headline
+    if headline is not None:
+        if method == "monte_carlo_median":
+            headline = stats.median
+        elif method == "monte_carlo_mean":
+            headline = stats.mean
     return OverallResult(
-        **asdict(stats), score=headline,
+        **asdict(stats), score=headline, score_method=method,
+        weighted_category_score=weighted_category_score,
         risk_level=config.risk_level(headline) if headline is not None else None,
         stability=config.stability_label(stats.spread) if simulated else None,
         coverage=coverage, incomplete=incomplete, status=status,

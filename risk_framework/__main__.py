@@ -2,12 +2,14 @@
 from __future__ import annotations
 
 import argparse
+from dataclasses import asdict
 from pathlib import Path
 
 from . import RiskFramework, ValidationError, load_assessments, load_config, load_json, to_json
 from .models import Scoreboard
 from .collection import load_collection
 from .export import WebsiteDataset, export_json
+from .simulation import simulate_assessments
 
 
 def _display(value: float | None) -> str:
@@ -15,7 +17,8 @@ def _display(value: float | None) -> str:
 
 
 def table(result: Scoreboard) -> str:
-    lines = ["AI assessment disagreement ranges (p10–p90); higher scores mean higher risk."]
+    label = "SYNTHETIC demonstration spread" if result.contains_synthetic_assessments else "AI assessment disagreement"
+    lines = [f"{label} ranges (p10–p90); higher scores mean higher risk."]
     for row in result.records:
         overall = row.overall
         lines.append(f"{row.rank or '-':>3}  {row.entity_name}: {_display(overall.score)} "
@@ -47,8 +50,23 @@ def main(argv: list[str] | None = None) -> int:
     export.add_argument("--config", help="Partial JSON policy override")
     export.add_argument("--assessments", help="Optional repeated AI assessment JSON/JSONL; replaces heuristic scoring")
     export.add_argument("--output", default="exports/risk-data.json", help="Website JSON snapshot path")
+    mock = sub.add_parser("simulate", help="Generate explicitly synthetic repeated assessments from collected summaries")
+    mock.add_argument("--reports", required=True, help="Collection report file or directory")
+    mock.add_argument("--config", help="Partial JSON policy override, including assessment_simulation")
+    mock.add_argument("--output", default="exports/simulated-assessments.json", help="Synthetic assessment JSON array")
     args = parser.parse_args(argv)
     try:
+        if args.command == "simulate":
+            collection = load_collection(args.reports)
+            assessments = simulate_assessments(collection, load_config(args.config))
+            protected = [*collection.input_files]
+            if args.config:
+                protected.append(Path(args.config))
+            if Path(args.reports).is_dir() and Path(args.output).resolve().is_relative_to(Path(args.reports).resolve()):
+                raise ValidationError("Simulation output must be outside the collection report directory")
+            export_json([asdict(a) for a in assessments], args.output, protected_paths=protected)
+            print(f"Wrote {len(assessments)} SYNTHETIC assessments to {args.output}; no AI calls were made")
+            return 0
         if args.command == "export":
             collection = load_collection(args.reports)
             dataset = WebsiteDataset(collection, load_config(args.config),

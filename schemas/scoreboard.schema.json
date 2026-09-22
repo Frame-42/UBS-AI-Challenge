@@ -1,10 +1,10 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Third-party risk scoreboard v1.0",
+  "title": "Third-party risk scoreboard v1.1",
   "type": "object",
   "properties": {
     "schema_version": {
-      "const": "1.0"
+      "const": "1.1"
     },
     "assessment_count": {
       "type": "integer",
@@ -93,11 +93,19 @@
             "seed": {
               "type": "integer",
               "minimum": 0
+            },
+            "headline_method": {
+              "enum": [
+                "monte_carlo_median",
+                "monte_carlo_mean",
+                "weighted_categories"
+              ]
             }
           },
           "required": [
             "runs",
-            "seed"
+            "seed",
+            "headline_method"
           ],
           "additionalProperties": false
         },
@@ -166,6 +174,44 @@
             "renormalize",
             "withhold"
           ]
+        },
+        "assessment_simulation": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "runs": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "seed": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "spread_std_min": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "spread_std_max": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 100
+            },
+            "excluded_categories": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            }
+          },
+          "required": [
+            "runs",
+            "seed",
+            "spread_std_min",
+            "spread_std_max",
+            "excluded_categories"
+          ]
         }
       },
       "required": [
@@ -176,7 +222,8 @@
         "stability",
         "risk_levels",
         "minimum_runs",
-        "missing_categories"
+        "missing_categories",
+        "assessment_simulation"
       ],
       "additionalProperties": false
     },
@@ -200,6 +247,9 @@
       "items": {
         "$ref": "#/$defs/entity"
       }
+    },
+    "contains_synthetic_assessments": {
+      "type": "boolean"
     }
   },
   "required": [
@@ -209,7 +259,8 @@
     "config",
     "weights",
     "normalized_weights",
-    "records"
+    "records",
+    "contains_synthetic_assessments"
   ],
   "additionalProperties": false,
   "$defs": {
@@ -568,6 +619,21 @@
             "pattern": "^\\S(?:[\\s\\S]*\\S)?$"
           },
           "uniqueItems": true
+        },
+        "weighted_category_score": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "score_method": {
+          "enum": [
+            "monte_carlo_median",
+            "monte_carlo_mean",
+            "weighted_categories"
+          ]
         }
       },
       "required": [
@@ -594,7 +660,9 @@
         "contributions",
         "missing_categories",
         "insufficient_categories",
-        "below_preferred_categories"
+        "below_preferred_categories",
+        "score_method",
+        "weighted_category_score"
       ],
       "additionalProperties": false
     },
